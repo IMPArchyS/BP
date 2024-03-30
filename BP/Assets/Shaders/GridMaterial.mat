@@ -38,7 +38,7 @@ Material:
     - _GridBias: 0.5
     - _GridDiv: 10
     - _GridScale: 1
-    - _GridSpacing: 1
+    - _GridSpacing: 3
     - _LineThickness: 0.1
     - _LineWidth: 1.57
     - _MajorLineWidth: 7.64

@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class GridToCamera : MonoBehaviour
 {
-    [SerializeField] private Transform camObject;
+    [SerializeField] private Camera camObject;
+    [SerializeField] private OverviewMovement ovm;
     [SerializeField] float offsetX = 1;
     [SerializeField] float offsetZ = 1;
     private void Awake()
     {
-        camObject = Camera.main.transform;
+        camObject = GameObject.Find("FPSCamera").GetComponent<Camera>();
+        ovm = GameObject.Find("OverviewCamera").GetComponent<OverviewMovement>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        float minX = Camera.main.nearClipPlane;
-        float maxX = Camera.main.farClipPlane;
-        float minZ = Camera.main.nearClipPlane;
-        float maxZ = Camera.main.farClipPlane;
-
-        float clampedX = Mathf.Clamp(camObject.position.x + offsetX, minX, maxX);
-        float clampedZ = Mathf.Clamp(camObject.position.z + offsetZ, minZ, maxZ);
-
-        transform.position = new Vector3(clampedX, transform.position.y, clampedZ);
+        if (camObject.enabled)
+        {
+            transform.position = new Vector3(camObject.transform.position.x + offsetX, transform.position.y, camObject.transform.position.z + offsetZ);
+        }
+        else
+        {
+            transform.position = new Vector3(ovm.LookedAtObject.transform.position.x, ovm.LookedAtObject.transform.position.y, ovm.LookedAtObject.transform.position.z);
+        }
     }
 }

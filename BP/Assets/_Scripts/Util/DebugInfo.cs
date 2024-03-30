@@ -8,7 +8,8 @@ public class DebugInfo : MonoBehaviour
 {
     public static DebugInfo instance;
     public TextMeshProUGUI fpsText;
-    
+    public TextMeshProUGUI speedText;
+    FPSMovement f;
     private void Awake()
     {
         if (instance == null)
@@ -25,16 +26,18 @@ public class DebugInfo : MonoBehaviour
     private void Start()
     {
         fpsText = GameObject.Find("FPSText").GetComponent<TextMeshProUGUI>();
-        StartCoroutine(UpdateFPS());
+        speedText = GameObject.Find("SPEEDText").GetComponent<TextMeshProUGUI>();
+        f = GameObject.Find("FPSCamera").GetComponent<FPSMovement>();
+        InvokeRepeating(nameof(UpdateFPS), 1, 1);
+        InvokeRepeating(nameof(UpdateSpeed), 1, 1);
     }
-
-    private IEnumerator UpdateFPS()
+    private void UpdateSpeed()
     {
-        while (true)
-        {
-            float fps = 1f / Time.deltaTime;
-            fpsText.text = "FPS: " + Mathf.Round(fps);
-            yield return new WaitForSeconds(0.5f);
-        }
+        speedText.text = "SPEED:" + Mathf.Round(f.CurrentSpeed);
+    }
+    private void UpdateFPS()
+    {
+        int fps = (int)(1f / Time.unscaledDeltaTime);
+        fpsText.text = "FPS: " + Mathf.Round(fps);
     }
 }

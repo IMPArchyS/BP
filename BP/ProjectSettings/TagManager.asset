@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TimeController
+  - Star
+  - SecondaryCamera
   layers:
   - Default
   - TransparentFX
