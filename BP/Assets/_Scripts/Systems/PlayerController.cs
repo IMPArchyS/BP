@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("DEBUG Settings")]
     [SerializeField] private Material gridMaterial;
-    [SerializeField] private bool fpsCameraOn = true; // yet to implement
+    [SerializeField] private bool fpsCameraOn = true;
     [SerializeField] private Camera fpsCamera;
     [SerializeField] private Camera overviewCamera;
 
@@ -61,6 +61,9 @@ public class PlayerController : MonoBehaviour
         fps.PlayerSprintSpeed = sprintSpeed;
         fps.PlayerSensitivity = sensitivity;
         fps.LockCursor();
+        if (fpsCameraOn)
+            fpsCameraOn = false;
+        SetCamera();
     }
 
     private void Update()
@@ -81,7 +84,8 @@ public class PlayerController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        SetCamera();
+        if (Input.GetKeyDown(KeyCode.P))
+            SetCamera();
         if (fpsCamera)
         {
 
@@ -93,8 +97,7 @@ public class PlayerController : MonoBehaviour
     }
     private void SetCamera()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-            fpsCameraOn = !fpsCameraOn;
+        fpsCameraOn = !fpsCameraOn;
 
         if (fpsCameraOn)
         {

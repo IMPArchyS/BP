@@ -16,6 +16,7 @@ public class FPSMovement : MonoBehaviour
     public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         CurrentSpeed = PlayerSpeed;
     }
 
@@ -28,6 +29,7 @@ public class FPSMovement : MonoBehaviour
             if (PlayerIsInventoryOpen)
             {
                 Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
                 Debug.Log("Player is in inventory");
             }
             else
