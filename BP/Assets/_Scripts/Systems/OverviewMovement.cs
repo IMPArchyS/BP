@@ -8,7 +8,6 @@ public class OverviewMovement : MonoBehaviour
     public float ZoomSpeed { get; set; }
 
     public float DragSpeed { get; set; }
-    [SerializeField] private GameObject lookAtObj;
     public bool LoopCamera { get; set; } = false;
     public int CameraLoopSpeed { get; set; } = 3;
     public CameraController CamController { get; private set; }
@@ -18,6 +17,7 @@ public class OverviewMovement : MonoBehaviour
         get { return lookAtObj; }
         set { lookAtObj = value; }
     }
+    [SerializeField] private GameObject lookAtObj;
 
     public void SetupOvm()
     {
@@ -73,6 +73,8 @@ public class OverviewMovement : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 Debug.Log(hit.collider.gameObject);
+                lookAtObj = hit.collider.gameObject;
+                CamController.CameraTarget = lookAtObj.transform;
             }
         }
     }
