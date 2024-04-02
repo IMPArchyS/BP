@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum StarLuminosityType { Nebula, TTauri, Dwarf, Giant, SuperGiant, HyperGiant }
 public enum StarSpectralType { None, Blue, White, Yellow, Orange, Red, Black }
-
+public enum StarDeathType { WhiteDwarf, BlackHole, NeutronStar }
 [RequireComponent(typeof(CelestialObject))]
 public class Star : MonoBehaviour
 {
@@ -23,16 +23,20 @@ public class Star : MonoBehaviour
     [SerializeField] private float stellarWindIntensity; // in solar masses per year
 
     // Additional properties specific to the end-of-life stage
-    [SerializeField] private string endOfLifeStage; // e.g., white dwarf, neutron star, black hole
-    [SerializeField] private bool willSupernova; // Indicates if the star will undergo a supernova explosion
-    [SerializeField] private string supernovaTrigger; // Circumstances leading to a supernova explosion
+    [SerializeField] private StarDeathType endOfLifeStage; // e.g., white dwarf, neutron star, black hole
 
     #endregion
-    void Start()
+
+    private void Awake()
     {
 
     }
-    void Update()
+
+    private void Start()
+    {
+
+    }
+    private void Update()
     {
 
     }

@@ -2121,9 +2121,7 @@ MonoBehaviour:
   luminosity: 0
   fusionProcess: 
   stellarWindIntensity: 0
-  endOfLifeStage: 
-  willSupernova: 0
-  supernovaTrigger: 
+  endOfLifeStage: 0
 --- !u!114 &1601187131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2137,7 +2135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: 
-  type: 0
+  type: 2
   region: 0
   mass: 0
   diameter: 0
@@ -2145,12 +2143,14 @@ MonoBehaviour:
   velocity: 0
   age: 0
   hasAtmosphere: 0
-  atmosphereComposition: 
+  atmospherePressure: 0
+  atmosphereComposition: []
   orbitalRadius: 0
   orbitalPeriod: 0
   orbitalEccentricity: 0
   inclination: 0
   surfaceFeatures: []
+  groundElements: []
   minTemperature: 0
   averageTemperature: 0
   maxTemperature: 0

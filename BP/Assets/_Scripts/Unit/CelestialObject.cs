@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum CelestialObjectType { Planet, Moon, Star, Asteroid }
-public enum CelestialRegion { NearStar, InnerPlanets, OuterPlanets, AsteroidBelt, KuiperBelt, OortCloud }
+public enum CelestialRegion { Star, InnerPlanets, OuterPlanets, AsteroidBelt, KuiperBelt, OortCloud }
 [System.Serializable]
 public class CelestialObject : MonoBehaviour
 {
@@ -25,7 +25,8 @@ public class CelestialObject : MonoBehaviour
     [Header("Atmosphere Information")]
 
     public bool hasAtmosphere;
-    public string atmosphereComposition;
+    public float atmospherePressure; // in Pascals
+    public List<Element> atmosphereComposition;
 
     #endregion
 
@@ -43,6 +44,7 @@ public class CelestialObject : MonoBehaviour
     [Header("Surface Information")]
 
     public string[] surfaceFeatures;
+    public List<Element> groundElements;
     public float minTemperature; // in Celsius
     public float averageTemperature; // in Celsius
     public float maxTemperature; // in Celsius
@@ -59,12 +61,12 @@ public class CelestialObject : MonoBehaviour
 
     #endregion
 
-    virtual public void Start()
+    private void Start()
     {
 
     }
 
-    virtual public void Update()
+    private void Update()
     {
 
     }
