@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351063ba36c6f8340b114d3ae4bf1a36, type: 3}
   m_Name: Element109
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
-  <AtomicNumber>k__BackingField: 0
-  <NeutronAmount>k__BackingField: 0
-  <ElectronAmount>k__BackingField: 0
-  <AtomicMass>k__BackingField: 0
-  <Symbol>k__BackingField: 
-  <State>k__BackingField: 0
+  <Name>k__BackingField: Meitnerium
+  <AtomicNumber>k__BackingField: 109
+  <NeutronAmount>k__BackingField: 168
+  <ElectronAmount>k__BackingField: 109
+  <AtomicMass>k__BackingField: 278
+  <Symbol>k__BackingField: Mt
+  <State>k__BackingField: 4
   <Isotopes>k__BackingField: []
