@@ -6,6 +6,7 @@ public class Planet : MonoBehaviour
 {
     #region Moons & Rings
     [Header("Moons & Rings Information")]
+    public PlanetData planetData;
     public Moon[] moons;
     public bool hasRings;
     public string[] ringCharacteristics;

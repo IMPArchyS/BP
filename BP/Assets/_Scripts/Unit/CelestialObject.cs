@@ -9,7 +9,7 @@ public class CelestialObject : MonoBehaviour
 {
     #region Generic information
     [Header("General Information")]
-
+    public GenericCOData celestialObjectData;
     public string objectName;
     public CelestialObjectType type;
     public CelestialRegion region;

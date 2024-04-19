@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ElementState { Gas, Liquid, Solid, Plasma }
+public enum ElementState { Gas, Liquid, Solid, Plasma, Unknown }
 
 [CreateAssetMenu(fileName = "New Element", menuName = "Elements/Element")]
 public class Element : ScriptableObject

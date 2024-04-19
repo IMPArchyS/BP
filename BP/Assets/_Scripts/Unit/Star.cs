@@ -12,6 +12,7 @@ public class Star : MonoBehaviour
     #region Star Attributes
 
     [Header("Star Information")]
+    public StarData starData;
     [SerializeField] private CelestialObject celestialObject;
     [SerializeField] private StarLuminosityType luminosityType;
     [SerializeField] private StarSpectralType spectralType;
