@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bed496875867d84c9fd9d2c1578b091, type: 3}
-  m_Name: New Isotope 4
+  m_Name: Xenon-128
   m_EditorClassIdentifier: 
-  <BaseElement>k__BackingField: {fileID: 0}
-  <NeutronAmount>k__BackingField: 0
-  <RelativeAbundance>k__BackingField: 0
+  <BaseElement>k__BackingField: {fileID: 11400000, guid: c1a25bedabad09d4fa4e2f9492d9b407, type: 2}
+  <NeutronAmount>k__BackingField: 74
+  <Symbol>k__BackingField: 128Xe
+  <DecayMode>k__BackingField: 0

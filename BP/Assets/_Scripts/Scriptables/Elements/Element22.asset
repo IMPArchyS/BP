@@ -19,4 +19,10 @@ MonoBehaviour:
   <AtomicMass>k__BackingField: 47.867
   <Symbol>k__BackingField: Ti
   <State>k__BackingField: 2
-  <Isotopes>k__BackingField: []
+  <Isotopes>k__BackingField:
+  - {fileID: 11400000, guid: d789d1a670ad3244f9ecfe1020d9475c, type: 2}
+  - {fileID: 11400000, guid: 02d16e4037ecc2d46838727d4d1b1dc6, type: 2}
+  - {fileID: 11400000, guid: a46f577b109f35244b4c4b75a9efb068, type: 2}
+  - {fileID: 11400000, guid: dd2b3b493f5cf8145afb64c3fe4273c1, type: 2}
+  - {fileID: 11400000, guid: 2b6a74f1d641e6749b3344d54ccdf6fb, type: 2}
+  - {fileID: 11400000, guid: fa5d3743b3fa5814c89a6c402bef1d2d, type: 2}

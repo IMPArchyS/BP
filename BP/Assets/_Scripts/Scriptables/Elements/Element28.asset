@@ -19,4 +19,11 @@ MonoBehaviour:
   <AtomicMass>k__BackingField: 58.6934
   <Symbol>k__BackingField: Ni
   <State>k__BackingField: 2
-  <Isotopes>k__BackingField: []
+  <Isotopes>k__BackingField:
+  - {fileID: 11400000, guid: 7f5bf2c841ac6584fbbb3af6cd818644, type: 2}
+  - {fileID: 11400000, guid: d3fe722fe55dc214790b6b9baba74f2b, type: 2}
+  - {fileID: 11400000, guid: e6aa473f1c2a42d4cae85c1b0cda4693, type: 2}
+  - {fileID: 11400000, guid: 3506f2cdea05d644b81835f0a922d6cc, type: 2}
+  - {fileID: 11400000, guid: 6971ed0457a7b784d8712989409da10e, type: 2}
+  - {fileID: 11400000, guid: 6226beeedcb3f9b4485190f5e6f286a8, type: 2}
+  - {fileID: 11400000, guid: cb1f56b80cc46f0418b44475f9b7f6a8, type: 2}

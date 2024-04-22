@@ -19,4 +19,9 @@ MonoBehaviour:
   <AtomicMass>k__BackingField: 72.61
   <Symbol>k__BackingField: Ge
   <State>k__BackingField: 2
-  <Isotopes>k__BackingField: []
+  <Isotopes>k__BackingField:
+  - {fileID: 11400000, guid: d87c4c7354c607046b92b5fb68e1abda, type: 2}
+  - {fileID: 11400000, guid: 15cdbc00925107147b3a7ede04d59319, type: 2}
+  - {fileID: 11400000, guid: d0bb60f9dc47ca84a882a31ab8f6f171, type: 2}
+  - {fileID: 11400000, guid: 80433626f942b7249abf6c8aafdd3685, type: 2}
+  - {fileID: 11400000, guid: 9db319405ae4e074d87b894dcf5fd14c, type: 2}

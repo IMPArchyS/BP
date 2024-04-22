@@ -19,4 +19,9 @@ MonoBehaviour:
   <AtomicMass>k__BackingField: 65.39
   <Symbol>k__BackingField: Zn
   <State>k__BackingField: 2
-  <Isotopes>k__BackingField: []
+  <Isotopes>k__BackingField:
+  - {fileID: 11400000, guid: 4bffcb8ef8e4bee46a01654317ff52f0, type: 2}
+  - {fileID: 11400000, guid: 26c8af27ae230034fb848683231eb361, type: 2}
+  - {fileID: 11400000, guid: fad995b79d3008f4980ec8cfa6074eee, type: 2}
+  - {fileID: 11400000, guid: 88f7a7e533dbbf548811e958ea595512, type: 2}
+  - {fileID: 11400000, guid: da54f53edc991574da1c46216111ee09, type: 2}
