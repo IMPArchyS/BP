@@ -19,4 +19,11 @@ MonoBehaviour:
   <AtomicMass>k__BackingField: 144.24
   <Symbol>k__BackingField: Nd
   <State>k__BackingField: 2
-  <Isotopes>k__BackingField: []
+  <Isotopes>k__BackingField:
+  - {fileID: 11400000, guid: 75a8eaf4f8f43514eb3aa6da5d927928, type: 2}
+  - {fileID: 11400000, guid: 1d3766f1fabfae24ebcce0bce8d856db, type: 2}
+  - {fileID: 11400000, guid: c2311241ff069de448cf1e9064cb2dd0, type: 2}
+  - {fileID: 11400000, guid: 401705ab26555a24fbc1086b176317f7, type: 2}
+  - {fileID: 11400000, guid: a15fc627a85d22e4092c6671c2ff0707, type: 2}
+  - {fileID: 11400000, guid: 469d25d1aa367c14a90bfaabdda0cb50, type: 2}
+  - {fileID: 11400000, guid: 9305006784c94344e96f215918c73654, type: 2}

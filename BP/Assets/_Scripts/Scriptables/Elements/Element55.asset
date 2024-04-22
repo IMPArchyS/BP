@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351063ba36c6f8340b114d3ae4bf1a36, type: 3}
   m_Name: Element55
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Cesium
+  <Name>k__BackingField: Caesium
   <AtomicNumber>k__BackingField: 55
   <NeutronAmount>k__BackingField: 78
   <ElectronAmount>k__BackingField: 55
   <AtomicMass>k__BackingField: 132.9054519
   <Symbol>k__BackingField: Cs
   <State>k__BackingField: 2
-  <Isotopes>k__BackingField: []
+  <Isotopes>k__BackingField:
+  - {fileID: 11400000, guid: b0d160bfc796b1949bf429a4919137ba, type: 2}
+  - {fileID: 11400000, guid: 368d122552f5f1c4a975f8e6a1b15388, type: 2}
+  - {fileID: 11400000, guid: cc2afe6d4abca5c4c8fe6d45bfbdfe54, type: 2}
+  - {fileID: 11400000, guid: 6d8891c1a82908a43b7185be7196f26f, type: 2}
