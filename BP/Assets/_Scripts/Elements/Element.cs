@@ -7,12 +7,12 @@ public enum ElementState { Gas, Liquid, Solid, Plasma, Unknown }
 [CreateAssetMenu(fileName = "New Element", menuName = "Elements/Element")]
 public class Element : ScriptableObject
 {
-    [field: SerializeField] public string Name { get; private set; }  // Element name
+    [field: SerializeField] public string Name { get; private set; }
     [field: SerializeField] public int AtomicNumber { get; private set; }
-    [field: SerializeField] public int NeutronAmount { get; private set; } // Amount of neutrons
-    [field: SerializeField] public int ElectronAmount { get; private set; } // Amount of electrons
+    [field: SerializeField] public int NeutronAmount { get; private set; }
+    [field: SerializeField] public int ElectronAmount { get; private set; }
     [field: SerializeField] public double AtomicMass { get; private set; }
     [field: SerializeField] public string Symbol { get; private set; }
     [field: SerializeField] public ElementState State { get; set; }
-    [field: SerializeField] public List<Isotope> Isotopes { get; private set; } // List of isotopes
+    [field: SerializeField] public List<Isotope> Isotopes { get; private set; }
 }

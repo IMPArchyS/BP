@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 31aa1a8d6e15783469ba9611c87a1fe3, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -309,8 +309,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Time sec/sec
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 15d4ab06ec08c484c814a7712adb39ed, type: 2}
+  m_sharedMaterial: {fileID: 5908016200952834067, guid: 15d4ab06ec08c484c814a7712adb39ed, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -812,7 +812,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -870,7 +870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -2.72, y: 13.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -984,14 +984,14 @@ MonoBehaviour:
       - m_Target: {fileID: 2051687682}
         m_TargetAssemblyTypeName: TimeControl, Assembly-CSharp
         m_MethodName: ChangeTimeScaler
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &930438411
 MonoBehaviour:
@@ -2015,6 +2015,7 @@ GameObject:
   - component: {fileID: 1601187128}
   - component: {fileID: 1601187127}
   - component: {fileID: 1601187126}
+  - component: {fileID: 1601187132}
   - component: {fileID: 1601187131}
   - component: {fileID: 1601187130}
   m_Layer: 0
@@ -2114,6 +2115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c509960f1e17e240a8df59c338e8151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starData: {fileID: 0}
   celestialObject: {fileID: 0}
   luminosityType: 0
   spectralType: 0
@@ -2134,8 +2136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2aec512d9b3faf418ba3f42425e9f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  celestialObjectData: {fileID: 0}
   objectName: 
-  type: 2
+  type: 0
   region: 0
   mass: 0
   diameter: 0
@@ -2158,6 +2161,19 @@ MonoBehaviour:
   rotationPeriod: 0
   hasMagneticField: 0
   magneticFieldStrength: 0
+--- !u!114 &1601187132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601187125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bba6fcfcb414f43afd9d964430daae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 0}
 --- !u!1 &1612498065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,8 +2459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fae698bd8341284485a4efd6803adcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StellarTimeScale: 1
-  timeControlButton: {fileID: 0}
   timeScaleText: {fileID: 0}
   timeText: {fileID: 0}
 --- !u!4 &2051687683

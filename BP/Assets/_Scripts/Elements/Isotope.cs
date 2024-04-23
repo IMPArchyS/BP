@@ -7,8 +7,8 @@ public enum DecayMode { Stable, Alpha_decay, Beta_decay, Proton_emission, Neutro
 [CreateAssetMenu(fileName = "New Isotope", menuName = "Elements/Isotope")]
 public class Isotope : ScriptableObject
 {
-    [field: SerializeField] public Element BaseElement { get; private set; } // Relative abundance of the isotope
-    [field: SerializeField] public int NeutronAmount { get; private set; } // Amount of neutrons
-    [field: SerializeField] public string Symbol { get; set; } // Symbol of the isotope
-    [field: SerializeField] public DecayMode DecayMode { get; set; } // Decay state of the isotope
+    [field: SerializeField] public Element BaseElement { get; private set; }
+    [field: SerializeField] public int NeutronAmount { get; private set; }
+    [field: SerializeField] public string Symbol { get; set; }
+    [field: SerializeField] public DecayMode DecayMode { get; set; }
 }

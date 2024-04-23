@@ -41,7 +41,7 @@ public class GenericCOData : ScriptableObject
     #region Surface
     [Header("Surface Information")]
 
-    public string[] surfaceFeatures;
+    public List<string> surfaceFeatures;
     public List<Element> groundElements;
     public float minTemperature; // in Celsius
     public float averageTemperature; // in Celsius

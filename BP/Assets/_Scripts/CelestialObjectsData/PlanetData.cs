@@ -7,9 +7,9 @@ public class PlanetData : ScriptableObject
 {
     #region Moons & Rings
     [Header("Moons & Rings Information")]
-    public Moon[] moons;
+    public List<Moon> moons;
     public bool hasRings;
-    public string[] ringCharacteristics;
+    public List<string> ringCharacteristics;
 
     #endregion
 }

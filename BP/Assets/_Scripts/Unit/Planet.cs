@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CelestialObject))]
 public class Planet : MonoBehaviour
 {
     #region Moons & Rings
     [Header("Moons & Rings Information")]
     public PlanetData planetData;
-    public Moon[] moons;
+    public List<Moon> moons;
     public bool hasRings;
-    public string[] ringCharacteristics;
+    public List<string> ringCharacteristics;
 
     #endregion
     private void Start()

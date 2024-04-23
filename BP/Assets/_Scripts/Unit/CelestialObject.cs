@@ -5,6 +5,7 @@ using UnityEngine;
 public enum CelestialObjectType { Planet, Moon, Star, Asteroid }
 public enum CelestialRegion { Star, InnerPlanets, OuterPlanets, AsteroidBelt, KuiperBelt, OortCloud }
 [System.Serializable]
+[RequireComponent(typeof(LifeSpanController))]
 public class CelestialObject : MonoBehaviour
 {
     #region Generic information
@@ -43,7 +44,7 @@ public class CelestialObject : MonoBehaviour
     #region Surface
     [Header("Surface Information")]
 
-    public string[] surfaceFeatures;
+    public List<string> surfaceFeatures;
     public List<Element> groundElements;
     public float minTemperature; // in Celsius
     public float averageTemperature; // in Celsius
@@ -60,6 +61,10 @@ public class CelestialObject : MonoBehaviour
     public float magneticFieldStrength; // in Tesla
 
     #endregion
+    private void Awake()
+    {
+
+    }
 
     private void Start()
     {
@@ -70,4 +75,6 @@ public class CelestialObject : MonoBehaviour
     {
 
     }
+
+
 }

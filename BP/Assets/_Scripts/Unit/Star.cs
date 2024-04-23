@@ -22,8 +22,6 @@ public class Star : MonoBehaviour
     [SerializeField] private float luminosity; // in solar luminosities
     [SerializeField] private string fusionProcess;
     [SerializeField] private float stellarWindIntensity; // in solar masses per year
-
-    // Additional properties specific to the end-of-life stage
     [SerializeField] private StarDeathType endOfLifeStage; // e.g., white dwarf, neutron star, black hole
 
     #endregion

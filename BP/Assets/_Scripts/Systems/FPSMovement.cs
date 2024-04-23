@@ -5,7 +5,7 @@ using UnityEngine;
 public class FPSMovement : MonoBehaviour
 {
     public float PlayerSpeed { get; set; }
-    public float PlayerSprintSpeed { get; set; } // yet to implement
+    public float PlayerSprintSpeed { get; set; }
     public float PlayerSensitivity { get; set; }
     public bool PlayerIsInventoryOpen { get; private set; }
 
