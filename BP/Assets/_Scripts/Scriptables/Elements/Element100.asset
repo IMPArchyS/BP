@@ -20,4 +20,5 @@ MonoBehaviour:
   <Symbol>k__BackingField: Fm
   <State>k__BackingField: 2
   <Isotopes>k__BackingField:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ba5e0117a52cb3249a90a0b8993be423, type: 2}
+  - {fileID: 11400000, guid: 3d65256305b8fd440b5850dd95585100, type: 2}
