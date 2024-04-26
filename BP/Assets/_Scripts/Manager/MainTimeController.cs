@@ -11,6 +11,7 @@ public class MainTimeController : MonoBehaviour
     public decimal ElapsedTime { get; private set; } = 0;
     [SerializeField] private TextMeshProUGUI timeScaleText;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private TextMeshProUGUI utilText;
 
     private long dayCount = 0;
     private long hourCount = 0;
@@ -35,8 +36,8 @@ public class MainTimeController : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        timeScaleText = GameObject.Find("TimeScaleText").GetComponent<TextMeshProUGUI>();
-        timeText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
+        timeScaleText = GameObject.Find("MainTimeScaleText").GetComponent<TextMeshProUGUI>();
+        timeText = GameObject.Find("MainTimeText").GetComponent<TextMeshProUGUI>();
     }
 
     private void Start()
@@ -83,7 +84,8 @@ public class MainTimeController : MonoBehaviour
 
     private void UpdateTimeUI()
     {
-        timeScaleText.text = "TIME: " + TimeScaleToSlovak(timeUnits[currentIndex]) + " / sek";
+        timeScaleText.text = TimeScaleToSlovak(timeUnits[currentIndex]) + " / sek";
+        utilText.text = timeScaleText.text;
         updateCounter += Time.deltaTime;
         if (updateCounter >= 1f)
         {
@@ -148,5 +150,11 @@ public class MainTimeController : MonoBehaviour
                 break;
         }
         return skUnit;
+    }
+
+    public void ResetTimeScale()
+    {
+        currentIndex = 0;
+        StellarTimeScale = 1;
     }
 }

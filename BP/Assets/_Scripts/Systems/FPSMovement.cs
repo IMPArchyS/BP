@@ -7,7 +7,6 @@ public class FPSMovement : MonoBehaviour
     public float PlayerSpeed { get; set; }
     public float PlayerSprintSpeed { get; set; }
     public float PlayerSensitivity { get; set; }
-    public bool PlayerIsInventoryOpen { get; private set; }
 
     public float Acceleration { get; set; }
 
@@ -20,38 +19,15 @@ public class FPSMovement : MonoBehaviour
         CurrentSpeed = PlayerSpeed;
     }
 
-    public void HandleInventoryToggle()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            PlayerIsInventoryOpen = !PlayerIsInventoryOpen;
-
-            if (PlayerIsInventoryOpen)
-            {
-                Cursor.lockState = CursorLockMode.Confined;
-                Cursor.visible = true;
-                Debug.Log("Player is in inventory");
-            }
-            else
-            {
-                LockCursor();
-                Debug.Log("Player is not in inventory");
-            }
-        }
-    }
-
     public void HandlePlayerMovementAndLook()
     {
-        if (!PlayerIsInventoryOpen)
-        {
-            // Player can move and look
-            Vector3 currentRotation = transform.rotation.eulerAngles;
-            currentRotation.z = 0f;
-            transform.rotation = Quaternion.Euler(currentRotation);
+        // Player can move and look
+        Vector3 currentRotation = transform.rotation.eulerAngles;
+        currentRotation.z = 0f;
+        transform.rotation = Quaternion.Euler(currentRotation);
 
-            MovePlayer();
-            RotatePlayer();
-        }
+        MovePlayer();
+        RotatePlayer();
     }
 
     public void MovePlayer()

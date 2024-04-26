@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 
     #region FPSCameraSettings
     [Header("FPS Camera Settings")]
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float sprintSpeed = 10f;
+    [SerializeField] private float speed;
+    [SerializeField] private float sprintSpeed;
     [SerializeField] private float sensitivity = 2f;
     [SerializeField] private FPSMovement fps;
     #endregion
@@ -29,8 +29,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Material gridMaterial;
     [SerializeField] private bool fpsCameraOn = true;
     [SerializeField] private Camera fpsCamera;
+
     [SerializeField] private Camera overviewCamera;
+
     [field: SerializeField] public bool CanMove { get; set; } = true;
+    #endregion
+
+    #region GettersSetters
+    public float Speed
+    {
+        get { return speed; }
+        set { speed = value; }
+    }
+    public bool FpsCameraOn
+    {
+        get { return fpsCameraOn; }
+        set { fpsCameraOn = value; }
+    }
+    public Camera FpsCamera { get { return fpsCamera; } }
+    public Camera OverviewCamera { get { return overviewCamera; } }
     #endregion
     private void Awake()
     {
@@ -52,7 +69,7 @@ public class PlayerController : MonoBehaviour
         overviewCamera = GameObject.FindGameObjectWithTag("SecondaryCamera").GetComponent<Camera>();
         fps = fpsCamera.GetComponent<FPSMovement>();
         ovm = overviewCamera.GetComponent<OverviewMovement>();
-
+        sprintSpeed = speed * 2.5f;
         ovm.ZoomSpeed = zoomSpeed;
         ovm.DragSpeed = dragSpeed;
         ovm.LoopCamera = loopCamera;
@@ -76,7 +93,6 @@ public class PlayerController : MonoBehaviour
 
         if (fpsCameraOn)
         {
-            fps.HandleInventoryToggle();
             fps.HandlePlayerMovementAndLook();
             gridMaterial.SetFloat("_FPSCamera", fpsCameraOn ? 1f : 0f);
         }
@@ -135,5 +151,12 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
         }
+    }
+
+    public void UpdateSprintSpeed()
+    {
+        sprintSpeed = speed * 2.5f;
+        fps.PlayerSpeed = speed;
+        fps.PlayerSprintSpeed = sprintSpeed;
     }
 }
