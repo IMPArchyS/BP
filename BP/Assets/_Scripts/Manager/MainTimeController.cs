@@ -6,7 +6,7 @@ using TMPro;
 public class MainTimeController : MonoBehaviour
 {
     public static MainTimeController Instance { get; private set; }
-    public long StellarTimeScale { get; private set; } = 1;
+    public long StellarTimeScale { get; set; } = 1;
     public long YearCount { get; private set; } = 0;
     public decimal ElapsedTime { get; private set; } = 0;
     [SerializeField] private TextMeshProUGUI timeScaleText;
@@ -31,7 +31,9 @@ public class MainTimeController : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(Instance.gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         timeScaleText = GameObject.Find("TimeScaleText").GetComponent<TextMeshProUGUI>();
         timeText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
@@ -81,18 +83,18 @@ public class MainTimeController : MonoBehaviour
 
     private void UpdateTimeUI()
     {
-        timeScaleText.text = "TIME: " + timeUnits[currentIndex] + " / sec";
+        timeScaleText.text = "TIME: " + TimeScaleToSlovak(timeUnits[currentIndex]) + " / sek";
         updateCounter += Time.deltaTime;
         if (updateCounter >= 1f)
         {
             string timeDisplay = timeUnits[currentIndex] switch
             {
-                "sec" => $"Y: {YearCount}, D: {dayCount}, H: {hourCount}, M: {minuteCount}, S: {secondCount}",
-                "min" => $"Y: {YearCount}, D: {dayCount}, H: {hourCount}, M: {minuteCount}",
-                "hr" => $"Y: {YearCount}, D: {dayCount}, H: {hourCount}",
-                "day" => $"Y: {YearCount}, D: {dayCount}",
-                "yr" => $"Y: {YearCount}",
-                _ => $"Y: {YearCount}",
+                "sec" => $"R: {YearCount}, D: {dayCount}, H: {hourCount}, M: {minuteCount}, S: {secondCount}",
+                "min" => $"R: {YearCount}, D: {dayCount}, H: {hourCount}, M: {minuteCount}",
+                "hr" => $"R: {YearCount}, D: {dayCount}, H: {hourCount}",
+                "day" => $"R: {YearCount}, D: {dayCount}",
+                "yr" => $"R: {YearCount}",
+                _ => $"R: {YearCount}",
             };
             timeText.text = timeDisplay;
             updateCounter = 0f;
@@ -104,5 +106,47 @@ public class MainTimeController : MonoBehaviour
         CalculateTime();
         UpdateTimeUI();
         UpdateTimeUI();
+    }
+
+    private string TimeScaleToSlovak(string timeUnit)
+    {
+        string skUnit = "";
+        switch (timeUnit)
+        {
+            case "sec":
+                skUnit = "sek";
+                break;
+            case "min":
+                skUnit = "min";
+                break;
+            case "hr":
+                skUnit = "hod";
+                break;
+            case "day":
+                skUnit = "deň";
+                break;
+            case "yr":
+                skUnit = "rok";
+                break;
+            case "10 yrs":
+                skUnit = "10 rokov";
+                break;
+            case "100 yrs":
+                skUnit = "100 rokov";
+                break;
+            case "1000 yrs":
+                skUnit = "1000 rokov";
+                break;
+            case "10k yrs":
+                skUnit = "10k rokov";
+                break;
+            case "100k yrs":
+                skUnit = "100k rokov";
+                break;
+            case "1mil yrs":
+                skUnit = "1mil rokov";
+                break;
+        }
+        return skUnit;
     }
 }

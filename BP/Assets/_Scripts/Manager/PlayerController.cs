@@ -24,12 +24,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float acceleration = 25f;
     #endregion
 
-    [Header("DEBUG Settings")]
+    #region MISCSettings
+    [Header("MISC Settings")]
     [SerializeField] private Material gridMaterial;
     [SerializeField] private bool fpsCameraOn = true;
     [SerializeField] private Camera fpsCamera;
     [SerializeField] private Camera overviewCamera;
-
+    [field: SerializeField] public bool CanMove { get; set; } = true;
+    #endregion
     private void Awake()
     {
         if (Instance == null)
@@ -39,7 +41,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(Instance.gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
     private void Start()
@@ -68,6 +72,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!CanMove) return;
+
         if (fpsCameraOn)
         {
             fps.HandleInventoryToggle();
@@ -84,6 +90,8 @@ public class PlayerController : MonoBehaviour
     }
     private void LateUpdate()
     {
+        if (!CanMove) return;
+
         if (Input.GetKeyDown(KeyCode.P))
             SetCamera();
         if (fpsCamera)
@@ -101,19 +109,31 @@ public class PlayerController : MonoBehaviour
 
         if (fpsCameraOn)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            SetCursorBasedOnCam();
             fpsCamera.enabled = true;
             overviewCamera.enabled = false;
             ovm.CamController.enabled = false;
         }
         else
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            SetCursorBasedOnCam();
             fpsCamera.enabled = false;
             ovm.CamController.enabled = true;
             overviewCamera.enabled = true;
+        }
+    }
+
+    public void SetCursorBasedOnCam()
+    {
+        if (fpsCameraOn)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
 }
