@@ -5,8 +5,9 @@ using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
-    private Resolution[] resolutions;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
+    private Resolution[] resolutions;
+
     private void Start()
     {
         resolutions = Screen.resolutions;
@@ -24,6 +25,7 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.value = resIndex;
         resolutionDropdown.RefreshShownValue();
     }
+
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);

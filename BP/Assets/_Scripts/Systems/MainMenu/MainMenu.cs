@@ -2,8 +2,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.Animations;
+
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Canvas mainMenu;
@@ -13,7 +12,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Animator bg;
 
     private bool startup = true;
-    private float target;
 
     private void Start()
     {
@@ -23,23 +21,17 @@ public class MainMenu : MonoBehaviour
             startup = false;
         }
     }
-    private void Update()
-    {
-    }
 
     public async void Play()
     {
         mainMenu.gameObject.SetActive(false);
         loadingMenu.gameObject.SetActive(true);
-        target = 0;
         var scene = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         scene.allowSceneActivation = false;
         do
         {
             await Task.Delay(100);
-            target = scene.progress;
         } while (scene.progress < 0.9f);
-        target = 1;
         await Task.Delay(1000);
         scene.allowSceneActivation = true;
         loadingMenu.gameObject.SetActive(false);
@@ -49,6 +41,7 @@ public class MainMenu : MonoBehaviour
     {
         StartCoroutine(WaitForAnimationDisable(g));
     }
+
     public void EnableDelayed(GameObject g)
     {
         StartCoroutine(WaitForAnimationEnable(g));

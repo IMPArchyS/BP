@@ -7,7 +7,6 @@ public class EpochMenu : MonoBehaviour
     [SerializeField] private Transform currentMenu;
     [SerializeField] private Transform loadingMenu;
 
-
     public async void StartSimulationScene(int sceneIndex)
     {
         currentMenu.gameObject.SetActive(false);
