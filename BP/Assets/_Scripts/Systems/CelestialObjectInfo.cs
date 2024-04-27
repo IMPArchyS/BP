@@ -13,15 +13,15 @@ public class CelestialObjectInfo : MonoBehaviour
 
     private void Update()
     {
-        GetObjectInfo();
+        if (Input.GetMouseButtonDown(1) && !PlayerController.Instance.FpsCameraOn)
+            GetObjectInfo(true);
     }
 
-    public void GetObjectInfo()
+    public void GetObjectInfo(bool mouseClick)
     {
-        if (Input.GetMouseButtonDown(1) && !PlayerController.Instance.FpsCameraOn)
+        if (mouseClick)
         {
             Ray ray = PlayerController.Instance.OverviewCamera.ScreenPointToRay(Input.mousePosition);
-
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 Debug.Log("GetObjectInfoRAY : " + hit.collider.gameObject);
@@ -30,8 +30,17 @@ public class CelestialObjectInfo : MonoBehaviour
                     UpdateInfoUI(csObj);
                 }
             }
-            // else
-            //     celestialObjectInfoBox.SetActive(false);
+            else
+                celestialObjectInfoBox.SetActive(false);
+        }
+        else
+        {
+            PlayerController.Instance.Ovm.LookedAtObject.TryGetComponent<CelestialObject>(out CelestialObject csObj);
+            if (csObj)
+            {
+                Debug.Log("GetObjectInfoBUTTON : " + csObj);
+                UpdateInfoUI(csObj);
+            }
         }
     }
     private void UpdateInfoUI(CelestialObject foundCelestial)

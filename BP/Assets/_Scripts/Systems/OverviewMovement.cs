@@ -6,7 +6,6 @@ using TMPro.Examples;
 public class OverviewMovement : MonoBehaviour
 {
     public float ZoomSpeed { get; set; }
-
     public float DragSpeed { get; set; }
     public bool LoopCamera { get; set; } = false;
     public int CameraLoopSpeed { get; set; } = 3;

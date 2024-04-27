@@ -46,6 +46,10 @@ public class PlayerController : MonoBehaviour
         get { return fpsCameraOn; }
         set { fpsCameraOn = value; }
     }
+    public OverviewMovement Ovm
+    {
+        get { return ovm; }
+    }
     public Camera FpsCamera { get { return fpsCamera; } }
     public Camera OverviewCamera { get { return overviewCamera; } }
     #endregion
