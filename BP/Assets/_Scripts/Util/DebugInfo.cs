@@ -6,20 +6,22 @@ using TMPro;
 
 public class DebugInfo : MonoBehaviour
 {
-    public static DebugInfo instance;
+    public static DebugInfo Instance;
     public TextMeshProUGUI fpsText;
     public TextMeshProUGUI speedText;
     FPSMovement f;
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(Instance.gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
