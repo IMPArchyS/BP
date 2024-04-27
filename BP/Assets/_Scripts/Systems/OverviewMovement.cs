@@ -72,7 +72,7 @@ public class OverviewMovement : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                Debug.Log(hit.collider.gameObject);
+                Debug.Log("OVM CAM RAY: " + hit.collider.gameObject);
                 lookAtObj = hit.collider.gameObject;
                 CamController.CameraTarget = lookAtObj.transform;
             }

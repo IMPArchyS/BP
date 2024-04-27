@@ -13,5 +13,7 @@ public class OverviewCanvas : MonoBehaviour
             ovmCanvas.gameObject.SetActive(true);
         else if (Input.GetKeyDown(KeyCode.P) && !PlayerController.Instance.FpsCameraOn)
             ovmCanvas.gameObject.SetActive(false);
+        else if (PlayerController.Instance.FpsCameraOn)
+            ovmCanvas.gameObject.SetActive(false);
     }
 }

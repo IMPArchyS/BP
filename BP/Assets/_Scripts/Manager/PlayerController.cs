@@ -159,4 +159,11 @@ public class PlayerController : MonoBehaviour
         fps.PlayerSpeed = speed;
         fps.PlayerSprintSpeed = sprintSpeed;
     }
+
+    public void JumpToObject()
+    {
+        fpsCamera.transform.SetPositionAndRotation(overviewCamera.transform.position, overviewCamera.transform.rotation);
+        SetCamera();
+        SetCursorBasedOnCam();
+    }
 }
