@@ -19,6 +19,7 @@ public class MainTimeController : MonoBehaviour
     private long secondCount = 0;
     private long currentIndex = 0;
     private float updateCounter = 0f;
+    private bool timePaused = false;
 
     private readonly long[] timeScales = { 1, 60, 3600, 86400, 31536000, 315360000, 3153600000, 31536000000, 315360000000, 3153600000000, 31536000000000 };
     private readonly string[] timeUnits = { "sec", "min", "hr", "day", "yr", "10 yrs", "100 yrs", "1000 yrs", "10k yrs", "100k yrs", "1mil yrs" };
@@ -53,6 +54,8 @@ public class MainTimeController : MonoBehaviour
 
     public void ChangeTimeScaler(bool forward = true)
     {
+        if (StellarTimeScale == 0) return;
+
         if (forward)
             currentIndex++;
         else
@@ -84,8 +87,17 @@ public class MainTimeController : MonoBehaviour
 
     private void UpdateTimeUI()
     {
-        timeScaleText.text = TimeScaleToSlovak(timeUnits[currentIndex]) + " / sek";
-        utilText.text = timeScaleText.text;
+        if (StellarTimeScale != 0)
+        {
+            timeScaleText.text = TimeScaleToSlovak(timeUnits[currentIndex]) + " / sek";
+            utilText.text = timeScaleText.text;
+        }
+        else
+        {
+            timeScaleText.text = "pozastavený";
+            utilText.text = "pozastavený";
+        }
+
         updateCounter += Time.deltaTime;
         if (updateCounter >= 1f)
         {
@@ -156,5 +168,19 @@ public class MainTimeController : MonoBehaviour
     {
         currentIndex = 0;
         StellarTimeScale = 1;
+    }
+
+    public void ToggleTime()
+    {
+        if (!timePaused)
+        {
+            StellarTimeScale = 0;
+            timePaused = true;
+        }
+        else
+        {
+            timePaused = false;
+            StellarTimeScale = timeScales[currentIndex];
+        }
     }
 }
