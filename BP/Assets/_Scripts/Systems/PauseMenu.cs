@@ -20,23 +20,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && !inMenu)
         {
-            // Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
-            timeScale = MainTimeController.Instance.StellarTimeScale;
-            MainTimeController.Instance.StellarTimeScale = 0;
-            PlayerController.Instance.CanMove = false;
-            pauseCanvas.gameObject.SetActive(true);
-            inMenu = true;
+            PauseSim();
         }
         else if (Input.GetKeyDown(KeyCode.Q) && inMenu)
         {
-            // Time.timeScale = 1;
-            PlayerController.Instance.SetCursorBasedOnCam();
-            MainTimeController.Instance.StellarTimeScale = timeScale;
-            PlayerController.Instance.CanMove = true;
-            pauseCanvas.gameObject.SetActive(false);
-            inMenu = false;
+            ResumeSim();
         }
     }
 
@@ -65,6 +53,21 @@ public class PauseMenu : MonoBehaviour
             PlayerController.Instance.CanMove = true;
             pauseCanvas.gameObject.SetActive(false);
             inMenu = false;
+        }
+    }
+
+    public void PauseSim()
+    {
+        if (!inMenu)
+        {
+            // Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            timeScale = MainTimeController.Instance.StellarTimeScale;
+            MainTimeController.Instance.StellarTimeScale = 0;
+            PlayerController.Instance.CanMove = false;
+            pauseCanvas.gameObject.SetActive(true);
+            inMenu = true;
         }
     }
 }
