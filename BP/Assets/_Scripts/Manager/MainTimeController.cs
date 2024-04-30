@@ -5,13 +5,20 @@ using TMPro;
 
 public class MainTimeController : MonoBehaviour
 {
+    #region Primary time atributes
     public static MainTimeController Instance { get; private set; }
-    public long StellarTimeScale { get; set; } = 1;
-    public long YearCount { get; private set; } = 0;
-    public decimal ElapsedTime { get; private set; } = 0;
+    [Header("Primary time atributes")]
     [SerializeField] private TextMeshProUGUI timeScaleText;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI utilText;
+    [field: SerializeField] public long StellarTimeScale { get; set; } = 1;
+    [field: SerializeField] public long YearCount { get; private set; } = 0;
+    [SerializeField] private bool timePaused = false;
+    public decimal ElapsedTime { get; private set; } = 0;
+
+    #endregion
+
+    #region detailAtributes
 
     private long dayCount = 0;
     private long hourCount = 0;
@@ -19,11 +26,16 @@ public class MainTimeController : MonoBehaviour
     private long secondCount = 0;
     private long currentIndex = 0;
     private float updateCounter = 0f;
-    private bool timePaused = false;
-
     private readonly long[] timeScales = { 1, 60, 3600, 86400, 31536000, 315360000, 3153600000, 31536000000, 315360000000, 3153600000000, 31536000000000 };
     private readonly string[] timeUnits = { "sec", "min", "hr", "day", "yr", "10 yrs", "100 yrs", "1000 yrs", "10k yrs", "100k yrs", "1mil yrs" };
 
+    #endregion
+
+    #region DEBUG
+
+    [Header("DEBUG SETTINGS")]
+    [SerializeField] private TextMeshProUGUI debugTimeScaleText;
+    #endregion
     private void Awake()
     {
         if (Instance == null)
@@ -39,12 +51,14 @@ public class MainTimeController : MonoBehaviour
         }
         timeScaleText = GameObject.Find("MainTimeScaleText").GetComponent<TextMeshProUGUI>();
         timeText = GameObject.Find("MainTimeText").GetComponent<TextMeshProUGUI>();
+        // debug only
+        debugTimeScaleText = GameObject.Find("DebugTimeText").GetComponent<TextMeshProUGUI>();
     }
 
     private void Start()
     {
-        timeText.text = "Year: " + YearCount;
-        timeScaleText.text = "Time x" + StellarTimeScale;
+        timeText.text = "0" + YearCount;
+        timeScaleText.text = "";
     }
 
     private void Update()
@@ -101,16 +115,11 @@ public class MainTimeController : MonoBehaviour
         updateCounter += Time.deltaTime;
         if (updateCounter >= 1f)
         {
-            string timeDisplay = timeUnits[currentIndex] switch
-            {
-                "sec" => $"R: {YearCount}, D: {dayCount}, H: {hourCount}, M: {minuteCount}, S: {secondCount}",
-                "min" => $"R: {YearCount}, D: {dayCount}, H: {hourCount}, M: {minuteCount}",
-                "hr" => $"R: {YearCount}, D: {dayCount}, H: {hourCount}",
-                "day" => $"R: {YearCount}, D: {dayCount}",
-                "yr" => $"R: {YearCount}",
-                _ => $"R: {YearCount}",
-            };
-            timeText.text = timeDisplay;
+            // debug
+            string timeDisplay = $"R: {YearCount}\nD: {dayCount}\nH: {hourCount}\nM: {minuteCount}\nS: {secondCount}";
+            debugTimeScaleText.text = timeDisplay;
+
+            timeText.text = "ROK: " + YearCount.ToString();
             updateCounter = 0f;
         }
     }

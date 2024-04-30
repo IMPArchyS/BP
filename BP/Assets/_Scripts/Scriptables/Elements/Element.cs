@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum ElementState { Gas, Liquid, Solid, Plasma, Unknown }
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "New Element", menuName = "Elements/Element")]
 public class Element : ScriptableObject
 {

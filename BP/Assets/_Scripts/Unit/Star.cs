@@ -28,7 +28,7 @@ public class Star : MonoBehaviour
 
     private void Awake()
     {
-
+        CelestialEventManager.Instance.TriggerEvent(5, "Polievka");
     }
 
     private void Start()

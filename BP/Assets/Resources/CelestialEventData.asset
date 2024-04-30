@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ff3e0db5c0ebf49bbc43f460ea3639, type: 3}
+  m_Name: CelestialEventData
+  m_EditorClassIdentifier: 
+  <Events>k__BackingField:
+  - <Year>k__BackingField: 5
+    <Keyword>k__BackingField: Polievka
+    <Description>k__BackingField: Polievka stoji 5 eur
+  - <Year>k__BackingField: 6
+    <Keyword>k__BackingField: Auto
+    <Description>k__BackingField: Brasko strielam nemcov
+  - <Year>k__BackingField: 56
+    <Keyword>k__BackingField: Fontana
+    <Description>k__BackingField: Na fontane prsi
