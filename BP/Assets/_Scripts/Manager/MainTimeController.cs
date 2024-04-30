@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class MainTimeController : MonoBehaviour
@@ -14,12 +15,14 @@ public class MainTimeController : MonoBehaviour
     [field: SerializeField] public long StellarTimeScale { get; set; } = 1;
     [field: SerializeField] public long YearCount { get; private set; } = 0;
     [SerializeField] private bool timePaused = false;
+    [SerializeField] private UnityEvent<long> onNewYear;
     public decimal ElapsedTime { get; private set; } = 0;
 
     #endregion
 
     #region detailAtributes
 
+    private long lastYearCount = 0;
     private long dayCount = 0;
     private long hourCount = 0;
     private long minuteCount = 0;
@@ -59,6 +62,7 @@ public class MainTimeController : MonoBehaviour
     {
         timeText.text = "0" + YearCount;
         timeScaleText.text = "";
+        onNewYear?.AddListener(CelestialEventManager.Instance.TriggerEvent);
     }
 
     private void Update()
@@ -128,7 +132,11 @@ public class MainTimeController : MonoBehaviour
     {
         CalculateTime();
         UpdateTimeUI();
-        UpdateTimeUI();
+        if (YearCount != lastYearCount)
+        {
+            lastYearCount = YearCount;
+            onNewYear?.Invoke(YearCount);
+        }
     }
 
     private string TimeScaleToSlovak(string timeUnit)

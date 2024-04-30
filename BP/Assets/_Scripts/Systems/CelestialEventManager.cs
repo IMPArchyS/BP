@@ -9,10 +9,10 @@ public class CelestialEventManager : MonoBehaviour
     [SerializeField] private CelestialEventData eventData;
     [SerializeField] private TextMeshProUGUI eventLogDisplay;  // Assign this in the Unity inspector
     [SerializeField] private uint maxEventDisplay = 3;  // Limit for event lines on the screen
-    [SerializeField] private List<string> eventList = new();
+    [SerializeField] private List<CelestialEvent> eventList = new();
 
     [SerializeField] private TextMeshProUGUI fullEventLog;  // Assign this in the Unity inspector;
-    private List<string> allEvents = new();
+    private List<CelestialEvent> allEvents = new();
 
     private void Awake()
     {
@@ -29,18 +29,19 @@ public class CelestialEventManager : MonoBehaviour
         }
     }
 
-    public void TriggerEvent(int year, string keyword)
+    public void TriggerEvent(long year)
     {
-        var eventToTrigger = eventData.Events.Find(e => e.Year == year && e.Keyword == keyword);
+        var eventsToTrigger = eventData.Events.FindAll(e => e.Year < year && !allEvents.Contains(e));
 
-        if (eventToTrigger != null)
+        foreach (var eventToTrigger in eventsToTrigger)
         {
-            AddEventToLogs($"{eventToTrigger.Year} - {eventToTrigger.Description}");
+            allEvents.Add(eventToTrigger);
+            AddEventToLogs(eventToTrigger); // Fix: Pass the CelestialEvent object instead of a string
         }
     }
 
 
-    private void AddEventToLogs(string newEvent)
+    private void AddEventToLogs(CelestialEvent newEvent)
     {
         // Real-time event display update logic
         eventList.Insert(0, newEvent);
@@ -51,7 +52,6 @@ public class CelestialEventManager : MonoBehaviour
         UpdateEventDisplay();
 
         // Full event log update logic
-        allEvents.Add(newEvent);
         UpdateFullEventLog();
     }
 
@@ -62,7 +62,7 @@ public class CelestialEventManager : MonoBehaviour
 
         for (int i = 0; i < eventList.Count; i++)
         {
-            combinedEvents += $"<alpha=#{(int)(opacity * 255):X2}>{eventList[i]}\n";
+            combinedEvents += $"<alpha=#{(int)(opacity * 255):X2}>{eventList[i].Year + " " + eventList[i].Description}\n";
             opacity -= 0.3f;
         }
 
@@ -75,7 +75,7 @@ public class CelestialEventManager : MonoBehaviour
 
         foreach (var eventItem in allEvents)
         {
-            combinedFullEvents += $"{eventItem}\n";
+            combinedFullEvents += $"{eventItem.Year + " " + eventItem.Description}\n";
         }
 
         fullEventLog.text = combinedFullEvents;
