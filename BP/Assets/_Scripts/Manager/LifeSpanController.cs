@@ -13,6 +13,7 @@ public class LifeSpanController : MonoBehaviour
     {
         obj = GetComponent<CelestialObject>();
     }
+
     private void Start()
     {
         obj.age = 0;

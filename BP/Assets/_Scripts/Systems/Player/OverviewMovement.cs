@@ -5,6 +5,7 @@ using TMPro.Examples;
 
 public class OverviewMovement : MonoBehaviour
 {
+    #region OverviewSettings
     public float ZoomSpeed { get; set; }
     public float DragSpeed { get; set; }
     public bool LoopCamera { get; set; } = false;
@@ -17,6 +18,7 @@ public class OverviewMovement : MonoBehaviour
         set { lookAtObj = value; }
     }
     [SerializeField] private GameObject lookAtObj;
+    #endregion
 
     public void SetupOvm()
     {
@@ -32,7 +34,7 @@ public class OverviewMovement : MonoBehaviour
             CamController.OrbitalAngle += CameraLoopSpeed * Time.deltaTime;
     }
 
-    public void UpdateStar()
+    public void UpdateLookAtObject()
     {
         if (lookAtObj == null)
         {
@@ -57,9 +59,7 @@ public class OverviewMovement : MonoBehaviour
     {
         float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
         if (mouseWheel != 0)
-        {
             CamController.FollowDistance += mouseWheel * -10 * ZoomSpeed * 75 * Time.deltaTime;
-        }
     }
 
     public void RaycastOnClick()
@@ -68,7 +68,6 @@ public class OverviewMovement : MonoBehaviour
         {
             Camera cam = GetComponent<Camera>();
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 Debug.Log("OVM CAM RAY: " + hit.collider.gameObject);

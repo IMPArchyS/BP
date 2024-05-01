@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FPSMovement : MonoBehaviour
 {
+    #region PlayerSettings
     public float PlayerSpeed { get; set; }
     public float PlayerSprintSpeed { get; set; }
     public float PlayerSensitivity { get; set; }
-
     public float Acceleration { get; set; }
-
     public float CurrentSpeed { get; private set; }
+    #endregion
 
     public void LockCursor()
     {
@@ -21,11 +21,9 @@ public class FPSMovement : MonoBehaviour
 
     public void HandlePlayerMovementAndLook()
     {
-        // Player can move and look
         Vector3 currentRotation = transform.rotation.eulerAngles;
         currentRotation.z = 0f;
         transform.rotation = Quaternion.Euler(currentRotation);
-
         MovePlayer();
         RotatePlayer();
     }

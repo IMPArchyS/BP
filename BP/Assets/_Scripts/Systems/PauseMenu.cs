@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    #region Properties
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private Canvas loadingMenu;
-    private bool inMenu;
+    private bool inPauseMenu = false;
     private long timeScale;
+    #endregion
     private void Update()
     {
         PauseGame();
@@ -18,14 +20,8 @@ public class PauseMenu : MonoBehaviour
 
     private void PauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !inMenu)
-        {
-            PauseSim();
-        }
-        else if (Input.GetKeyDown(KeyCode.Q) && inMenu)
-        {
-            ResumeSim();
-        }
+        if (Input.GetKeyDown(KeyCode.Q) && !inPauseMenu) PauseSim();
+        else if (Input.GetKeyDown(KeyCode.Q) && inPauseMenu) ResumeSim();
     }
 
     public async void BackToMenu()
@@ -45,29 +41,33 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeSim()
     {
-        if (inMenu)
+        if (inPauseMenu)
         {
-            // Time.timeScale = 1;
+            // set cursor
             PlayerController.Instance.SetCursorBasedOnCam();
+            // resume time scale
             MainTimeController.Instance.StellarTimeScale = timeScale;
-            PlayerController.Instance.CanMove = true;
+            // disable canvas and enable player movement
+            PlayerController.Instance.InMenu = false;
             pauseCanvas.gameObject.SetActive(false);
-            inMenu = false;
+            inPauseMenu = false;
         }
     }
 
     public void PauseSim()
     {
-        if (!inMenu)
+        if (!inPauseMenu)
         {
-            // Time.timeScale = 0;
+            // set the cursor to visible
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
+            // pause the time scale
             timeScale = MainTimeController.Instance.StellarTimeScale;
             MainTimeController.Instance.StellarTimeScale = 0;
-            PlayerController.Instance.CanMove = false;
+            // set canvas active and disable player movement
+            PlayerController.Instance.InMenu = true;
             pauseCanvas.gameObject.SetActive(true);
-            inMenu = true;
+            inPauseMenu = true;
         }
     }
 }

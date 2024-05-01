@@ -20,9 +20,12 @@ public class EventMenu : MonoBehaviour
         if (eventMenuCanvas.gameObject.activeInHierarchy)
         {
             eventMenuCanvas.gameObject.SetActive(false);
+            PlayerController.Instance.InMenu = false;
+
         }
         else
         {
+            PlayerController.Instance.InMenu = true;
             eventMenuCanvas.gameObject.SetActive(true);
         }
     }

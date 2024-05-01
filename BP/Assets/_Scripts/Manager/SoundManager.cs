@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     [SerializeField] private List<Sound> music, sfx;
     [SerializeField] private AudioSource musicSrc, sfxSrc;
+
     private void Awake()
     {
         if (Instance == null)
@@ -18,6 +19,7 @@ public class SoundManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
     private void Start()
     {
         // PlayMusic("BGMusic");

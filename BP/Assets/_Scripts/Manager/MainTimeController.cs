@@ -60,7 +60,7 @@ public class MainTimeController : MonoBehaviour
 
     private void Start()
     {
-        timeText.text = "0" + YearCount;
+        timeText.text = "0";
         timeScaleText.text = "";
         onNewYear?.AddListener(CelestialEventManager.Instance.TriggerEvent);
     }
@@ -107,7 +107,7 @@ public class MainTimeController : MonoBehaviour
     {
         if (StellarTimeScale != 0)
         {
-            timeScaleText.text = TimeScaleToSlovak(timeUnits[currentIndex]) + " / sek";
+            timeScaleText.text = TranslateToSlovak.Instance.TimeScaleToSlovak(timeUnits[currentIndex]) + " / sek";
             utilText.text = timeScaleText.text;
         }
         else
@@ -137,48 +137,6 @@ public class MainTimeController : MonoBehaviour
             lastYearCount = YearCount;
             onNewYear?.Invoke(YearCount);
         }
-    }
-
-    private string TimeScaleToSlovak(string timeUnit)
-    {
-        string skUnit = "";
-        switch (timeUnit)
-        {
-            case "sec":
-                skUnit = "sek";
-                break;
-            case "min":
-                skUnit = "min";
-                break;
-            case "hr":
-                skUnit = "hod";
-                break;
-            case "day":
-                skUnit = "deň";
-                break;
-            case "yr":
-                skUnit = "rok";
-                break;
-            case "10 yrs":
-                skUnit = "10 rokov";
-                break;
-            case "100 yrs":
-                skUnit = "100 rokov";
-                break;
-            case "1000 yrs":
-                skUnit = "1000 rokov";
-                break;
-            case "10k yrs":
-                skUnit = "10k rokov";
-                break;
-            case "100k yrs":
-                skUnit = "100k rokov";
-                break;
-            case "1mil yrs":
-                skUnit = "1mil rokov";
-                break;
-        }
-        return skUnit;
     }
 
     public void ResetTimeScale()

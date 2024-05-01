@@ -6,6 +6,7 @@ using TMPro;
 public class CelestialObjectInfo : MonoBehaviour
 {
     [SerializeField] GameObject celestialObjectInfoBox;
+
     private void Start()
     {
 
@@ -43,6 +44,7 @@ public class CelestialObjectInfo : MonoBehaviour
             }
         }
     }
+
     private void UpdateInfoUI(CelestialObject foundCelestial)
     {
         Asteroid asteroid = foundCelestial.GetComponent<Asteroid>();

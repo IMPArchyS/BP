@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprintSpeed;
     [SerializeField] private float sensitivity = 2f;
     [SerializeField] private FPSMovement fps;
+    [SerializeField] private float acceleration = 25f;
     #endregion
 
     #region OverviewCameraSettings
@@ -21,7 +22,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private OverviewMovement ovm;
     [SerializeField] private bool loopCamera = false;
     [SerializeField] private int loopSpeed = 3;
-    [SerializeField] private float acceleration = 25f;
     #endregion
 
     #region MISCSettings
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Camera overviewCamera;
 
-    [field: SerializeField] public bool CanMove { get; set; } = true;
+    [field: SerializeField] public bool InMenu { get; set; } = false;
     #endregion
 
     #region GettersSetters
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     public Camera FpsCamera { get { return fpsCamera; } }
     public Camera OverviewCamera { get { return overviewCamera; } }
     #endregion
+
     private void Awake()
     {
         if (Instance == null)
@@ -67,33 +68,44 @@ public class PlayerController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
     private void Start()
     {
+        // Setup components from object
         fpsCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         overviewCamera = GameObject.FindGameObjectWithTag("SecondaryCamera").GetComponent<Camera>();
         fps = fpsCamera.GetComponent<FPSMovement>();
         ovm = overviewCamera.GetComponent<OverviewMovement>();
-        sprintSpeed = speed * 2.5f;
+        // setup overview movement controller
         ovm.ZoomSpeed = zoomSpeed;
         ovm.DragSpeed = dragSpeed;
         ovm.LoopCamera = loopCamera;
         ovm.CameraLoopSpeed = loopSpeed;
         ovm.GridMaterial = gridMaterial;
         ovm.SetupOvm();
-
+        // setup fps movement controller
+        sprintSpeed = speed * 2.5f;
         fps.PlayerSpeed = speed;
         fps.Acceleration = acceleration;
         fps.PlayerSprintSpeed = sprintSpeed;
         fps.PlayerSensitivity = sensitivity;
         fps.LockCursor();
-        if (fpsCameraOn)
-            fpsCameraOn = false;
+        // switch bool based on UX & init camera
+        if (fpsCameraOn) fpsCameraOn = false;
         SetCamera();
     }
 
     private void Update()
     {
-        if (!CanMove) return;
+        if (InMenu)
+        {
+            ovm.CamController.enabled = false;
+            return;
+        }
+        else
+        {
+            ovm.CamController.enabled = true;
+        }
 
         if (fpsCameraOn)
         {
@@ -102,31 +114,27 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            ovm.UpdateStar();
+            ovm.UpdateLookAtObject();
             ovm.UpdateCameraAngles();
             ovm.MouseZoom();
             ovm.RaycastOnClick();
         }
     }
+
     private void LateUpdate()
     {
-        if (!CanMove) return;
-
-        if (Input.GetKeyDown(KeyCode.P))
-            SetCamera();
-        if (fpsCamera)
-        {
-
-        }
+        if (InMenu) return;
+        if (Input.GetKeyDown(KeyCode.P)) SetCamera();
+        if (fpsCamera) { }
         else
         {
             ovm.UpdateOrbitalAngle();
         }
     }
+
     private void SetCamera()
     {
         fpsCameraOn = !fpsCameraOn;
-
         if (fpsCameraOn)
         {
             SetCursorBasedOnCam();

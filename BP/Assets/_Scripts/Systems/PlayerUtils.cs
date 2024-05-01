@@ -6,11 +6,14 @@ using TMPro;
 
 public class PlayerUtils : MonoBehaviour
 {
+    #region UIElements
     [SerializeField] private Canvas playerUtilCanvas;
     [SerializeField] private TextMeshProUGUI playerSpeedValueText;
     [SerializeField] private TextMeshProUGUI playerFOVValueText;
     [SerializeField] private Slider speedSlider;
     [SerializeField] private Slider fovSlider;
+    #endregion
+
     private void Start()
     {
         playerSpeedValueText.text = PlayerController.Instance.Speed.ToString();
@@ -21,21 +24,21 @@ public class PlayerUtils : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T) && PlayerController.Instance.FpsCameraOn)
-            ToggleUtilCanvas();
+        if (Input.GetKeyDown(KeyCode.T) && PlayerController.Instance.FpsCameraOn) ToggleUtilCanvas();
+        if (playerUtilCanvas.gameObject.activeInHierarchy) PlayerController.Instance.InMenu = true;
     }
 
     public void ToggleUtilCanvas()
     {
         if (playerUtilCanvas.gameObject.activeInHierarchy)
         {
-            PlayerController.Instance.CanMove = true;
+            PlayerController.Instance.InMenu = false;
             PlayerController.Instance.SetCursorBasedOnCam();
             playerUtilCanvas.gameObject.SetActive(false);
         }
         else
         {
-            PlayerController.Instance.CanMove = false;
+            PlayerController.Instance.InMenu = true;
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
             playerUtilCanvas.gameObject.SetActive(true);

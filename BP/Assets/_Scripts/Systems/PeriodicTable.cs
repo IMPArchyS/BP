@@ -22,9 +22,11 @@ public class PeriodicTable : MonoBehaviour
         if (periodicTableCanvas.gameObject.activeInHierarchy)
         {
             periodicTableCanvas.gameObject.SetActive(false);
+            PlayerController.Instance.InMenu = false;
         }
         else
         {
+            PlayerController.Instance.InMenu = true;
             periodicTableCanvas.gameObject.SetActive(true);
         }
     }
