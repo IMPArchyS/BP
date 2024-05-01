@@ -59,6 +59,7 @@ public class TranslateToSlovak
         return skUnit;
     }
 
+    #region ElementTranslation
     public string ElementStateToSlovak(ElementState state)
     {
         string skState = "";
@@ -115,4 +116,133 @@ public class TranslateToSlovak
         }
         return skState;
     }
+    #endregion
+
+    #region StarTranslation
+    public string StarTypeToSlovak(StarLuminosityType luminosityType)
+    {
+        string skLuminosityType = "";
+        switch (luminosityType)
+        {
+            case StarLuminosityType.Nebula:
+                skLuminosityType = "Nebula";
+                break;
+            case StarLuminosityType.Giant:
+                skLuminosityType = "Obor";
+                break;
+            case StarLuminosityType.HyperGiant:
+                skLuminosityType = "Hyper obor";
+                break;
+            case StarLuminosityType.Dwarf:
+                skLuminosityType = "Trpaslík";
+                break;
+            case StarLuminosityType.SuperGiant:
+                skLuminosityType = "Super obor";
+                break;
+            case StarLuminosityType.TTauri:
+                skLuminosityType = "T Tauri";
+                break;
+        }
+        return skLuminosityType;
+    }
+
+    public string StarSpectralTypeToSlovak(StarSpectralType spectralType)
+    {
+        string skSpectralType = "";
+        switch (spectralType)
+        {
+            case StarSpectralType.Black:
+                skSpectralType = "Čierny";
+                break;
+            case StarSpectralType.Blue:
+                skSpectralType = "Modrý";
+                break;
+            case StarSpectralType.None:
+                skSpectralType = "Žiadny";
+                break;
+            case StarSpectralType.Orange:
+                skSpectralType = "Oranžový";
+                break;
+            case StarSpectralType.Red:
+                skSpectralType = "Červený";
+                break;
+            case StarSpectralType.White:
+                skSpectralType = "Biely";
+                break;
+            case StarSpectralType.Yellow:
+                skSpectralType = "Žltý";
+                break;
+        }
+        return skSpectralType;
+    }
+
+    public string StarDeathTypeToSlovak(StarDeathType spectralType)
+    {
+        string skStarDeathType = "";
+        switch (spectralType)
+        {
+            case StarDeathType.BlackHole:
+                skStarDeathType = "Čierna diera";
+                break;
+            case StarDeathType.NeutronStar:
+                skStarDeathType = "Neutrónová hviezda";
+                break;
+            case StarDeathType.WhiteDwarf:
+                skStarDeathType = "Biely Trpaslík";
+                break;
+        }
+        return skStarDeathType;
+    }
+    #endregion
+
+    #region CelestialTranslation
+    public string CelestialTypeToSlovak(CelestialObjectType celestialObjectType)
+    {
+        string skCelestialObjectType = "";
+        switch (celestialObjectType)
+        {
+            case CelestialObjectType.Asteroid:
+                skCelestialObjectType = "Asteroid";
+                break;
+            case CelestialObjectType.Moon:
+                skCelestialObjectType = "Mesiac";
+                break;
+            case CelestialObjectType.Planet:
+                skCelestialObjectType = "Planéta";
+                break;
+            case CelestialObjectType.Star:
+                skCelestialObjectType = "Hviezda";
+                break;
+        }
+        return skCelestialObjectType;
+    }
+
+    public string CelestialRegionToSlovak(CelestialRegion celestialRegion)
+    {
+        string skCelestialRegion = "";
+        switch (celestialRegion)
+        {
+            case CelestialRegion.Star:
+                skCelestialRegion = "Oblasť hviezdy";
+                break;
+            case CelestialRegion.OuterPlanets:
+                skCelestialRegion = "Vonkajšie planéty";
+                break;
+            case CelestialRegion.OortCloud:
+                skCelestialRegion = "Oortov oblak";
+                break;
+            case CelestialRegion.KuiperBelt:
+                skCelestialRegion = "Kuiperov pás";
+                break;
+            case CelestialRegion.InnerPlanets:
+                skCelestialRegion = "Vnútorné planéty";
+                break;
+            case CelestialRegion.AsteroidBelt:
+                skCelestialRegion = "Pásmo astroidov";
+                break;
+        }
+        return skCelestialRegion;
+    }
+    #endregion
+
 }
