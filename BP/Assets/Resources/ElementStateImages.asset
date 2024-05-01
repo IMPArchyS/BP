@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44a864ef6535604a9738e1d9f147360, type: 3}
+  m_Name: ElementStateImages
+  m_EditorClassIdentifier: 
+  <ImageMappings>k__BackingField:
+  - state: Gas
+    image: {fileID: 21300000, guid: 6de84b3b23aed7c44bbf4fa283ffb05e, type: 3}
+  - state: Liquid
+    image: {fileID: 21300000, guid: 6f649aea2852e3b46a8c4386355a2c53, type: 3}
+  - state: Solid
+    image: {fileID: 21300000, guid: f050b492e03119344b04cf01a3486662, type: 3}
+  - state: Plasma
+    image: {fileID: 21300000, guid: 0f3ba1ed6373fec4bbd0490fb756f318, type: 3}
+  - state: Unknown
+    image: {fileID: 21300000, guid: 6b6fd3f59ae45864286df43a2671b9f8, type: 3}
