@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            ovm.CamController.MovementSmoothing = false;
             ovm.UpdateLookAtObject();
             ovm.UpdateCameraAngles();
             ovm.MouseZoom();

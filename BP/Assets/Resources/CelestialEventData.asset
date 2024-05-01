@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CelestialEventData
   m_EditorClassIdentifier: 
   <Events>k__BackingField:
-  - <Year>k__BackingField: 5
+  - <Year>k__BackingField: 1
     <Keyword>k__BackingField: Polievka
     <Description>k__BackingField: Polievka stoji 5 eur
   - <Year>k__BackingField: 6
