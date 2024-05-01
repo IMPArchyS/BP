@@ -245,4 +245,368 @@ public class TranslateToSlovak
     }
     #endregion
 
+    #region ElementTranslation
+    public string ElementNameToSlovak(int atomicNumber)
+    {
+        string skElementName = "";
+        switch (atomicNumber)
+        {
+            case 1:
+                skElementName = "Vodík";
+                break;
+            case 2:
+                skElementName = "Hélium";
+                break;
+            case 3:
+                skElementName = "Lítium";
+                break;
+            case 4:
+                skElementName = "Berýlium";
+                break;
+            case 5:
+                skElementName = "Bór";
+                break;
+            case 6:
+                skElementName = "Uhlík";
+                break;
+            case 7:
+                skElementName = "Dusík";
+                break;
+            case 8:
+                skElementName = "Kyslík";
+                break;
+            case 9:
+                skElementName = "Fluór";
+                break;
+            case 10:
+                skElementName = "Neón";
+                break;
+            case 11:
+                skElementName = "Sodík";
+                break;
+            case 12:
+                skElementName = "Horčík";
+                break;
+            case 13:
+                skElementName = "Hliník";
+                break;
+            case 14:
+                skElementName = "Kremík";
+                break;
+            case 15:
+                skElementName = "Fosfor";
+                break;
+            case 16:
+                skElementName = "Síra";
+                break;
+            case 17:
+                skElementName = "Chlór";
+                break;
+            case 18:
+                skElementName = "Argón";
+                break;
+            case 19:
+                skElementName = "Draslík";
+                break;
+            case 20:
+                skElementName = "Vápnik";
+                break;
+            case 21:
+                skElementName = "Skandium";
+                break;
+            case 22:
+                skElementName = "Titán";
+                break;
+            case 23:
+                skElementName = "Vanád";
+                break;
+            case 24:
+                skElementName = "Chróm";
+                break;
+            case 25:
+                skElementName = "Mangán";
+                break;
+            case 26:
+                skElementName = "Železo";
+                break;
+            case 27:
+                skElementName = "Kobalt";
+                break;
+            case 28:
+                skElementName = "Nikel";
+                break;
+            case 29:
+                skElementName = "Meď";
+                break;
+            case 30:
+                skElementName = "Zinok";
+                break;
+            case 31:
+                skElementName = "Gálium";
+                break;
+            case 32:
+                skElementName = "Germánium";
+                break;
+            case 33:
+                skElementName = "Arzén";
+                break;
+            case 34:
+                skElementName = "Selén";
+                break;
+            case 35:
+                skElementName = "Bróm";
+                break;
+            case 36:
+                skElementName = "Kryptón";
+                break;
+            case 37:
+                skElementName = "Rubídium";
+                break;
+            case 38:
+                skElementName = "Stroncium";
+                break;
+            case 39:
+                skElementName = "Yttrium";
+                break;
+            case 40:
+                skElementName = "Zirkónium";
+                break;
+            case 41:
+                skElementName = "Niób";
+                break;
+            case 42:
+                skElementName = "Molybdén";
+                break;
+            case 43:
+                skElementName = "Technécium";
+                break;
+            case 44:
+                skElementName = "Ruténium";
+                break;
+            case 45:
+                skElementName = "Ródium";
+                break;
+            case 46:
+                skElementName = "Paládium";
+                break;
+            case 47:
+                skElementName = "Striebro";
+                break;
+            case 48:
+                skElementName = "Kadmium";
+                break;
+            case 49:
+                skElementName = "Indium";
+                break;
+            case 50:
+                skElementName = "Cín";
+                break;
+            case 51:
+                skElementName = "Antimón";
+                break;
+            case 52:
+                skElementName = "Telúr";
+                break;
+            case 53:
+                skElementName = "Jód";
+                break;
+            case 54:
+                skElementName = "Xenón";
+                break;
+            case 55:
+                skElementName = "Cézium";
+                break;
+            case 56:
+                skElementName = "Bárium";
+                break;
+            case 57:
+                skElementName = "Lantán";
+                break;
+            case 58:
+                skElementName = "Cér";
+                break;
+            case 59:
+                skElementName = "Praseodým";
+                break;
+            case 60:
+                skElementName = "Neodým";
+                break;
+            case 61:
+                skElementName = "Prométium";
+                break;
+            case 62:
+                skElementName = "Samárium";
+                break;
+            case 63:
+                skElementName = "Európium";
+                break;
+            case 64:
+                skElementName = "Gadolínium";
+                break;
+            case 65:
+                skElementName = "Terbium";
+                break;
+            case 66:
+                skElementName = "Dysprózium";
+                break;
+            case 67:
+                skElementName = "Holmium";
+                break;
+            case 68:
+                skElementName = "Erbium";
+                break;
+            case 69:
+                skElementName = "Túlium";
+                break;
+            case 70:
+                skElementName = "Yterbium";
+                break;
+            case 71:
+                skElementName = "Lutécium";
+                break;
+            case 72:
+                skElementName = "Hafnium";
+                break;
+            case 73:
+                skElementName = "Tantal";
+                break;
+            case 74:
+                skElementName = "Volfrám";
+                break;
+            case 75:
+                skElementName = "Rénium";
+                break;
+            case 76:
+                skElementName = "Osmium";
+                break;
+            case 77:
+                skElementName = "Irídium";
+                break;
+            case 78:
+                skElementName = "Platina";
+                break;
+            case 79:
+                skElementName = "Zlato";
+                break;
+            case 80:
+                skElementName = "Ortuť";
+                break;
+            case 81:
+                skElementName = "Tálium";
+                break;
+            case 82:
+                skElementName = "Olovo";
+                break;
+            case 83:
+                skElementName = "Bismut";
+                break;
+            case 84:
+                skElementName = "Polónium";
+                break;
+            case 85:
+                skElementName = "Astat";
+                break;
+            case 86:
+                skElementName = "Radón";
+                break;
+            case 87:
+                skElementName = "Francium";
+                break;
+            case 88:
+                skElementName = "Rádium";
+                break;
+            case 89:
+                skElementName = "Aktínium";
+                break;
+            case 90:
+                skElementName = "Tórium";
+                break;
+            case 91:
+                skElementName = "Protaktínium";
+                break;
+            case 92:
+                skElementName = "Urán";
+                break;
+            case 93:
+                skElementName = "Neptúnium";
+                break;
+            case 94:
+                skElementName = "Plutónium";
+                break;
+            case 95:
+                skElementName = "Amerícium";
+                break;
+            case 96:
+                skElementName = "Curium";
+                break;
+            case 97:
+                skElementName = "Berkélium";
+                break;
+            case 98:
+                skElementName = "Kalifornium";
+                break;
+            case 99:
+                skElementName = "Einsteinium";
+                break;
+            case 100:
+                skElementName = "Fermium";
+                break;
+            case 101:
+                skElementName = "Mendelévium";
+                break;
+            case 102:
+                skElementName = "Nobélium";
+                break;
+            case 103:
+                skElementName = "Lawrencium";
+                break;
+            case 104:
+                skElementName = "Rutherfordium";
+                break;
+            case 105:
+                skElementName = "Dubnium";
+                break;
+            case 106:
+                skElementName = "Seaborgium";
+                break;
+            case 107:
+                skElementName = "Bohrium";
+                break;
+            case 108:
+                skElementName = "Hásium";
+                break;
+            case 109:
+                skElementName = "Meitnérium";
+                break;
+            case 110:
+                skElementName = "Darmštádtium";
+                break;
+            case 111:
+                skElementName = "Roentgénium";
+                break;
+            case 112:
+                skElementName = "Kopernícium";
+                break;
+            case 113:
+                skElementName = "Nihónium";
+                break;
+            case 114:
+                skElementName = "Fleróvium";
+                break;
+            case 115:
+                skElementName = "Moskóvium";
+                break;
+            case 116:
+                skElementName = "Livermórium";
+                break;
+            case 117:
+                skElementName = "Tenés";
+                break;
+            case 118:
+                skElementName = "Oganesón";
+                break;
+        }
+        return skElementName;
+    }
+    #endregion
 }

@@ -40,7 +40,7 @@ public class UIElement : MonoBehaviour
     {
         atomicNumberText.text = elementData.AtomicNumber.ToString();
         symbolText.text = elementData.Symbol;
-        fullNameText.text = elementData.Name;
+        fullNameText.text = TranslateToSlovak.Instance.ElementNameToSlovak(elementData.AtomicNumber);
         neutronAmountText.text = "N:" + elementData.NeutronAmount.ToString();
         electronAmountText.text = "E:" + elementData.ElectronAmount.ToString();
         atomicMassText.text = elementData.AtomicMass.ToString();
