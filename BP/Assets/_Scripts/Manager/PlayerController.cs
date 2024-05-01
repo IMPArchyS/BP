@@ -97,28 +97,35 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (InMenu)
+        try
         {
-            ovm.CamController.enabled = false;
-            return;
-        }
-        else
-        {
-            ovm.CamController.enabled = true;
-        }
+            if (InMenu)
+            {
+                ovm.CamController.enabled = false;
+                return;
+            }
+            else
+            {
+                ovm.CamController.enabled = true;
+            }
 
-        if (fpsCameraOn)
-        {
-            fps.HandlePlayerMovementAndLook();
-            gridMaterial.SetFloat("_FPSCamera", fpsCameraOn ? 1f : 0f);
+            if (fpsCameraOn)
+            {
+                fps.HandlePlayerMovementAndLook();
+                gridMaterial.SetFloat("_FPSCamera", fpsCameraOn ? 1f : 0f);
+            }
+            else
+            {
+                ovm.CamController.MovementSmoothing = false;
+                ovm.UpdateLookAtObject();
+                ovm.UpdateCameraAngles();
+                ovm.MouseZoom();
+                ovm.RaycastOnClick();
+            }
         }
-        else
+        catch (System.Exception)
         {
-            ovm.CamController.MovementSmoothing = false;
-            ovm.UpdateLookAtObject();
-            ovm.UpdateCameraAngles();
-            ovm.MouseZoom();
-            ovm.RaycastOnClick();
+
         }
     }
 
