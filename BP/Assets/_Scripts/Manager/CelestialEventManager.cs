@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
+using System.Linq;
+using System;
 
 public class CelestialEventManager : MonoBehaviour
 {
@@ -10,9 +13,9 @@ public class CelestialEventManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI eventLogDisplay;  // Assign this in the Unity inspector
     [SerializeField] private uint maxEventDisplay = 3;  // Limit for event lines on the screen
     [SerializeField] private List<CelestialEvent> eventList = new();
-
     [SerializeField] private TextMeshProUGUI fullEventLog;  // Assign this in the Unity inspector;
     private List<CelestialEvent> allEvents = new();
+    [SerializeField] private UnityEvent<string> onElementCreation;
 
     private void Awake()
     {
@@ -35,11 +38,33 @@ public class CelestialEventManager : MonoBehaviour
 
         foreach (var eventToTrigger in eventsToTrigger)
         {
+            TriggerAditionalEvents(eventToTrigger);
             allEvents.Add(eventToTrigger);
             AddEventToLogs(eventToTrigger); // Fix: Pass the CelestialEvent object instead of a string
         }
     }
 
+    public void TriggerAditionalEvents(CelestialEvent celestialEvent)
+    {
+        switch (celestialEvent.EventType)
+        {
+            case CelestialEventType.SocietyEvent:
+                break;
+            case CelestialEventType.ElementCreationEvent:
+                onElementCreation?.Invoke(celestialEvent.Keyword);
+                break;
+            case CelestialEventType.MoonEvent:
+                break;
+            case CelestialEventType.OuterSpaceEvent:
+                break;
+            case CelestialEventType.PlanetEvent:
+                break;
+            case CelestialEventType.StarEvent:
+                break;
+            case CelestialEventType.AsteroidEvent:
+                break;
+        }
+    }
 
     private void AddEventToLogs(CelestialEvent newEvent)
     {
@@ -83,6 +108,11 @@ public class CelestialEventManager : MonoBehaviour
 
     private void Start()
     {
+        List<UIElement> elements = FindObjectsOfType<UIElement>(true).ToList();
+        foreach (UIElement element in elements)
+        {
+            onElementCreation?.AddListener(element.SetExistenceOfElement);
+        }
         UpdateEventDisplay();
         UpdateFullEventLog();
     }

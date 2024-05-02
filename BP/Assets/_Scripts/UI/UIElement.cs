@@ -25,15 +25,11 @@ public class UIElement : MonoBehaviour
     #region Data
     [Header("Element Data")]
     [SerializeField] private Element elementData;
+    [SerializeField] private bool existsInSolarSystem = false;
     #endregion
     private void Start()
     {
         UpdateUIData();
-    }
-
-    private void Update()
-    {
-
     }
 
     private void UpdateUIData()
@@ -45,7 +41,8 @@ public class UIElement : MonoBehaviour
         electronAmountText.text = "E:" + elementData.ElectronAmount.ToString();
         atomicMassText.text = elementData.AtomicMass.ToString();
         UpdateGUIData();
-        SetColors(bgColor);
+        if (existsInSolarSystem) SetColors(bgColor);
+        else SetColors(new Color(0.6f, 0.6f, 0.6f, 1));
     }
 
     private void UpdateGUIData()
@@ -78,5 +75,14 @@ public class UIElement : MonoBehaviour
         Color.RGBToHSV(outlineColor, out h, out s, out v);
         outlineColor = Color.HSVToRGB(h, s, v - 0.5f);
         outline.effectColor = outlineColor;
+    }
+
+    public void SetExistenceOfElement(string elementName)
+    {
+        if (elementName == elementData.Name)
+        {
+            existsInSolarSystem = true;
+            SetColors(bgColor);
+        }
     }
 }

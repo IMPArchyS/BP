@@ -14,14 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Events>k__BackingField:
   - <Year>k__BackingField: 1
-    <Keyword>k__BackingField: Polievka
+    <EventType>k__BackingField: 0
+    <Keyword>k__BackingField: 0
     <Description>k__BackingField: Polievka stoji 5 eur
+  - <Year>k__BackingField: 2
+    <EventType>k__BackingField: 1
+    <Keyword>k__BackingField: Hydrogen
+    <Description>k__BackingField: Vodik vytvoreny
   - <Year>k__BackingField: 6
-    <Keyword>k__BackingField: Auto
+    <EventType>k__BackingField: 0
+    <Keyword>k__BackingField: 0
     <Description>k__BackingField: Brasko strielam nemcov
   - <Year>k__BackingField: 56
-    <Keyword>k__BackingField: Fontana
+    <EventType>k__BackingField: 0
+    <Keyword>k__BackingField: 0
     <Description>k__BackingField: Na fontane prsi
   - <Year>k__BackingField: 150
-    <Keyword>k__BackingField: ASdasda
+    <EventType>k__BackingField: 0
+    <Keyword>k__BackingField: 0
     <Description>k__BackingField: Na fontane prsi
