@@ -25,19 +25,10 @@ public class UIElement : MonoBehaviour
     [SerializeField] private bool existsInSolarSystem = false;
     #endregion
 
+    #region UI Startup
     private void Start()
     {
         UpdateUIData();
-    }
-
-    private void UpdateDataText()
-    {
-        atomicNumberText.text = elementData.AtomicNumber.ToString();
-        symbolText.text = elementData.Symbol;
-        fullNameText.text = TranslateToSlovak.Instance.ElementNameToSlovak(elementData.AtomicNumber);
-        neutronAmountText.text = "N:" + elementData.NeutronAmount.ToString();
-        electronAmountText.text = "E:" + elementData.ElectronAmount.ToString();
-        atomicMassText.text = elementData.AtomicMass.ToString();
     }
 
     private void UpdateUIData()
@@ -46,6 +37,15 @@ public class UIElement : MonoBehaviour
         UpdateGUIData();
         if (existsInSolarSystem) SetColors(bgColor);
         else SetColors(new Color(0.6f, 0.6f, 0.6f, 1));
+    }
+    private void UpdateDataText()
+    {
+        atomicNumberText.text = elementData.AtomicNumber.ToString();
+        symbolText.text = elementData.Symbol;
+        fullNameText.text = TranslateToSlovak.Instance.ElementNameToSlovak(elementData.AtomicNumber);
+        neutronAmountText.text = "N:" + elementData.NeutronAmount.ToString();
+        electronAmountText.text = "E:" + elementData.ElectronAmount.ToString();
+        atomicMassText.text = elementData.AtomicMass.ToString();
     }
 
     private void UpdateGUIData()
@@ -79,7 +79,9 @@ public class UIElement : MonoBehaviour
         outlineColor = Color.HSVToRGB(h, s, v - 0.5f);
         outline.effectColor = outlineColor;
     }
+    #endregion
 
+    #region Color setup Logic
     public void SetExistenceOfElement(string elementName)
     {
         if (elementName == elementData.Name)
@@ -88,4 +90,5 @@ public class UIElement : MonoBehaviour
             SetColors(bgColor);
         }
     }
+    #endregion
 }

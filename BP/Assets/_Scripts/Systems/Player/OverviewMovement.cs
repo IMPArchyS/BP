@@ -18,6 +18,7 @@ public class OverviewMovement : MonoBehaviour
     [SerializeField] private GameObject lookAtObj;
     #endregion
 
+    #region Startup
     public void SetupOvm()
     {
         lookAtObj = GameObject.FindGameObjectWithTag("Star");
@@ -25,7 +26,9 @@ public class OverviewMovement : MonoBehaviour
         CamController = GetComponent<CameraController>();
         CamController.CameraTarget = lookAtObj.transform;
     }
+    #endregion
 
+    #region Camera Update
     public void UpdateOrbitalAngle()
     {
         if (LoopCamera)
@@ -52,7 +55,9 @@ public class OverviewMovement : MonoBehaviour
             CamController.ElevationAngle -= axisY * DragSpeed / 100;
         }
     }
+    #endregion
 
+    #region Mouse Logic
     public void MouseZoom()
     {
         float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
@@ -74,4 +79,5 @@ public class OverviewMovement : MonoBehaviour
             }
         }
     }
+    #endregion
 }

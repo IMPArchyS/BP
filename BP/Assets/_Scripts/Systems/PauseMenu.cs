@@ -12,17 +12,7 @@ public class PauseMenu : MonoBehaviour
     private BigInteger timeScale;
     #endregion
 
-    private void Update()
-    {
-        PauseGame();
-    }
-
-    private void PauseGame()
-    {
-        if (Input.GetKeyDown(KeyCode.Q) && !inPauseMenu) PauseSim();
-        else if (Input.GetKeyDown(KeyCode.Q) && inPauseMenu) ResumeSim();
-    }
-
+    #region Simulation Time toggling
     public async void BackToMenu()
     {
         pauseCanvas.gameObject.SetActive(false);
@@ -36,6 +26,11 @@ public class PauseMenu : MonoBehaviour
         await Task.Delay(1000);
         scene.allowSceneActivation = true;
         loadingMenu.gameObject.SetActive(false);
+    }
+    private void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && !inPauseMenu) PauseSim();
+        else if (Input.GetKeyDown(KeyCode.Q) && inPauseMenu) ResumeSim();
     }
 
     public void ResumeSim()
@@ -68,5 +63,11 @@ public class PauseMenu : MonoBehaviour
             pauseCanvas.gameObject.SetActive(true);
             inPauseMenu = true;
         }
+    }
+    #endregion
+
+    private void Update()
+    {
+        PauseGame();
     }
 }

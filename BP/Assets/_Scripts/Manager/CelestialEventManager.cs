@@ -25,6 +25,7 @@ public class CelestialEventManager : MonoBehaviour
     [SerializeField] private UnityEvent<string> onElementCreation;
     #endregion
 
+    #region Startup
     private void Awake()
     {
         if (Instance == null)
@@ -40,6 +41,19 @@ public class CelestialEventManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        List<UIElement> elements = FindObjectsOfType<UIElement>(true).ToList();
+        foreach (UIElement element in elements)
+        {
+            onElementCreation?.AddListener(element.SetExistenceOfElement);
+        }
+        UpdateEventDisplay();
+        UpdateFullEventLog();
+    }
+    #endregion
+
+    #region Event Logic & Trigger
     public void TriggerEvent(BigInteger year)
     {
         var eventsToTrigger = eventData.Events.FindAll(e => e.Year <= year && !allEvents.Contains(e));
@@ -73,7 +87,9 @@ public class CelestialEventManager : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
+    #region Event Display
     private void AddEventToLogs(CelestialEvent newEvent)
     {
         eventList.Insert(0, newEvent);
@@ -108,17 +124,7 @@ public class CelestialEventManager : MonoBehaviour
         }
         fullEventLog.text = combinedFullEvents;
     }
-
-    private void Start()
-    {
-        List<UIElement> elements = FindObjectsOfType<UIElement>(true).ToList();
-        foreach (UIElement element in elements)
-        {
-            onElementCreation?.AddListener(element.SetExistenceOfElement);
-        }
-        UpdateEventDisplay();
-        UpdateFullEventLog();
-    }
+    #endregion
 
     private void Update()
     {

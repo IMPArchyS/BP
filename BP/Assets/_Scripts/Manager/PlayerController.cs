@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     public Camera OverviewCamera { get { return overviewCamera; } }
     #endregion
 
+    #region Startup
     private void Awake()
     {
         if (Instance == null)
@@ -92,52 +93,9 @@ public class PlayerController : MonoBehaviour
         if (fpsCameraOn) fpsCameraOn = false;
         SetCamera();
     }
+    #endregion
 
-    private void Update()
-    {
-        try
-        {
-            if (InMenu)
-            {
-                ovm.CamController.enabled = false;
-                return;
-            }
-            else
-            {
-                ovm.CamController.enabled = true;
-            }
-
-            if (fpsCameraOn)
-            {
-                fps.HandlePlayerMovementAndLook();
-                gridMaterial.SetFloat("_FPSCamera", fpsCameraOn ? 1f : 0f);
-            }
-            else
-            {
-                ovm.CamController.MovementSmoothing = false;
-                ovm.UpdateLookAtObject();
-                ovm.UpdateCameraAngles();
-                ovm.MouseZoom();
-                ovm.RaycastOnClick();
-            }
-        }
-        catch (System.Exception)
-        {
-
-        }
-    }
-
-    private void LateUpdate()
-    {
-        if (InMenu) return;
-        if (Input.GetKeyDown(KeyCode.P)) SetCamera();
-        if (fpsCamera) { }
-        else
-        {
-            ovm.UpdateOrbitalAngle();
-        }
-    }
-
+    #region Camera controls
     private void SetCamera()
     {
         fpsCameraOn = !fpsCameraOn;
@@ -183,5 +141,51 @@ public class PlayerController : MonoBehaviour
         fpsCamera.transform.SetPositionAndRotation(overviewCamera.transform.position, overviewCamera.transform.rotation);
         SetCamera();
         SetCursorBasedOnCam();
+    }
+    #endregion
+
+    private void Update()
+    {
+        try
+        {
+            if (InMenu)
+            {
+                ovm.CamController.enabled = false;
+                return;
+            }
+            else
+            {
+                ovm.CamController.enabled = true;
+            }
+
+            if (fpsCameraOn)
+            {
+                fps.HandlePlayerMovementAndLook();
+                gridMaterial.SetFloat("_FPSCamera", fpsCameraOn ? 1f : 0f);
+            }
+            else
+            {
+                ovm.CamController.MovementSmoothing = false;
+                ovm.UpdateLookAtObject();
+                ovm.UpdateCameraAngles();
+                ovm.MouseZoom();
+                ovm.RaycastOnClick();
+            }
+        }
+        catch (System.Exception)
+        {
+
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (InMenu) return;
+        if (Input.GetKeyDown(KeyCode.P)) SetCamera();
+        if (fpsCamera) { }
+        else
+        {
+            ovm.UpdateOrbitalAngle();
+        }
     }
 }

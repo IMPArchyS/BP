@@ -1,11 +1,15 @@
 using System;
+using System.Numerics;
 using UnityEngine;
 
 public class LifeSpanController : MonoBehaviour
 {
+    #region Atributes
     public decimal ElapsedTime { get; private set; } = 0;
     [SerializeField] private CelestialObject obj;
+    #endregion
 
+    #region Startup
     private void Awake()
     {
         obj = GetComponent<CelestialObject>();
@@ -15,12 +19,9 @@ public class LifeSpanController : MonoBehaviour
     {
         obj.age = 0;
     }
+    #endregion
 
-    private void Update()
-    {
-        LifeSpan();
-    }
-
+    #region Time Calculation
     private void LifeSpan()
     {
         ElapsedTime += (decimal)Time.smoothDeltaTime * (decimal)MainTimeController.Instance.StellarTimeScale;
@@ -30,6 +31,13 @@ public class LifeSpanController : MonoBehaviour
     private void ConvertToYears()
     {
         decimal years = ElapsedTime / 31536000;
-        obj.age = (long)Math.Floor(years);
+        obj.age = (BigInteger)Math.Floor(years);
     }
+    #endregion
+
+    private void Update()
+    {
+        LifeSpan();
+    }
+
 }

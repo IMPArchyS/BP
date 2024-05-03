@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public enum CelestialObjectType { Planet, Moon, Star, Asteroid }
@@ -18,7 +19,7 @@ public class CelestialObject : MonoBehaviour
     public float diameter;
     public float radius;
     public float velocity;
-    public long age; // years
+    public BigInteger age; // years
 
     #endregion
 

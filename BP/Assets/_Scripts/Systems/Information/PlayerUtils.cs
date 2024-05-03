@@ -12,18 +12,10 @@ public class PlayerUtils : MonoBehaviour
     [SerializeField] private Slider fovSlider;
     #endregion
 
+    #region Startup
     private void Start()
     {
         SetupTextValues();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T) && PlayerController.Instance.FpsCameraOn)
-            ToggleUtilCanvas();
-
-        if (playerUtilCanvas.gameObject.activeInHierarchy)
-            PlayerController.Instance.InMenu = true;
     }
 
     private void SetupTextValues()
@@ -33,7 +25,9 @@ public class PlayerUtils : MonoBehaviour
         fovSlider.value = PlayerController.Instance.FpsCamera.fieldOfView;
         playerFOVValueText.text = PlayerController.Instance.FpsCamera.fieldOfView.ToString();
     }
+    #endregion
 
+    #region UI Sim Modification
     public void ToggleUtilCanvas()
     {
         if (playerUtilCanvas.gameObject.activeInHierarchy)
@@ -71,5 +65,15 @@ public class PlayerUtils : MonoBehaviour
         MainTimeController.Instance.ResetTimeScale();
         speedSlider.value = PlayerController.Instance.Speed;
         fovSlider.value = PlayerController.Instance.FpsCamera.fieldOfView;
+    }
+    #endregion
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T) && PlayerController.Instance.FpsCameraOn)
+            ToggleUtilCanvas();
+
+        if (playerUtilCanvas.gameObject.activeInHierarchy)
+            PlayerController.Instance.InMenu = true;
     }
 }

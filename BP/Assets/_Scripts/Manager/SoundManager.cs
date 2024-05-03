@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    #region Atributes
     public static SoundManager Instance;
     [SerializeField] private List<Sound> music, sfx;
     [SerializeField] private AudioSource musicSrc, sfxSrc;
+    #endregion
 
+    #region Startup
     private void Awake()
     {
         if (Instance == null)
@@ -22,7 +25,9 @@ public class SoundManager : MonoBehaviour
     {
         // PlayMusic("BGMusic");
     }
+    #endregion
 
+    #region Music 
     public void PlayMusic(string name)
     {
         Sound s = music.Find(m => m.Name.Equals(name));
@@ -34,14 +39,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySfx(string name)
-    {
-        Sound s = sfx.Find(m => m.Name.Equals(name));
-
-        if (s != null)
-            sfxSrc.PlayOneShot(s.Clip);
-    }
-
     public void AdjustMusic(float value)
     {
         musicSrc.volume = value;
@@ -49,6 +46,16 @@ public class SoundManager : MonoBehaviour
             musicSrc.mute = true;
         else
             musicSrc.mute = false;
+    }
+    #endregion
+
+    #region SFX
+    public void PlaySfx(string name)
+    {
+        Sound s = sfx.Find(m => m.Name.Equals(name));
+
+        if (s != null)
+            sfxSrc.PlayOneShot(s.Clip);
     }
 
     public void AdjustSfx(float value)
@@ -59,4 +66,5 @@ public class SoundManager : MonoBehaviour
         else
             musicSrc.mute = false;
     }
+    #endregion
 }

@@ -10,13 +10,16 @@ public class FPSMovement : MonoBehaviour
     public float CurrentSpeed { get; private set; }
     #endregion
 
+    #region Mouse Logic
     public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         CurrentSpeed = PlayerSpeed;
     }
+    #endregion
 
+    #region Player logic
     public void HandlePlayerMovementAndLook()
     {
         Vector3 currentRotation = transform.rotation.eulerAngles;
@@ -49,4 +52,5 @@ public class FPSMovement : MonoBehaviour
             transform.Rotate(Vector3.left, mouseY);
         }
     }
+    #endregion
 }

@@ -10,6 +10,7 @@ public class DebugInfo : MonoBehaviour
     private FPSMovement fpsController;
     #endregion
 
+    #region Startup
     private void Awake()
     {
         CreateSingletonInstance();
@@ -48,7 +49,9 @@ public class DebugInfo : MonoBehaviour
         speedText = GameObject.Find("SPEEDText").GetComponent<TextMeshProUGUI>();
         fpsController = GameObject.Find("FPSCamera").GetComponent<FPSMovement>();
     }
+    #endregion
 
+    #region UI update
     private void UpdateSpeed()
     {
         speedText.text = "SPEED:" + Mathf.Round(fpsController.CurrentSpeed);
@@ -59,4 +62,5 @@ public class DebugInfo : MonoBehaviour
         int fps = (int)(1f / Time.unscaledDeltaTime);
         fpsText.text = "FPS: " + Mathf.Round(fps);
     }
+    #endregion
 }

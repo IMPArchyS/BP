@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewGenericData", menuName = "CelestialObjectData/GenericData")]
@@ -15,7 +16,7 @@ public class GenericCOData : ScriptableObject
     public float diameter;
     public float radius;
     public float velocity;
-    public long age; // years
+    public BigInteger age; // years
 
     #endregion
 
