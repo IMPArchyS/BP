@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class LifeSpanController : MonoBehaviour
@@ -32,7 +29,7 @@ public class LifeSpanController : MonoBehaviour
 
     private void ConvertToYears()
     {
-        decimal years = ElapsedTime / 31536000; // Number of seconds in a year
+        decimal years = ElapsedTime / 31536000;
         obj.age = (long)Math.Floor(years);
     }
 }

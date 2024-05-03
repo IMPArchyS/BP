@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum DecayMode { Stable, Alpha_decay, Beta_decay, Proton_emission, Neutron_emission, Positron_emission, Electron_capture, Spontaneous_fission }

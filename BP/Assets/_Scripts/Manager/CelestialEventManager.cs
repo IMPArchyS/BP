@@ -1,22 +1,29 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 using System.Linq;
-using System;
 using System.Numerics;
 
 public class CelestialEventManager : MonoBehaviour
 {
+    #region Atributes
     public static CelestialEventManager Instance;
     [SerializeField] private CelestialEventData eventData;
-    [SerializeField] private TextMeshProUGUI eventLogDisplay;  // Assign this in the Unity inspector
-    [SerializeField] private uint maxEventDisplay = 3;  // Limit for event lines on the screen
     [SerializeField] private List<CelestialEvent> eventList = new();
-    [SerializeField] private TextMeshProUGUI fullEventLog;  // Assign this in the Unity inspector;
-    private List<CelestialEvent> allEvents = new();
+    [SerializeField] private List<CelestialEvent> allEvents = new();
+    #endregion
+
+    #region UI
+    [SerializeField] private uint maxEventDisplay = 3;
+    [SerializeField] private TextMeshProUGUI eventLogDisplay;
+    [SerializeField] private TextMeshProUGUI fullEventLog;
+
+    #endregion
+
+    #region UnityEvents
     [SerializeField] private UnityEvent<string> onElementCreation;
+    #endregion
 
     private void Awake()
     {
@@ -41,7 +48,7 @@ public class CelestialEventManager : MonoBehaviour
         {
             TriggerAditionalEvents(eventToTrigger);
             allEvents.Add(eventToTrigger);
-            AddEventToLogs(eventToTrigger); // Fix: Pass the CelestialEvent object instead of a string
+            AddEventToLogs(eventToTrigger);
         }
     }
 
@@ -69,15 +76,12 @@ public class CelestialEventManager : MonoBehaviour
 
     private void AddEventToLogs(CelestialEvent newEvent)
     {
-        // Real-time event display update logic
         eventList.Insert(0, newEvent);
         if (eventList.Count > maxEventDisplay)
         {
             eventList.RemoveAt(eventList.Count - 1);
         }
         UpdateEventDisplay();
-
-        // Full event log update logic
         UpdateFullEventLog();
     }
 
@@ -91,7 +95,6 @@ public class CelestialEventManager : MonoBehaviour
             combinedEvents += $"<alpha=#{(int)(opacity * 255):X2}>{eventList[i].Year + " " + eventList[i].Description}\n";
             opacity -= 0.3f;
         }
-
         eventLogDisplay.text = combinedEvents;
     }
 
@@ -103,7 +106,6 @@ public class CelestialEventManager : MonoBehaviour
         {
             combinedFullEvents += $"{eventItem.Year + " " + eventItem.Description}\n";
         }
-
         fullEventLog.text = combinedFullEvents;
     }
 

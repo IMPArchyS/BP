@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 public class EventMenu : MonoBehaviour
 {
     [SerializeField] private Canvas eventMenuCanvas;
+
     private void Start()
     {
 
@@ -21,7 +19,6 @@ public class EventMenu : MonoBehaviour
         {
             eventMenuCanvas.gameObject.SetActive(false);
             PlayerController.Instance.InMenu = false;
-
         }
         else
         {

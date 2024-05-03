@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Threading.Tasks;
-using UnityEngine.UI;
 using System.Numerics;
 
 public class PauseMenu : MonoBehaviour
@@ -14,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     private bool inPauseMenu = false;
     private BigInteger timeScale;
     #endregion
+
     private void Update()
     {
         PauseGame();

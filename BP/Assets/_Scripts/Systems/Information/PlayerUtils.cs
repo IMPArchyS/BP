@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class PlayerUtils : MonoBehaviour
 {
-    #region UIElements
+    #region UI
     [SerializeField] private Canvas playerUtilCanvas;
     [SerializeField] private TextMeshProUGUI playerSpeedValueText;
     [SerializeField] private TextMeshProUGUI playerFOVValueText;
@@ -16,16 +14,24 @@ public class PlayerUtils : MonoBehaviour
 
     private void Start()
     {
-        playerSpeedValueText.text = PlayerController.Instance.Speed.ToString();
-        speedSlider.value = PlayerController.Instance.Speed;
-        fovSlider.value = PlayerController.Instance.FpsCamera.fieldOfView;
-        playerFOVValueText.text = PlayerController.Instance.FpsCamera.fieldOfView.ToString();
+        SetupTextValues();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T) && PlayerController.Instance.FpsCameraOn) ToggleUtilCanvas();
-        if (playerUtilCanvas.gameObject.activeInHierarchy) PlayerController.Instance.InMenu = true;
+        if (Input.GetKeyDown(KeyCode.T) && PlayerController.Instance.FpsCameraOn)
+            ToggleUtilCanvas();
+
+        if (playerUtilCanvas.gameObject.activeInHierarchy)
+            PlayerController.Instance.InMenu = true;
+    }
+
+    private void SetupTextValues()
+    {
+        playerSpeedValueText.text = PlayerController.Instance.Speed.ToString();
+        speedSlider.value = PlayerController.Instance.Speed;
+        fovSlider.value = PlayerController.Instance.FpsCamera.fieldOfView;
+        playerFOVValueText.text = PlayerController.Instance.FpsCamera.fieldOfView.ToString();
     }
 
     public void ToggleUtilCanvas()

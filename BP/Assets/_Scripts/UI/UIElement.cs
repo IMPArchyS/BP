@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 public class UIElement : MonoBehaviour
 {
     #region UIElements
@@ -27,12 +24,13 @@ public class UIElement : MonoBehaviour
     [SerializeField] private Element elementData;
     [SerializeField] private bool existsInSolarSystem = false;
     #endregion
+
     private void Start()
     {
         UpdateUIData();
     }
 
-    private void UpdateUIData()
+    private void UpdateDataText()
     {
         atomicNumberText.text = elementData.AtomicNumber.ToString();
         symbolText.text = elementData.Symbol;
@@ -40,6 +38,11 @@ public class UIElement : MonoBehaviour
         neutronAmountText.text = "N:" + elementData.NeutronAmount.ToString();
         electronAmountText.text = "E:" + elementData.ElectronAmount.ToString();
         atomicMassText.text = elementData.AtomicMass.ToString();
+    }
+
+    private void UpdateUIData()
+    {
+        UpdateDataText();
         UpdateGUIData();
         if (existsInSolarSystem) SetColors(bgColor);
         else SetColors(new Color(0.6f, 0.6f, 0.6f, 1));

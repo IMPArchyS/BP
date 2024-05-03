@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PeriodicTable : MonoBehaviour
 {
     [SerializeField] private Canvas periodicTableCanvas;
+
     private void Start()
     {
 

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class OverviewCanvas : MonoBehaviour
 {
@@ -9,11 +6,14 @@ public class OverviewCanvas : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && PlayerController.Instance.FpsCameraOn)
-            ovmCanvas.gameObject.SetActive(true);
-        else if (Input.GetKeyDown(KeyCode.P) && !PlayerController.Instance.FpsCameraOn)
-            ovmCanvas.gameObject.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            bool isFpsCameraOn = PlayerController.Instance.FpsCameraOn;
+            ovmCanvas.gameObject.SetActive(isFpsCameraOn);
+        }
         else if (PlayerController.Instance.FpsCameraOn)
+        {
             ovmCanvas.gameObject.SetActive(false);
+        }
     }
 }

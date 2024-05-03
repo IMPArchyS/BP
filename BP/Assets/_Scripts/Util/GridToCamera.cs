@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GridToCamera : MonoBehaviour
@@ -8,6 +6,7 @@ public class GridToCamera : MonoBehaviour
     [SerializeField] private OverviewMovement ovm;
     [SerializeField] float offsetX = 1;
     [SerializeField] float offsetZ = 1;
+
     private void Awake()
     {
         camObject = GameObject.Find("FPSCamera").GetComponent<Camera>();

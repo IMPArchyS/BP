@@ -1,16 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class DebugInfo : MonoBehaviour
 {
+    #region Atributes
     public static DebugInfo Instance;
     public TextMeshProUGUI fpsText;
     public TextMeshProUGUI speedText;
-    FPSMovement f;
+    private FPSMovement fpsController;
+    #endregion
+
     private void Awake()
+    {
+        CreateSingletonInstance();
+    }
+
+    private void Start()
+    {
+        LinkGUIObjects();
+        StartTextUpdates();
+    }
+
+    private void CreateSingletonInstance()
     {
         if (Instance == null)
         {
@@ -25,18 +36,24 @@ public class DebugInfo : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void StartTextUpdates()
     {
-        fpsText = GameObject.Find("FPSText").GetComponent<TextMeshProUGUI>();
-        speedText = GameObject.Find("SPEEDText").GetComponent<TextMeshProUGUI>();
-        f = GameObject.Find("FPSCamera").GetComponent<FPSMovement>();
         InvokeRepeating(nameof(UpdateFPS), 1, 1);
         InvokeRepeating(nameof(UpdateSpeed), 1, 1);
     }
+
+    private void LinkGUIObjects()
+    {
+        fpsText = GameObject.Find("FPSText").GetComponent<TextMeshProUGUI>();
+        speedText = GameObject.Find("SPEEDText").GetComponent<TextMeshProUGUI>();
+        fpsController = GameObject.Find("FPSCamera").GetComponent<FPSMovement>();
+    }
+
     private void UpdateSpeed()
     {
-        speedText.text = "SPEED:" + Mathf.Round(f.CurrentSpeed);
+        speedText.text = "SPEED:" + Mathf.Round(fpsController.CurrentSpeed);
     }
+
     private void UpdateFPS()
     {
         int fps = (int)(1f / Time.unscaledDeltaTime);
