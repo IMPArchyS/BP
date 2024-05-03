@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using System.Numerics;
 
 public class MainTimeController : MonoBehaviour
 {
@@ -12,10 +13,10 @@ public class MainTimeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeScaleText;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI utilText;
-    [field: SerializeField] public long StellarTimeScale { get; set; } = 1;
-    [field: SerializeField] public long YearCount { get; private set; } = 0;
+    [field: SerializeField] public BigInteger StellarTimeScale { get; set; } = 1;
+    [field: SerializeField] public BigInteger YearCount { get; private set; } = 0;
     [SerializeField] private bool timePaused = false;
-    [SerializeField] private UnityEvent<long> onNewYear;
+    [SerializeField] private UnityEvent<BigInteger> onNewYear;
     [field: SerializeField] public UnityEvent<bool> OnSimToggle { get; private set; }
     public decimal ElapsedTime { get; private set; } = 0;
 
@@ -23,15 +24,15 @@ public class MainTimeController : MonoBehaviour
 
     #region detailAtributes
 
-    private long lastYearCount = 0;
+    private BigInteger lastYearCount = 0;
     private long dayCount = 0;
     private long hourCount = 0;
     private long minuteCount = 0;
     private long secondCount = 0;
     private long currentIndex = 0;
     private float updateCounter = 0f;
-    private readonly long[] timeScales = { 1, 60, 3600, 86400, 31536000, 315360000, 3153600000, 31536000000, 315360000000, 3153600000000, 31536000000000 };
-    private readonly string[] timeUnits = { "sec", "min", "hr", "day", "yr", "10 yrs", "100 yrs", "1000 yrs", "10k yrs", "100k yrs", "1mil yrs" };
+    private readonly BigInteger[] timeScales = { 1, 60, 3600, 86400, 31536000, 315360000, 3153600000, 31536000000, 315360000000, 3153600000000, 31536000000000, 3153600000000000, 31536000000000000, BigInteger.Parse("31536000000000000000") };
+    private readonly string[] timeUnits = { "sec", "min", "hr", "day", "yr", "10 yrs", "100 yrs", "1000 yrs", "10k yrs", "100k yrs", "1mil yrs", "100mil yrs", "1bil yrs", "1mld yrs" };
 
     #endregion
 
@@ -90,12 +91,12 @@ public class MainTimeController : MonoBehaviour
 
     private void CalculateTime()
     {
-        ElapsedTime += (decimal)Time.smoothDeltaTime * StellarTimeScale;
+        ElapsedTime += (decimal)Time.smoothDeltaTime * (decimal)StellarTimeScale;
 
         // Calculate years and remaining seconds
         decimal years = ElapsedTime / 31536000;
         YearCount = (long)Math.Floor(years);
-        decimal remainingSeconds = ElapsedTime - (YearCount * 31536000);
+        decimal remainingSeconds = ElapsedTime - (decimal)(YearCount * 31536000);
 
         // Update other time units
         dayCount = (long)(remainingSeconds / 86400) % 365;
@@ -124,7 +125,7 @@ public class MainTimeController : MonoBehaviour
             string timeDisplay = $"R: {YearCount}\nD: {dayCount}\nH: {hourCount}\nM: {minuteCount}\nS: {secondCount}";
             debugTimeScaleText.text = timeDisplay;
 
-            timeText.text = "ROK: " + YearCount.ToString();
+            timeText.text = "ROK: " + YearCount.ToString("N0");
             updateCounter = 0f;
         }
     }

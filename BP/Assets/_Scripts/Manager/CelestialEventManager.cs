@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using TMPro;
 using System.Linq;
 using System;
+using System.Numerics;
 
 public class CelestialEventManager : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class CelestialEventManager : MonoBehaviour
         }
     }
 
-    public void TriggerEvent(long year)
+    public void TriggerEvent(BigInteger year)
     {
         var eventsToTrigger = eventData.Events.FindAll(e => e.Year <= year && !allEvents.Contains(e));
 

@@ -26,7 +26,7 @@ public class LifeSpanController : MonoBehaviour
 
     private void LifeSpan()
     {
-        ElapsedTime += (decimal)Time.smoothDeltaTime * MainTimeController.Instance.StellarTimeScale;
+        ElapsedTime += (decimal)Time.smoothDeltaTime * (decimal)MainTimeController.Instance.StellarTimeScale;
         ConvertToYears();
     }
 

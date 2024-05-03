@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.UI;
+using System.Numerics;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private Canvas loadingMenu;
     private bool inPauseMenu = false;
-    private long timeScale;
+    private BigInteger timeScale;
     #endregion
     private void Update()
     {
