@@ -5,27 +5,24 @@ using UnityEngine.UI;
 
 public class ToggleButtonIcon : MonoBehaviour
 {
-    [SerializeField] Sprite originalImageSprite;
-    [SerializeField] Sprite alternateImageSprite;
-    private bool toggled = false;
-
+    [SerializeField] private Sprite originalImageSprite;
+    [SerializeField] private Sprite alternateImageSprite;
     private void Start()
     {
         Image currentImage = GetComponent<Image>();
         currentImage.sprite = originalImageSprite;
+        MainTimeController.Instance.OnSimToggle.AddListener(ToggleButtonImage);
     }
 
-    public void ToggleButtonImage()
+    public void ToggleButtonImage(bool toggle)
     {
         Image currentImage = GetComponent<Image>();
-        if (!toggled)
+        if (toggle)
         {
-            toggled = true;
             currentImage.sprite = alternateImageSprite;
         }
         else
         {
-            toggled = false;
             currentImage.sprite = originalImageSprite;
         }
     }

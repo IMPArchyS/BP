@@ -962,18 +962,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 38954811}
-        m_TargetAssemblyTypeName: ToggleButtonIcon, Assembly-CSharp
-        m_MethodName: ToggleButtonImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &38954809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4781,7 +4769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &337376229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4850,7 +4838,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337376228}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -30370,6 +30358,9 @@ MonoBehaviour:
   <YearCount>k__BackingField: 0
   timePaused: 0
   onNewYear:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnSimToggle>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
   debugTimeScaleText: {fileID: 1124808447}

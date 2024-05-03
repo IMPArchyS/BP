@@ -16,6 +16,7 @@ public class MainTimeController : MonoBehaviour
     [field: SerializeField] public long YearCount { get; private set; } = 0;
     [SerializeField] private bool timePaused = false;
     [SerializeField] private UnityEvent<long> onNewYear;
+    [field: SerializeField] public UnityEvent<bool> OnSimToggle { get; private set; }
     public decimal ElapsedTime { get; private set; } = 0;
 
     #endregion
@@ -157,5 +158,6 @@ public class MainTimeController : MonoBehaviour
             timePaused = false;
             StellarTimeScale = timeScales[currentIndex];
         }
+        OnSimToggle?.Invoke(timePaused);
     }
 }
