@@ -70,7 +70,7 @@ public class PlayerUtils : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T) && PlayerController.Instance.FpsCameraOn)
+        if (Input.GetKeyDown(KeyCode.T) && PlayerController.Instance.FpsCameraOn && !PlayerController.Instance.InSubMenuOpen)
             ToggleUtilCanvas();
 
         if (playerUtilCanvas.gameObject.activeInHierarchy)

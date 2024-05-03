@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera overviewCamera;
 
     [field: SerializeField] public bool InMenu { get; set; } = false;
+    [field: SerializeField] public bool InSubMenuOpen { get ; set; } = false;
     #endregion
 
     #region GettersSetters

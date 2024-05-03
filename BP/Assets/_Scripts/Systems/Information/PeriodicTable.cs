@@ -20,10 +20,12 @@ public class PeriodicTable : MonoBehaviour
         {
             periodicTableCanvas.gameObject.SetActive(false);
             PlayerController.Instance.InMenu = false;
+            PlayerController.Instance.InSubMenuOpen = false;
         }
         else
         {
             PlayerController.Instance.InMenu = true;
+            PlayerController.Instance.InSubMenuOpen = true;
             periodicTableCanvas.gameObject.SetActive(true);
         }
     }

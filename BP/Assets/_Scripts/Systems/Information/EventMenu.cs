@@ -19,10 +19,12 @@ public class EventMenu : MonoBehaviour
         {
             eventMenuCanvas.gameObject.SetActive(false);
             PlayerController.Instance.InMenu = false;
+            PlayerController.Instance.InSubMenuOpen = false;
         }
         else
         {
             PlayerController.Instance.InMenu = true;
+            PlayerController.Instance.InSubMenuOpen = true;
             eventMenuCanvas.gameObject.SetActive(true);
         }
     }
