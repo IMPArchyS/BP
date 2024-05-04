@@ -12,6 +12,7 @@ public class DebugInfo : MonoBehaviour
     public TextMeshProUGUI memText;
     public TextMeshProUGUI renderText;
     public TextMeshProUGUI activeObjectText;
+    public GameObject debugCanvas;
     public int maxDebugLines;
     private FPSMovement fpsController;
     #endregion
@@ -55,6 +56,7 @@ public class DebugInfo : MonoBehaviour
         speedText = GameObject.Find("SPEEDText").GetComponent<TextMeshProUGUI>();
         debugText = GameObject.Find("DebugLogText").GetComponent<TextMeshProUGUI>();
         fpsController = GameObject.Find("FPSCamera").GetComponent<FPSMovement>();
+        debugCanvas = GameObject.Find("DEBUGCanvas");
     }
     #endregion
 
@@ -125,12 +127,20 @@ public class DebugInfo : MonoBehaviour
         activeObjectText.text = "";
         activeObjectText.text = $"Active GameObjects: {activeGameObjects}";
     }
+
+    private void ToggleUI()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+            debugCanvas.SetActive(!debugCanvas.activeInHierarchy);
+    }
     #endregion
+
 
     private void Update()
     {
         ShowMemoryUsage();
         ShowAmountOfRenderedObjects();
         ShowAmountOfActiveGameObjects();
+        ToggleUI();
     }
 }
