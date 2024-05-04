@@ -41,7 +41,16 @@ public class CelestialObjectInfo : MonoBehaviour
     {
         celestialObjectInfoBox.gameObject.SetActive(!celestialObjectInfoBox.gameObject.activeInHierarchy);
         if (celestialObjectInfoBox.gameObject.activeInHierarchy)
+        {
             UpdateObjectDataUI(foundCelestial);
+            PlayerController.Instance.InMenu = true;
+            PlayerController.Instance.InSubMenuOpen = true;
+        }
+        else
+        {
+            PlayerController.Instance.InMenu = false;
+            PlayerController.Instance.InSubMenuOpen = false;
+        }
     }
     #endregion
 

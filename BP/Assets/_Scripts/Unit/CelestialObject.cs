@@ -69,6 +69,7 @@ public class CelestialObject : MonoBehaviour
     [Header("Unity properties")]
     [SerializeField] private SphereCollider sphereCollider;
     [SerializeField] private UnityEvent<CelestialObject> onPlayerEnter;
+    private static CelestialObject currentCelestial;
     #endregion
     private void Awake()
     {
@@ -84,10 +85,20 @@ public class CelestialObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("MainCamera"))
+        if (other.gameObject.CompareTag("MainCamera") && currentCelestial == null)
         {
             Debug.Log("CS-OBJ: " + gameObject.name + " -> IN RANGE");
             onPlayerEnter?.Invoke(this);
+            currentCelestial = this;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("MainCamera") && currentCelestial == this)
+        {
+            Debug.Log("CS-OBJ: " + gameObject.name + " -> OUT OF RANGE");
+            currentCelestial = null;
         }
     }
 
