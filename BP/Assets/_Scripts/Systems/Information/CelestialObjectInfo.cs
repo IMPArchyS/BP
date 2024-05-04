@@ -1,48 +1,29 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CelestialObjectInfo : MonoBehaviour
 {
-    [SerializeField] GameObject celestialObjectInfoBox;
+    #region Atributes
+    [SerializeField] Canvas celestialObjectInfoBox;
+    #endregion
 
     private void Start()
     {
 
     }
 
-    private void Update()
+    #region UI Logic
+    private void GetObjectData()
     {
-        if (Input.GetMouseButtonDown(1) && !PlayerController.Instance.FpsCameraOn)
-            GetObjectInfo(true);
-    }
-
-    public void GetObjectInfo(bool mouseClick)
-    {
-        if (mouseClick)
+        PlayerController.Instance.Ovm.LookedAtObject.TryGetComponent<CelestialObject>(out CelestialObject csObj);
+        if (csObj)
         {
-            Ray ray = PlayerController.Instance.OverviewCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                Debug.Log("GetObjectInfoRAY : " + hit.collider.gameObject);
-                if (hit.collider.TryGetComponent<CelestialObject>(out CelestialObject csObj))
-                {
-                    UpdateInfoUI(csObj);
-                }
-            }
-            else
-                celestialObjectInfoBox.SetActive(false);
-        }
-        else
-        {
-            PlayerController.Instance.Ovm.LookedAtObject.TryGetComponent<CelestialObject>(out CelestialObject csObj);
-            if (csObj)
-            {
-                Debug.Log("GetObjectInfoBUTTON : " + csObj);
-                UpdateInfoUI(csObj);
-            }
+            Debug.Log("GetObjectInfoBUTTON : " + csObj);
+            ToggleObjectUI(csObj);
         }
     }
 
-    private void UpdateInfoUI(CelestialObject foundCelestial)
+    private void UpdateObjectDataUI(CelestialObject foundCelestial)
     {
         Asteroid asteroid = foundCelestial.GetComponent<Asteroid>();
         Moon moon = foundCelestial.GetComponent<Moon>();
@@ -54,5 +35,28 @@ public class CelestialObjectInfo : MonoBehaviour
         // TextMeshProUGUI typeText = celestialObjectInfoBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         // TextMeshProUGUI habitableText = celestialObjectInfoBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
         // TextMeshProUGUI gasGiantText = celestialObjectInfoBox.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+    }
+
+    private void ToggleObjectUI(CelestialObject foundCelestial)
+    {
+        celestialObjectInfoBox.gameObject.SetActive(!celestialObjectInfoBox.gameObject.activeInHierarchy);
+        if (celestialObjectInfoBox.gameObject.activeInHierarchy)
+            UpdateObjectDataUI(foundCelestial);
+    }
+    #endregion
+
+    public void OnEnterRange(CelestialObject celestialObject)
+    {
+        Debug.Log("Hello from CSO-Info");
+    }
+
+    public void DisplayObjectInfo()
+    {
+        GetObjectData();
+    }
+
+    private void Update()
+    {
+
     }
 }
