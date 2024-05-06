@@ -13,6 +13,15 @@ public class MainMenu : MonoBehaviour
 
     private bool startup = true;
 
+    private void Awake()
+    {
+        GameObject[] managers = GameObject.FindGameObjectsWithTag("Manager");
+        foreach (GameObject manager in managers)
+        {
+            Destroy(manager);
+        }
+    }
+
     private void Start()
     {
         if (startup)
