@@ -33,8 +33,7 @@ public class CelestialObjectInfo : MonoBehaviour
         Planet planet = foundCelestial.GetComponent<Planet>();
         Star star = foundCelestial.GetComponent<Star>();
 
-        TextMeshProUGUI objectNameText = celestialObjectInfoBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        objectNameText.text = foundCelestial.objectName;
+        celestialObjectInfoBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = foundCelestial.objectName;
         // TextMeshProUGUI sizeText = celestialObjectInfoBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         // TextMeshProUGUI typeText = celestialObjectInfoBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         // TextMeshProUGUI habitableText = celestialObjectInfoBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();

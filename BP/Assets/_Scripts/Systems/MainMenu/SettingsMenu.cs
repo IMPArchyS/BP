@@ -15,7 +15,7 @@ public class SettingsMenu : MonoBehaviour
         int resIndex = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " * " + resolutions[i].height;
+            string option = resolutions[i].width + " * " + resolutions[i].height + " " + resolutions[i].refreshRate + "hz";
             options.Add(option);
             if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
                 resIndex = i;
@@ -23,6 +23,12 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = resIndex;
         resolutionDropdown.RefreshShownValue();
+    }
+
+    public void SetResolution(int resIndex)
+    {
+        Resolution resolution = resolutions[resIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void SetQuality(int qualityIndex)
