@@ -14,7 +14,7 @@ public class CelestialObject : MonoBehaviour
     #region Generic information
     [Header("General Information")]
     public GenericCOData celestialObjectData;
-    public string objectName;
+    public string objectName = "generic_celestial";
     public CelestialObjectType type;
     public CelestialRegion region;
     public float mass;
@@ -69,6 +69,7 @@ public class CelestialObject : MonoBehaviour
     [Header("Unity properties")]
     [SerializeField] private SphereCollider sphereCollider;
     [SerializeField] private UnityEvent<CelestialObject> onPlayerEnter;
+    [SerializeField] private UnityEvent onPlayerExit;
     private static CelestialObject currentCelestial;
     #endregion
     private void Awake()
@@ -81,6 +82,7 @@ public class CelestialObject : MonoBehaviour
     private void Start()
     {
         onPlayerEnter.AddListener(CanvasManager.Instance.CelestialObjectInfo.OnEnterRange);
+        onPlayerExit.AddListener(CanvasManager.Instance.CelestialObjectInfo.OnExitRange);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,6 +100,7 @@ public class CelestialObject : MonoBehaviour
         if (other.gameObject.CompareTag("MainCamera") && currentCelestial == this)
         {
             Debug.Log("CS-OBJ: " + gameObject.name + " -> OUT OF RANGE");
+            onPlayerExit?.Invoke();
             currentCelestial = null;
         }
     }

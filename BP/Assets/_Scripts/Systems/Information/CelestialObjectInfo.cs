@@ -1,10 +1,13 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CelestialObjectInfo : MonoBehaviour
 {
     #region Atributes
-    [SerializeField] Canvas celestialObjectInfoBox;
+    [SerializeField] Canvas celestialObjectInfoCanvas;
+    [SerializeField] RectTransform celestialObjectInfoBox;
+    [SerializeField] CelestialObject currentObject;
     #endregion
 
     private void Start()
@@ -30,7 +33,8 @@ public class CelestialObjectInfo : MonoBehaviour
         Planet planet = foundCelestial.GetComponent<Planet>();
         Star star = foundCelestial.GetComponent<Star>();
 
-        // TextMeshProUGUI objectText = celestialObjectInfoBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI objectNameText = celestialObjectInfoBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        objectNameText.text = foundCelestial.objectName;
         // TextMeshProUGUI sizeText = celestialObjectInfoBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         // TextMeshProUGUI typeText = celestialObjectInfoBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         // TextMeshProUGUI habitableText = celestialObjectInfoBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
@@ -39,10 +43,21 @@ public class CelestialObjectInfo : MonoBehaviour
 
     private void ToggleObjectUI(CelestialObject foundCelestial)
     {
-        celestialObjectInfoBox.gameObject.SetActive(!celestialObjectInfoBox.gameObject.activeInHierarchy);
-        if (celestialObjectInfoBox.gameObject.activeInHierarchy)
-        {
+        if (foundCelestial == null) return;
+
+        ToggleUI();
+        if (celestialObjectInfoCanvas.gameObject.activeInHierarchy)
             UpdateObjectDataUI(foundCelestial);
+        else
+            currentObject = null;
+    }
+    #endregion
+
+    public void ToggleUI()
+    {
+        celestialObjectInfoCanvas.gameObject.SetActive(!celestialObjectInfoCanvas.gameObject.activeInHierarchy);
+        if (celestialObjectInfoCanvas.gameObject.activeInHierarchy)
+        {
             PlayerController.Instance.InMenu = true;
             PlayerController.Instance.InSubMenuOpen = true;
         }
@@ -52,16 +67,25 @@ public class CelestialObjectInfo : MonoBehaviour
             PlayerController.Instance.InSubMenuOpen = false;
         }
     }
-    #endregion
 
     public void OnEnterRange(CelestialObject celestialObject)
     {
         Debug.Log("Hello from CSO-Info");
+        currentObject = celestialObject;
     }
 
-    public void DisplayObjectInfo()
+    public void OnExitRange()
     {
-        GetObjectData();
+        Debug.Log("Bye from CSO-Info");
+        currentObject = null;
+    }
+
+    public void DisplayObjectInfo(bool isOverview)
+    {
+        if (isOverview)
+            GetObjectData();
+        else
+            ToggleObjectUI(currentObject);
     }
 
     private void Update()
