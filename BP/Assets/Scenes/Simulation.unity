@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 4846108}
   m_Layer: 0
   m_Name: CameraManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3905,6 +3905,9 @@ MonoBehaviour:
   magneticFieldStrength: 0
   sphereCollider: {fileID: 0}
   onPlayerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerExit:
     m_PersistentCalls:
       m_Calls: []
 --- !u!135 &186153722
@@ -9006,7 +9009,7 @@ GameObject:
   - component: {fileID: 576067889}
   m_Layer: 0
   m_Name: CanvasManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18654,6 +18657,9 @@ MonoBehaviour:
   onPlayerEnter:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &1237319867
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18897,7 +18903,7 @@ GameObject:
   - component: {fileID: 1247705477}
   m_Layer: 0
   m_Name: DebugInformer
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24496,6 +24502,9 @@ MonoBehaviour:
   onPlayerEnter:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1601187132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24633,6 +24642,9 @@ MonoBehaviour:
   magneticFieldStrength: 0
   sphereCollider: {fileID: 0}
   onPlayerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerExit:
     m_PersistentCalls:
       m_Calls: []
 --- !u!135 &1612498071
@@ -27143,6 +27155,9 @@ MonoBehaviour:
   onPlayerEnter:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &1741148903
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29576,7 +29591,7 @@ GameObject:
   - component: {fileID: 1939272623}
   m_Layer: 0
   m_Name: CelestialEventManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31854,7 +31869,7 @@ GameObject:
   - component: {fileID: 2051687682}
   m_Layer: 0
   m_Name: TimeControlManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
