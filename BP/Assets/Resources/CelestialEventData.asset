@@ -13,23 +13,19 @@ MonoBehaviour:
   m_Name: CelestialEventData
   m_EditorClassIdentifier: 
   <Events>k__BackingField:
-  - <Year>k__BackingField: 1
+  - <Year>k__BackingField: 1969
     <EventType>k__BackingField: 0
-    <Keyword>k__BackingField: 0
-    <Description>k__BackingField: Polievka stoji 5 eur
-  - <Year>k__BackingField: 2
+    <Keyword>k__BackingField: Apollo 11
+    <Description>k__BackingField: "Prv\xFD \u010Dkovek na mesiaci"
+  - <Year>k__BackingField: 2002
     <EventType>k__BackingField: 1
-    <Keyword>k__BackingField: Hydrogen
-    <Description>k__BackingField: Vodik vytvoreny
-  - <Year>k__BackingField: 6
+    <Keyword>k__BackingField: Oganesson
+    <Description>k__BackingField: "Prvok 118 n\xE1jden\xFD"
+  - <Year>k__BackingField: 2017
     <EventType>k__BackingField: 0
-    <Keyword>k__BackingField: 0
-    <Description>k__BackingField: Brasko strielam nemcov
-  - <Year>k__BackingField: 120
+    <Keyword>k__BackingField: Oumuamua
+    <Description>k__BackingField: "Pr\xEDlet Oumuamua z h\u013Abkok vesm\xEDru"
+  - <Year>k__BackingField: 2022
     <EventType>k__BackingField: 0
-    <Keyword>k__BackingField: 0
-    <Description>k__BackingField: Na fontane prsi
-  - <Year>k__BackingField: 150
-    <EventType>k__BackingField: 0
-    <Keyword>k__BackingField: 0
-    <Description>k__BackingField: Na fontane prsi
+    <Keyword>k__BackingField: Artemis I
+    <Description>k__BackingField: "\xDAspe\u0161n\xFD \u0161tart SLS"
