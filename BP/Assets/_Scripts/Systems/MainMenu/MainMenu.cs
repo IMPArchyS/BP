@@ -29,6 +29,8 @@ public class MainMenu : MonoBehaviour
             bg.Play("BackgroundFadeIn");
             startup = false;
         }
+        SoundManager.Instance.StopMusic("SIMULATION");
+        SoundManager.Instance.PlayMusic("MAIN_MENU");
     }
 
     public async void Play()

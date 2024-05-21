@@ -73,6 +73,8 @@ public class MainTimeController : MonoBehaviour
         timeText.text = "0";
         timeScaleText.text = "";
         onNewYear?.AddListener(CelestialEventManager.Instance.TriggerEvent);
+        SoundManager.Instance.StopMusic("MAIN_MENU");
+        SoundManager.Instance.PlayMusic("SIMULATION");
     }
     #endregion
 

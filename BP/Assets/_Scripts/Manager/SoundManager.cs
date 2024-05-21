@@ -23,7 +23,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        // PlayMusic("BGMusic");
+
     }
     #endregion
 
@@ -36,6 +36,17 @@ public class SoundManager : MonoBehaviour
         {
             musicSrc.clip = s.Clip;
             musicSrc.Play();
+        }
+    }
+
+    public void StopMusic(string name)
+    {
+        Sound s = music.Find(m => m.Name.Equals(name));
+
+        if (s != null)
+        {
+            musicSrc.clip = s.Clip;
+            musicSrc.Stop();
         }
     }
 
