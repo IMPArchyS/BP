@@ -5,8 +5,9 @@ public class SoundManager : MonoBehaviour
 {
     #region Atributes
     public static SoundManager Instance;
-    [SerializeField] private List<Sound> music, sfx;
+    [SerializeField] private AudioSource positionSound;
     [SerializeField] private AudioSource musicSrc, sfxSrc;
+    [SerializeField] private SoundData sd;
     #endregion
 
     #region Startup
@@ -30,7 +31,7 @@ public class SoundManager : MonoBehaviour
     #region Music 
     public void PlayMusic(string name)
     {
-        Sound s = music.Find(m => m.Name.Equals(name));
+        Sound s = sd.Music.Find(m => m.Name.Equals(name));
 
         if (s != null)
         {
@@ -41,7 +42,7 @@ public class SoundManager : MonoBehaviour
 
     public void StopMusic(string name)
     {
-        Sound s = music.Find(m => m.Name.Equals(name));
+        Sound s = sd.Music.Find(m => m.Name.Equals(name));
 
         if (s != null)
         {
@@ -63,10 +64,21 @@ public class SoundManager : MonoBehaviour
     #region SFX
     public void PlaySfx(string name)
     {
-        Sound s = sfx.Find(m => m.Name.Equals(name));
+        Sound s = sd.Sfx.Find(m => m.Name.Equals(name));
 
         if (s != null)
             sfxSrc.PlayOneShot(s.Clip);
+    }
+    public void PlaySfx(string name, Vector3 pos)
+    {
+        Sound s = sd.Sfx.Find(m => m.Name.Equals(name));
+
+        if (s != null)
+        {
+            positionSound.transform.position = pos;
+            positionSound.volume = sfxSrc.volume;
+            positionSound.PlayOneShot(s.Clip);
+        }
     }
 
     public void AdjustSfx(float value)

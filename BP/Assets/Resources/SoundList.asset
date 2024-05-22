@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49efa4972347c574bb6288f034ff1585, type: 3}
+  m_Name: SoundList
+  m_EditorClassIdentifier: 
+  <Music>k__BackingField:
+  - <Name>k__BackingField: MAIN_MENU
+    <Clip>k__BackingField: {fileID: 8300000, guid: f2a92a893a3bb9a4d9cdd500ac460842, type: 3}
+  - <Name>k__BackingField: SIMULATION
+    <Clip>k__BackingField: {fileID: 8300000, guid: 9e63bb7f3a93b2f468a2339ab3b5d3c5, type: 3}
+  <Sfx>k__BackingField:
+  - <Name>k__BackingField: BUTTON_CLICK
+    <Clip>k__BackingField: {fileID: 8300000, guid: b957e43f31171684a872070bac21bde7, type: 3}
