@@ -12,6 +12,7 @@ public class EpochMenu : MonoBehaviour
         currentMenu.gameObject.SetActive(false);
         loadingMenu.gameObject.SetActive(true);
         var scene = SceneManager.LoadSceneAsync(sceneIndex);
+        PlayerPrefs.SetInt("epoch", sceneIndex);
         scene.allowSceneActivation = false;
         do
         {

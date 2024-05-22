@@ -22,8 +22,8 @@ public class MainTimeController : MonoBehaviour
     private long secondCount = 0;
     private long currentIndex = 0;
     private float updateCounter = 0f;
-    private readonly BigInteger[] timeScales = { 1, 60, 3600, 86400, 31536000, 315360000, 3153600000, 31536000000, 315360000000, 3153600000000, 31536000000000, 3153600000000000, 31536000000000000, BigInteger.Parse("31536000000000000000") };
-    private readonly string[] timeUnits = { "sec", "min", "hr", "day", "yr", "10 yrs", "100 yrs", "1000 yrs", "10k yrs", "100k yrs", "1mil yrs", "100mil yrs", "1bil yrs", "1mld yrs" };
+    private readonly BigInteger[] timeScales = { 1, 60, 3600, 86400, 31536000, 315360000, 3153600000, 31536000000, 315360000000, 3153600000000, 31536000000000, 3153600000000000, 31536000000000000, BigInteger.Parse("31536000000000000000"), BigInteger.Parse("3153600000000000000000") };
+    private readonly string[] timeUnits = { "sec", "min", "hr", "day", "yr", "10 yrs", "100 yrs", "1000 yrs", "10k yrs", "100k yrs", "1mil yrs", "100mil yrs", "1bil yrs", "1mld yrs", "100mld yrs" };
     #endregion
 
     #region UI
@@ -68,9 +68,31 @@ public class MainTimeController : MonoBehaviour
         debugTimeScaleText = GameObject.Find("DebugTimeText").GetComponent<TextMeshProUGUI>();
     }
 
+    private void SetEpoch()
+    {
+        int epochIndex = PlayerPrefs.GetInt("epoch");
+        switch (epochIndex)
+        {
+            case 2: // -3.8 bil yrs
+                ElapsedTime = (decimal)25257043377494153.032970218834;
+                break;
+            case 3: // 2024
+                ElapsedTime = (decimal)145344955972350710.55533790154;
+                break;
+            case 4: // +7 bil yrs
+                ElapsedTime = (decimal)359540261318455788.30508691731;
+                break;
+            default:
+                ElapsedTime = 0;
+                break;
+        }
+    }
+
     private void Start()
     {
-        timeText.text = "0";
+        //ElapsedTime = (decimal)31568092699542601247315.101196; // end
+        SetEpoch();
+        timeText.text = "";
         timeScaleText.text = "";
         onNewYear?.AddListener(CelestialEventManager.Instance.TriggerEvent);
         SoundManager.Instance.StopMusic("MAIN_MENU");
@@ -82,7 +104,6 @@ public class MainTimeController : MonoBehaviour
     private void CalculateTime()
     {
         ElapsedTime += (decimal)Time.smoothDeltaTime * (decimal)StellarTimeScale;
-
         // Calculate years and remaining seconds
         decimal years = ElapsedTime / 31536000;
         YearCount = (long)Math.Floor(years);
@@ -118,7 +139,15 @@ public class MainTimeController : MonoBehaviour
             string timeDisplay = $"R: {YearCount}\nD: {dayCount}\nH: {hourCount}\nM: {minuteCount}\nS: {secondCount}";
             debugTimeScaleText.text = timeDisplay;
 
-            timeText.text = "ROK: " + YearCount.ToString("N0");
+            //timeText.text = "ROK: " + YearCount.ToString("N0");
+            if (YearCount >= 4600000000)
+            {
+                timeText.text = "+" + ((decimal)YearCount / 1000000000m).ToString("N3") + " Miliard rokov";
+            }
+            else
+            {
+                timeText.text = (((decimal)YearCount - 4600000000) / 1000000000m).ToString("N3") + " Miliard rokov";
+            }
             updateCounter = 0f;
         }
     }

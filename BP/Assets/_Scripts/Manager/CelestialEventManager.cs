@@ -56,6 +56,10 @@ public class CelestialEventManager : MonoBehaviour
     #region Event Logic & Trigger
     public void TriggerEvent(BigInteger year)
     {
+        if (year >= BigInteger.Parse("1000000000000000"))
+        {
+            Debug.Log("END");
+        }
         var eventsToTrigger = eventData.Events.FindAll(e => e.Year <= year && !allEvents.Contains(e));
 
         foreach (var eventToTrigger in eventsToTrigger)
