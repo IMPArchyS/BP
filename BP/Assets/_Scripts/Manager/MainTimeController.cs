@@ -9,6 +9,7 @@ public class MainTimeController : MonoBehaviour
     #region Primary Time Properties
     public static MainTimeController Instance { get; private set; }
     public BigInteger StellarTimeScale { get; set; } = 1;
+    public int StellarYear { get; private set; } = 31536000;
     public BigInteger YearCount { get; private set; } = 0;
     public decimal ElapsedTime { get; private set; } = 0;
     [SerializeField] private bool timePaused = false;
