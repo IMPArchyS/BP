@@ -37,6 +37,7 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu.gameObject.SetActive(false);
         loadingMenu.gameObject.SetActive(true);
+        PlayerPrefs.SetInt("epoch", 1);
         var scene = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         scene.allowSceneActivation = false;
         do

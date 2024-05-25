@@ -60,7 +60,7 @@ public class CelestialEventManager : MonoBehaviour
         {
             Debug.Log("END");
         }
-        var eventsToTrigger = eventData.Events.FindAll(e => e.Year <= year && !allEvents.Contains(e));
+        var eventsToTrigger = eventData.Events.FindAll(e => BigInteger.Parse(e.Year) <= year && !allEvents.Contains(e));
 
         foreach (var eventToTrigger in eventsToTrigger)
         {
