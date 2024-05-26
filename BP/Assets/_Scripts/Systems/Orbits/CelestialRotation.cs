@@ -18,29 +18,30 @@ public class CelestialRotation : MonoBehaviour
         if (showTiltAxis)
         {
             // Create the tilt axis line as a child object
-            GameObject tiltAxisObject = new GameObject("TiltAxisLine");
+            GameObject tiltAxisObject = new("TiltAxisLine");
             tiltAxisObject.transform.SetParent(transform);
-            tiltAxisObject.transform.localPosition = Vector3.zero;
-            tiltAxisObject.transform.localRotation = Quaternion.identity;
-
+            tiltAxisObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             tiltAxisLine = tiltAxisObject.AddComponent<LineRenderer>();
             tiltAxisLine.positionCount = 2;
             tiltAxisLine.useWorldSpace = true; // World space
             tiltAxisLine.startWidth = 0.25f;
+            tiltAxisLine.startColor = new Color32(126, 126, 126, 255);
+            tiltAxisLine.endColor = new Color32(126, 126, 126, 255);
             tiltAxisLine.endWidth = 0.25f;
-            tiltAxisLine.material = new Material(Shader.Find("Sprites/Default")); // Change material as needed
+            tiltAxisLine.material = new Material(Resources.Load<Material>("Shaders/Lines"));
             tiltAxisLine.startColor = Color.red;
             tiltAxisLine.endColor = Color.red;
             UpdateTiltAxis();
         }
     }
 
-
+    private void OnValidate()
+    {
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, tilt);
+    }
 
     void Update()
     {
-        // Rotate around its own axis
-        //transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
 
         // Update the tilt axis line
@@ -53,8 +54,8 @@ public class CelestialRotation : MonoBehaviour
 
     void UpdateTiltAxis()
     {
-        Vector3 start = transform.position + transform.up * (transform.localScale.y * 0.3f + tiltAxisOffset);
-        Vector3 end = transform.position - transform.up * (transform.localScale.y * 0.3f + tiltAxisOffset);
+        Vector3 start = transform.position + transform.up * (transform.localScale.y * 0.7f + tiltAxisOffset);
+        Vector3 end = transform.position - transform.up * (transform.localScale.y * 0.7f + tiltAxisOffset);
 
         tiltAxisLine.SetPosition(0, start);
         tiltAxisLine.SetPosition(1, end);
@@ -65,8 +66,8 @@ public class CelestialRotation : MonoBehaviour
         if (showTiltAxis)
         {
             Gizmos.color = Color.red;
-            Vector3 start = transform.position + transform.up * (transform.localScale.y * 0.3f + tiltAxisOffset);
-            Vector3 end = transform.position - transform.up * (transform.localScale.y * 0.3f + tiltAxisOffset);
+            Vector3 start = transform.position + transform.up * (transform.localScale.y * 0.7f + tiltAxisOffset);
+            Vector3 end = transform.position - transform.up * (transform.localScale.y * 0.7f + tiltAxisOffset);
             Gizmos.DrawLine(start, end);
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(LineRenderer))]
 public class OrbitalMovement : MonoBehaviour
 {
     public Transform centerObject; // Object to orbit around
@@ -23,6 +24,11 @@ public class OrbitalMovement : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = segments + 1;
         lineRenderer.useWorldSpace = true;
+        lineRenderer.startColor = new Color32(126, 126, 126, 255);
+        lineRenderer.endColor = new Color32(126, 126, 126, 255);
+        lineRenderer.startWidth = 0.25f;
+        lineRenderer.endWidth = 0.25f;
+        lineRenderer.material = new Material(Resources.Load<Material>("Shaders/Lines"));
         UpdateOrbitPath();
     }
 
@@ -51,7 +57,7 @@ public class OrbitalMovement : MonoBehaviour
         float z = Mathf.Sin(angle) * zRadius;
 
         // Apply tilt to the orbit
-        Vector3 offset = new Vector3(x, y, z);
+        Vector3 offset = new(x, y, z);
         Quaternion tiltRotation = Quaternion.Euler(tiltAngle, 0, 0);
         offset = tiltRotation * offset;
 
@@ -84,7 +90,7 @@ public class OrbitalMovement : MonoBehaviour
         float x = Mathf.Cos(theta) * xRadius;
         float y = Mathf.Sin(theta) * yRadius;
         float z = Mathf.Sin(theta) * zRadius;
-        Vector3 point = new Vector3(x, y, z);
+        Vector3 point = new(x, y, z);
         Quaternion tiltRotation = Quaternion.Euler(tiltAngle, 0, 0);
         return tiltRotation * point;
     }

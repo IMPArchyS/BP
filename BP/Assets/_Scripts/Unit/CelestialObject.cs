@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.Events;
-using PathCreation;
 
 public enum CelestialObjectType { Planet, Moon, Star, Asteroid }
 public enum CelestialRegion { Star, InnerPlanets, OuterPlanets, AsteroidBelt, KuiperBelt, OortCloud }
 [System.Serializable]
 [RequireComponent(typeof(LifeSpanController))]
 [RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(CelestialRotation))]
+[RequireComponent(typeof(OrbitalMovement))]
 public class CelestialObject : MonoBehaviour
 {
     #region Generic information
@@ -71,10 +72,6 @@ public class CelestialObject : MonoBehaviour
     [SerializeField] private SphereCollider sphereCollider;
     [SerializeField] private UnityEvent<CelestialObject> onPlayerEnter;
     [SerializeField] private UnityEvent onPlayerExit;
-    public PathCreator pathCreator;
-    public EndOfPathInstruction end;
-    public float speed;
-    float dstTravelled;
     private static CelestialObject currentCelestial;
     #endregion
     private void Awake()
@@ -112,11 +109,5 @@ public class CelestialObject : MonoBehaviour
 
     private void Update()
     {
-        if (pathCreator)
-        {
-            dstTravelled += speed * Time.deltaTime;
-            transform.position = pathCreator.path.GetPointAtDistance(dstTravelled, end);
-            transform.rotation = pathCreator.path.GetRotationAtDistance(dstTravelled, end);
-        }
     }
 }

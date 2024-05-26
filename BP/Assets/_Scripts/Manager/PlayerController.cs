@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera overviewCamera;
 
     [field: SerializeField] public bool InMenu { get; set; } = false;
-    [field: SerializeField] public bool InSubMenuOpen { get ; set; } = false;
+    [field: SerializeField] public bool InSubMenuOpen { get; set; } = false;
     #endregion
 
     #region GettersSetters
@@ -145,6 +145,13 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    private void FixedUpdate()
+    {
+        if (fpsCameraOn)
+        {
+            fps.MovePlayer();
+        }
+    }
     private void Update()
     {
         try
@@ -161,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
             if (fpsCameraOn)
             {
-                fps.HandlePlayerMovementAndLook();
+                fps.HandlePlayerLook();
                 gridMaterial.SetFloat("_FPSCamera", fpsCameraOn ? 1f : 0f);
             }
             else

@@ -20,12 +20,12 @@ public class FPSMovement : MonoBehaviour
     #endregion
 
     #region Player logic
-    public void HandlePlayerMovementAndLook()
+    public void HandlePlayerLook()
     {
         Vector3 currentRotation = transform.rotation.eulerAngles;
         currentRotation.z = 0f;
         transform.rotation = Quaternion.Euler(currentRotation);
-        MovePlayer();
+        //MovePlayer();
         RotatePlayer();
     }
 
