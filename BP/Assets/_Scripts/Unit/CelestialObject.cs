@@ -78,7 +78,7 @@ public class CelestialObject : MonoBehaviour
     {
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;
-        sphereCollider.radius = 1f;
+        sphereCollider.radius = 1.5f;
     }
 
     private void Start()

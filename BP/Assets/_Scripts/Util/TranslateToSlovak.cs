@@ -31,6 +31,9 @@ public class TranslateToSlovak
             case "day":
                 skUnit = "deň";
                 break;
+            case "month":
+                skUnit = "mes";
+                break;
             case "yr":
                 skUnit = "rok";
                 break;

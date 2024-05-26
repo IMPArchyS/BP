@@ -8,7 +8,7 @@ public class CelestialRotation : MonoBehaviour
     public float tilt = 0f;
     public bool showTiltAxis = true; // Toggle for showing the tilt axis
     public float tiltAxisOffset = 0.5f; // Offset of the tilt axis line from the object's center
-
+    public bool rotateClockwise = true;
     private LineRenderer tiltAxisLine;
 
     void Start()
@@ -49,7 +49,8 @@ public class CelestialRotation : MonoBehaviour
         else
             stellarTimeScale = (int)MainTimeController.Instance.StellarTimeScale;
 
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime * stellarTimeScale, Space.World);
+        float rotationDirection = rotateClockwise ? 1f : -1f; // Determine rotation direction based on the boolean
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime * stellarTimeScale * rotationDirection, Space.World);
 
         // Update the tilt axis line
         if (showTiltAxis)
