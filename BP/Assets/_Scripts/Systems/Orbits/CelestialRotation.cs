@@ -42,7 +42,14 @@ public class CelestialRotation : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
+        int stellarTimeScale;
+        // Increment the angle based on time and speed
+        if (MainTimeController.Instance.StellarTimeScale > MainTimeController.Instance.StellarYear)
+            stellarTimeScale = MainTimeController.Instance.StellarYear;
+        else
+            stellarTimeScale = (int)MainTimeController.Instance.StellarTimeScale;
+
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime * stellarTimeScale, Space.World);
 
         // Update the tilt axis line
         if (showTiltAxis)
