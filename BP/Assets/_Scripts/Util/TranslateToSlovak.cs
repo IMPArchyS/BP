@@ -139,6 +139,9 @@ public class TranslateToSlovak
             case StarLuminosityType.Nebula:
                 skLuminosityType = "Nebula";
                 break;
+            case StarLuminosityType.ProtoStar:
+                skLuminosityType = "Proto hviezda";
+                break;
             case StarLuminosityType.Giant:
                 skLuminosityType = "Obor";
                 break;

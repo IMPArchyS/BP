@@ -23,6 +23,7 @@ public class CelestialEventManager : MonoBehaviour
 
     #region UnityEvents
     [SerializeField] private UnityEvent<string> onElementCreation;
+    [SerializeField] private UnityEvent onStarMajorEvent;
     #endregion
 
     #region Startup
@@ -41,6 +42,8 @@ public class CelestialEventManager : MonoBehaviour
         {
             onElementCreation?.AddListener(element.SetExistenceOfElement);
         }
+        Star star = FindObjectOfType<Star>();
+        onStarMajorEvent.AddListener(star.MajorEvent);
         UpdateEventDisplay();
         UpdateFullEventLog();
     }
@@ -49,33 +52,20 @@ public class CelestialEventManager : MonoBehaviour
     #region Event Logic & Trigger
     public void TriggerEvent(BigInteger year)
     {
-        // if (year >= BigInteger.Parse("1000000000000000"))
-        // {
-        //     Debug.Log("END");
-        //     CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
-        // }
-        // else if (year >= BigInteger.Parse("11000000000") && year <= BigInteger.Parse("18400946896"))
-        // {
-        //     Debug.Log("END");
-        //     CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
-        // }
-        // else if (year >= BigInteger.Parse("4600000000") && year <= BigInteger.Parse("7000000000"))
-        // {
-        //     Debug.Log("END");
-        //     CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
-        // }
-        // else if (year >= BigInteger.Parse("800000000") && year <= BigInteger.Parse("3600000000"))
-        // {
-        //     Debug.Log("END");
-        //     CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
-        // }
         var eventsToTrigger = eventData.Events.FindAll(e => BigInteger.Parse(e.Year) + eventData.ConvertYearToBigInt(eventData.StartingYear) <= year && !allEvents.Contains(e));
 
         foreach (var eventToTrigger in eventsToTrigger)
         {
-            TriggerAditionalEvents(eventToTrigger);
-            allEvents.Add(eventToTrigger);
-            AddEventToLogs(eventToTrigger);
+            if (eventToTrigger.EventType != CelestialEventType.HiddenEvent)
+            {
+                TriggerAditionalEvents(eventToTrigger);
+                allEvents.Add(eventToTrigger);
+                AddEventToLogs(eventToTrigger);
+            }
+            else
+            {
+                Debug.Log("[Hidden Event] -> " + eventToTrigger.Description);
+            }
         }
     }
 
@@ -83,6 +73,8 @@ public class CelestialEventManager : MonoBehaviour
     {
         switch (celestialEvent.EventType)
         {
+            case CelestialEventType.TextEvent:
+                break;
             case CelestialEventType.SocietyEvent:
                 break;
             case CelestialEventType.ElementCreationEvent:
@@ -95,6 +87,7 @@ public class CelestialEventManager : MonoBehaviour
             case CelestialEventType.PlanetEvent:
                 break;
             case CelestialEventType.StarEvent:
+                onStarMajorEvent?.Invoke();
                 break;
             case CelestialEventType.AsteroidEvent:
                 break;
@@ -124,7 +117,9 @@ public class CelestialEventManager : MonoBehaviour
 
         for (int i = 0; i < eventList.Count; i++)
         {
-            combinedEvents += $"<alpha=#{(int)(opacity * 255):X2}>{eventList[i].Year + " " + eventList[i].Description}\n";
+            BigInteger year = BigInteger.Parse(eventList[i].Year);
+            string yearFormated = year.ToString("N0");
+            combinedEvents += $"<alpha=#{(int)(opacity * 255):X2}>{yearFormated + " " + eventList[i].Description}\n"; // Use the modified yearFormated variable
             opacity -= 0.3f;
         }
         eventLogDisplay.text = combinedEvents;

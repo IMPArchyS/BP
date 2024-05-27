@@ -14,7 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Events>k__BackingField:
   - <Year>k__BackingField: 800000000
-    <EventType>k__BackingField: 7
+    <EventType>k__BackingField: 8
     <Keyword>k__BackingField: Koniec Etapy
     <Description>k__BackingField: Koniec Etapy
+  - <Year>k__BackingField: 1
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: ProtoStar
+    <Description>k__BackingField: Proto hviezda
+  - <Year>k__BackingField: 100000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: TTauri Star
+    <Description>k__BackingField: T Tauri hviezda
+  - <Year>k__BackingField: 50100000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: TTauri Star
+    <Description>k__BackingField: T Tauri hviezda
+  - <Year>k__BackingField: 68100000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: MainSequence
+    <Description>k__BackingField: "Hlavn\xE1 postupnos\u0165"
   <StartingYear>k__BackingField: 0

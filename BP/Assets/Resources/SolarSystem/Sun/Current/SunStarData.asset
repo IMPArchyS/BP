@@ -19,3 +19,11 @@ MonoBehaviour:
   stellarWindIntensity: 600
   lifetime: 11730100000
   endOfLifeStage: 0
+  planetaryNebulaDuration: 
+  mainSequenceDuration: 
+  redGiantDuration: 
+  whiteDwarfDuration: 
+  mainSequenceScale: {x: 20, y: 20, z: 20}
+  redGiantScale: {x: 168, y: 168, z: 168}
+  planetaryNebulaScale: {x: 5, y: 5, z: 5}
+  whiteDwarfScale: {x: 3, y: 3, z: 3}
