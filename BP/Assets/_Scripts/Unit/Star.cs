@@ -14,6 +14,8 @@ public class Star : MonoBehaviour
 
     [Header("Star Information")]
     [SerializeField] private StarData starData;
+    private int remainingYears = 100000;
+    private float endScale = 3f;
     public StarData CurrentData { get; set; }
 
     #endregion
@@ -35,5 +37,25 @@ public class Star : MonoBehaviour
     public void MajorEvent()
     {
         Debug.Log("Major Event");
+    }
+
+    public void YearlyEvent()
+    {
+        remainingYears -= 1;
+
+        if (remainingYears <= 0)
+        {
+            transform.localScale = new Vector3(endScale, endScale, endScale);
+            return;
+        }
+
+        float scaleIncrement = endScale / remainingYears;
+        float currentScale = transform.localScale.x;
+        currentScale += scaleIncrement;
+        if (currentScale > endScale)
+            currentScale = endScale;
+        transform.localScale = new Vector3(currentScale, currentScale, currentScale);
+
+        Debug.Log("[" + MainTimeController.Instance.YearCount + "] -> Yearly Event");
     }
 }

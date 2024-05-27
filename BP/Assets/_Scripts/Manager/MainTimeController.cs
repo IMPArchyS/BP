@@ -152,9 +152,23 @@ public class MainTimeController : MonoBehaviour
         UpdateTimeTextCounters();
     }
 
+    BigInteger lastYearSinceTick = 0;
+    BigInteger thisYearSinceTick = 0;
     private void UpdateTime()
     {
         CalculateTime();
+        lastYearSinceTick = thisYearSinceTick;
+        thisYearSinceTick = YearCount;
+        // calculate year change with lastYearSinceTick and thisYearSinceTick
+        BigInteger diff = thisYearSinceTick - lastYearSinceTick;
+        if (diff > 0)
+        {
+            for (BigInteger i = 0; i < diff; i++)
+            {
+                CelestialEventManager.Instance.OnStarYearly?.Invoke();
+            }
+        }
+
         UpdateTimeUI();
         if (YearCount != lastYearCount)
         {

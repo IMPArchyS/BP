@@ -25,7 +25,6 @@ public class FPSMovement : MonoBehaviour
         Vector3 currentRotation = transform.rotation.eulerAngles;
         currentRotation.z = 0f;
         transform.rotation = Quaternion.Euler(currentRotation);
-        //MovePlayer();
         RotatePlayer();
     }
 

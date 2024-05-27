@@ -148,10 +148,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (InMenu) return;
-        if (fpsCameraOn)
-        {
-            fps.MovePlayer();
-        }
     }
     private void Update()
     {
@@ -170,6 +166,8 @@ public class PlayerController : MonoBehaviour
             if (fpsCameraOn)
             {
                 fps.HandlePlayerLook();
+                fps.MovePlayer();
+
                 gridMaterial.SetFloat("_FPSCamera", fpsCameraOn ? 1f : 0f);
             }
             else

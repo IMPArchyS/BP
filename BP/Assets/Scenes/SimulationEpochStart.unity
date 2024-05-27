@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  sprintSpeed: 100
+  sprintSpeed: 200
   sensitivity: 2
   fps: {fileID: 963194232}
   acceleration: 25
@@ -22933,14 +22933,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.21176471, y: 0.41244608, z: -0.099200286, w: -0.8804563}
-  m_LocalPosition: {x: 59.67, y: 27.961514, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.036, y: 2.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 31.39, y: -132.88, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40217,7 +40217,7 @@ Transform:
   m_GameObject: {fileID: 1601187125}
   m_LocalRotation: {x: -0, y: -0, z: 0.061048545, w: 0.99813485}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1872937732}
@@ -50599,6 +50599,12 @@ MonoBehaviour:
   eventLogDisplay: {fileID: 1421677070}
   fullEventLog: {fileID: 1593672307}
   onElementCreation:
+    m_PersistentCalls:
+      m_Calls: []
+  onStarMajorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnStarYearly>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
 --- !u!224 &1948281928 stripped
