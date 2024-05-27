@@ -23,7 +23,7 @@ public class GenericCOData : ScriptableObject
     [Header("Atmosphere Information")]
 
     [SerializeField] private bool hasAtmosphere;
-    [SerializeField] private float atmospherePressure; // in Pascals
+    [SerializeField] private float atmospherePressure; // in bars
     [SerializeField] private List<Element> atmosphereComposition;
 
     #endregion

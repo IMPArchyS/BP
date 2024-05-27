@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9ecbbe82b443d4da0eb7e00e6541e1, type: 3}
+  m_Name: Generic_Moon
+  m_EditorClassIdentifier: 
+  objectName: Mesiac
+  type: 1
+  region: 1
+  mass: 0
+  radius: 0
+  velocity: 0
+  age: 0
+  hasAtmosphere: 0
+  atmospherePressure: 0
+  atmosphereComposition: []
+  orbitalRadius: 0
+  orbitalPeriod: 0
+  orbitalEccentricity: 0
+  inclination: 0
+  surface: 
+  groundElements: []
+  minTemperature: 0
+  averageTemperature: 0
+  maxTemperature: 0
+  gravity: 0
+  hasMagneticField: 0
+  magneticFieldStrength: 0

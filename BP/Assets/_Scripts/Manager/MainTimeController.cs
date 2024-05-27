@@ -136,7 +136,7 @@ public class MainTimeController : MonoBehaviour
             //timeText.text = "ROK: " + YearCount.ToString("N0");
             if (YearCount >= 4600000000)
             {
-                timeText.text = "+" + ((decimal)YearCount / 1000000000m).ToString("N3") + " Miliard rokov";
+                timeText.text = ((decimal)(YearCount - 4608858319) / 1000000000m).ToString("N3") + " Miliard rokov";
             }
             else
             {

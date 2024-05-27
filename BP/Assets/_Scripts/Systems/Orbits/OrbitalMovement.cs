@@ -18,6 +18,7 @@ public class OrbitalMovement : MonoBehaviour
     private readonly int segments = 100;
 
     private float currentTime = 0f;
+    private Vector3 offset = Vector3.zero;
 
     private void Start()
     {
@@ -57,12 +58,11 @@ public class OrbitalMovement : MonoBehaviour
         float z = Mathf.Sin(angle) * zRadius;
 
         // Apply tilt to the orbit
-        Vector3 offset = new(x, y, z);
+        offset = new(x, y, z);
         Quaternion tiltRotation = Quaternion.Euler(tiltAngle, 0, 0);
         offset = tiltRotation * offset;
 
         // Set the position of the orbiting object
-        transform.position = centerObject.position + centerOffset + offset;
 
         // Update the orbit path if toggled
         if (showOrbit)
@@ -70,6 +70,11 @@ public class OrbitalMovement : MonoBehaviour
             UpdateOrbitPath();
         }
         lineRenderer.enabled = showOrbit;
+    }
+
+    private void LateUpdate()
+    {
+        transform.position = centerObject.position + centerOffset + offset;
     }
 
     private void UpdateOrbitPath()
