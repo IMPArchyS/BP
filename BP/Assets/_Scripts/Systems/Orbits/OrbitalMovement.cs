@@ -26,8 +26,8 @@ public class OrbitalMovement : MonoBehaviour
         lineRenderer.useWorldSpace = true;
         lineRenderer.startColor = new Color32(126, 126, 126, 255);
         lineRenderer.endColor = new Color32(126, 126, 126, 255);
-        lineRenderer.startWidth = 0.25f;
-        lineRenderer.endWidth = 0.25f;
+        lineRenderer.startWidth = 0.15f;
+        lineRenderer.endWidth = 0.15f;
         lineRenderer.material = new Material(Resources.Load<Material>("Shaders/Lines"));
         UpdateOrbitPath();
     }

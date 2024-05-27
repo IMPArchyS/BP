@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (InMenu) return;
         if (fpsCameraOn)
         {
             fps.MovePlayer();

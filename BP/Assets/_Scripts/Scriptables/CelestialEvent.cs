@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [System.Serializable]
-public enum CelestialEventType { SocietyEvent, ElementCreationEvent, PlanetEvent, AsteroidEvent, StarEvent, OuterSpaceEvent, MoonEvent };
+public enum CelestialEventType { SocietyEvent, ElementCreationEvent, PlanetEvent, AsteroidEvent, StarEvent, OuterSpaceEvent, MoonEvent, EndEpoch };
 [System.Serializable]
 public class CelestialEvent
 {

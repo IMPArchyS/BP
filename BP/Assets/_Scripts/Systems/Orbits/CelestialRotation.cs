@@ -24,10 +24,10 @@ public class CelestialRotation : MonoBehaviour
             tiltAxisLine = tiltAxisObject.AddComponent<LineRenderer>();
             tiltAxisLine.positionCount = 2;
             tiltAxisLine.useWorldSpace = true; // World space
-            tiltAxisLine.startWidth = 0.25f;
+            tiltAxisLine.startWidth = 0.15f;
             tiltAxisLine.startColor = new Color32(126, 126, 126, 255);
             tiltAxisLine.endColor = new Color32(126, 126, 126, 255);
-            tiltAxisLine.endWidth = 0.25f;
+            tiltAxisLine.endWidth = 0.15f;
             tiltAxisLine.material = new Material(Resources.Load<Material>("Shaders/Lines"));
             tiltAxisLine.startColor = Color.red;
             tiltAxisLine.endColor = Color.red;

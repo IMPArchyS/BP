@@ -10,6 +10,7 @@ public class CanvasManager : MonoBehaviour
     [field: SerializeField] public CelestialObjectInfo CelestialObjectInfo { get; private set; }
     [field: SerializeField] public PeriodicTable PeriodicTable { get; private set; }
     [field: SerializeField] public EventMenu EventMenu { get; private set; }
+    [field: SerializeField] public EndMenu EndMenu { get; private set; }
     private void Awake()
     {
         if (Instance == null)

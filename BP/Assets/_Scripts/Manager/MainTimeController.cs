@@ -50,13 +50,6 @@ public class MainTimeController : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(Instance.gameObject);
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         LinkComponents();
     }

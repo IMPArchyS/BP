@@ -5,14 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(CelestialObject))]
 public class Planet : MonoBehaviour
 {
-    #region Moons & Rings
-    [Header("Moons & Rings Information")]
-    public PlanetData planetData;
-    public List<Moon> moons;
-    public bool hasRings;
-    public List<string> ringCharacteristics;
-
+    #region generic
+    [Header("Generic")]
+    [SerializeField] private PlanetData planetData;
+    public PlanetData CurrentData { get; set; }
     #endregion
+
+    private void Awake()
+    {
+        CurrentData = ScriptableObject.CreateInstance<PlanetData>();
+        CurrentData.CopyFrom(planetData);
+    }
     private void Start()
     {
 

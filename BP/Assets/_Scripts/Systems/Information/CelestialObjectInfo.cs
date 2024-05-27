@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class CelestialObjectInfo : MonoBehaviour
 {
@@ -28,16 +29,94 @@ public class CelestialObjectInfo : MonoBehaviour
 
     private void UpdateObjectDataUI(CelestialObject foundCelestial)
     {
+        celestialObjectInfoBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = foundCelestial.CurrentData.ObjectName;
+
+        // generic data
+        TextMeshProUGUI genericBundled = celestialObjectInfoBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        genericBundled.text = "hmotnosť: " + foundCelestial.CurrentData.Mass + "\n"
+        + "polomer: " + foundCelestial.CurrentData.Radius + "\n"
+        + "rýchlosť: " + foundCelestial.CurrentData.Velocity + "\n"
+        + "vek: " + foundCelestial.AgeBigInt.ToString("N1") + "\n";
+
+        // atmosphere data
+        TextMeshProUGUI atmoBundled = celestialObjectInfoBox.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+        string hasAtmoSk = foundCelestial.CurrentData.HasAtmosphere ? "áno" : "nie";
+        string composition = "zloženie: ";
+        foreach (Element e in foundCelestial.CurrentData.AtmosphereComposition)
+        {
+            composition += e.Symbol + ", ";
+        }
+        atmoBundled.text = "obsahuje: " + hasAtmoSk + "\n"
+        + "atmosférický tlak: " + foundCelestial.CurrentData.AtmospherePressure
+        + "zloženie: " + composition;
+
+        // orbit data
+        TextMeshProUGUI orbitBundled = celestialObjectInfoBox.transform.GetChild(6).GetComponent<TextMeshProUGUI>();
+        orbitBundled.text = "priemer: " + foundCelestial.CurrentData.OrbitalRadius + "\n"
+        + "doba: " + foundCelestial.CurrentData.OrbitalPeriod + "\n"
+        + "excentricita: " + foundCelestial.CurrentData.OrbitalEccentricity + "\n"
+        + "sklon: " + foundCelestial.CurrentData.Inclination;
+
+        // ground data
+        TextMeshProUGUI groundBundled = celestialObjectInfoBox.transform.GetChild(8).GetComponent<TextMeshProUGUI>();
+        string compositionGround = "zloženie: ";
+        foreach (Element e in foundCelestial.CurrentData.GroundElements)
+        {
+            compositionGround += e.Symbol + ", ";
+        }
+        groundBundled.text = "popis: " + foundCelestial.CurrentData.Surface + "\n"
+        + "teplota (min): " + foundCelestial.CurrentData.MinTemperature + "\n"
+        + "teplota (max): " + foundCelestial.CurrentData.MaxTemperature + "\n"
+        + "teplota (priemer): " + foundCelestial.CurrentData.AverageTemperature + "\n"
+        + compositionGround;
+
+        // magnetic field data
+        TextMeshProUGUI magnetBundled = celestialObjectInfoBox.transform.GetChild(10).GetComponent<TextMeshProUGUI>();
+        string hasGravitySk = foundCelestial.CurrentData.HasMagneticField ? "má" : "nemá";
+        magnetBundled.text = "pole: " + hasGravitySk + "\n"
+        + "konštanta: " + foundCelestial.CurrentData.Gravity + "\n"
+        + "sila: " + foundCelestial.CurrentData.MagneticFieldStrength;
+
+        // specific data based on type
+        TextMeshProUGUI specificBundled = celestialObjectInfoBox.transform.GetChild(12).GetComponent<TextMeshProUGUI>();
+        GetSpecificInfoToText(foundCelestial, specificBundled);
+    }
+
+    private void GetSpecificInfoToText(CelestialObject foundCelestial, TextMeshProUGUI specificBundled)
+    {
+        TextMeshProUGUI specificHeader = celestialObjectInfoBox.transform.GetChild(11).GetComponent<TextMeshProUGUI>();
         Asteroid asteroid = foundCelestial.GetComponent<Asteroid>();
         Moon moon = foundCelestial.GetComponent<Moon>();
         Planet planet = foundCelestial.GetComponent<Planet>();
         Star star = foundCelestial.GetComponent<Star>();
 
-        celestialObjectInfoBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = foundCelestial.objectName;
-        // TextMeshProUGUI sizeText = celestialObjectInfoBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        // TextMeshProUGUI typeText = celestialObjectInfoBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-        // TextMeshProUGUI habitableText = celestialObjectInfoBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-        // TextMeshProUGUI gasGiantText = celestialObjectInfoBox.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+        if (asteroid != null)
+        {
+            specificHeader.text = "Asteroid";
+        }
+        else if (moon != null)
+        {
+            specificHeader.text = "Mesiac";
+            // Handle moon
+        }
+        else if (planet != null)
+        {
+            specificHeader.text = "Planéta";
+            string hasMoonsSk = planet.CurrentData.hasMoons ? "má" : "nemá";
+            string hasRingsSk = planet.CurrentData.hasRings ? "má" : "nemá";
+            specificBundled.text = "Mesiace: " + hasMoonsSk + "\n"
+            + "Prstence: " + hasRingsSk + "\n";
+        }
+        else if (star != null)
+        {
+            specificHeader.text = "Hviezda";
+            specificBundled.text = "Typ: " + TranslateToSlovak.Instance.StarTypeToSlovak(star.CurrentData.LuminosityType) + "\n"
+            + "Farba: " + TranslateToSlovak.Instance.StarSpectralTypeToSlovak(star.CurrentData.SpectralType) + "\n"
+            + "Svietivosť: " + star.CurrentData.Luminosity + "\n"
+            + "Fúzny proces: " + star.CurrentData.FusionProcess + "\n"
+            + "intenzita vetrov: " + star.CurrentData.StellarWindIntensity + "\n"
+            + "koniec ako: " + TranslateToSlovak.Instance.StarDeathTypeToSlovak(star.CurrentData.EndOfLifeStage);
+        }
     }
 
     private void ToggleObjectUI(CelestialObject foundCelestial)

@@ -31,13 +31,6 @@ public class CelestialEventManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(Instance.gameObject);
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -56,11 +49,27 @@ public class CelestialEventManager : MonoBehaviour
     #region Event Logic & Trigger
     public void TriggerEvent(BigInteger year)
     {
-        if (year >= BigInteger.Parse("1000000000000000"))
-        {
-            Debug.Log("END");
-        }
-        var eventsToTrigger = eventData.Events.FindAll(e => BigInteger.Parse(e.Year) <= year && !allEvents.Contains(e));
+        // if (year >= BigInteger.Parse("1000000000000000"))
+        // {
+        //     Debug.Log("END");
+        //     CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
+        // }
+        // else if (year >= BigInteger.Parse("11000000000") && year <= BigInteger.Parse("18400946896"))
+        // {
+        //     Debug.Log("END");
+        //     CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
+        // }
+        // else if (year >= BigInteger.Parse("4600000000") && year <= BigInteger.Parse("7000000000"))
+        // {
+        //     Debug.Log("END");
+        //     CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
+        // }
+        // else if (year >= BigInteger.Parse("800000000") && year <= BigInteger.Parse("3600000000"))
+        // {
+        //     Debug.Log("END");
+        //     CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
+        // }
+        var eventsToTrigger = eventData.Events.FindAll(e => BigInteger.Parse(e.Year) + eventData.ConvertYearToBigInt(eventData.StartingYear) <= year && !allEvents.Contains(e));
 
         foreach (var eventToTrigger in eventsToTrigger)
         {
@@ -88,6 +97,9 @@ public class CelestialEventManager : MonoBehaviour
             case CelestialEventType.StarEvent:
                 break;
             case CelestialEventType.AsteroidEvent:
+                break;
+            case CelestialEventType.EndEpoch:
+                CanvasManager.Instance.EndMenu.gameObject.SetActive(true);
                 break;
         }
     }

@@ -17,7 +17,8 @@ public class LifeSpanController : MonoBehaviour
 
     private void Start()
     {
-        obj.age = 0;
+        obj.AgeBigInt = 0;
+        obj.CurrentData.Age = obj.AgeBigInt.ToString();
     }
     #endregion
 
@@ -31,11 +32,12 @@ public class LifeSpanController : MonoBehaviour
     private void ConvertToYears()
     {
         decimal years = ElapsedTime / 31536000;
-        obj.age = (BigInteger)Math.Floor(years);
+        obj.AgeBigInt = (BigInteger)Math.Floor(years);
+        obj.CurrentData.Age = obj.AgeBigInt.ToString();
     }
     #endregion
 
-    private void Update()
+    private void LateUpdate()
     {
         LifeSpan();
     }

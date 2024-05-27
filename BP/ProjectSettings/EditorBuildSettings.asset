@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 0e18ebe0667b71b42a60dfcd4abdeafb
   - enabled: 1
+    path: Assets/Scenes/SimulationEpochStart.unity
+    guid: 89622288f0500044a9668a6220742941
+  - enabled: 1
+    path: Assets/Scenes/SimulationEpoch2.unity
+    guid: 1a254e33bb78fd145bef9f1fe25779b6
+  - enabled: 1
     path: Assets/Scenes/Simulation.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/SimulationStart.unity
-    guid: b6174203032e1714a9a11183039e1d85
+    path: Assets/Scenes/SimulationEpochEnd.unity
+    guid: a7ba49f7443769e419581bb5442b2d2a
   m_configObjects: {}

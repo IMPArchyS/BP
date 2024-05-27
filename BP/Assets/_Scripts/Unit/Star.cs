@@ -12,22 +12,14 @@ public class Star : MonoBehaviour
     #region Star Attributes
 
     [Header("Star Information")]
-    public StarData starData;
-    [SerializeField] private CelestialObject celestialObject;
-    [SerializeField] private StarLuminosityType luminosityType;
-    [SerializeField] private StarSpectralType spectralType;
-
-    [Header("Star Properties")]
-    [SerializeField] private float temperature; // in Kelvin
-    [SerializeField] private float luminosity; // in solar luminosities
-    [SerializeField] private string fusionProcess;
-    [SerializeField] private float stellarWindIntensity; // in solar masses per year
-    [SerializeField] private StarDeathType endOfLifeStage; // e.g., white dwarf, neutron star, black hole
-
+    [SerializeField] private StarData starData;
+    public StarData CurrentData { get; set; }
     #endregion
 
     private void Awake()
     {
+        CurrentData = ScriptableObject.CreateInstance<StarData>();
+        CurrentData.CopyFrom(starData);
     }
 
     private void Start()

@@ -67,7 +67,7 @@ public class OverviewMovement : MonoBehaviour
 
     public void RaycastOnClick()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             Camera cam = GetComponent<Camera>();
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
