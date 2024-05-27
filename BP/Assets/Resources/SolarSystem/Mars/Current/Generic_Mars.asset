@@ -15,30 +15,31 @@ MonoBehaviour:
   objectName: Mars
   type: 0
   region: 1
-  mass: 3.30104e+23
-  radius: 2440
-  velocity: 47
-  age: 4500000000
+  mass: 6.39e+23
+  radius: 3389.5
+  velocity: 24.08
+  age: 4603000000
   hasAtmosphere: 1
-  atmospherePressure: 0
+  atmospherePressure: 0.006
   atmosphereComposition:
+  - {fileID: 11400000, guid: 8ef0f903efb57e648bb1d30e212f6b51, type: 2}
+  - {fileID: 11400000, guid: e2ceeb48f49e6d743932eb86f2fe45ec, type: 2}
   - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
-  - {fileID: 11400000, guid: a92f1f4a2635bfc49b2a613a7aab7915, type: 2}
-  - {fileID: 11400000, guid: 040683c42a12dc64d9e4d592ae30d2e0, type: 2}
-  - {fileID: 11400000, guid: 73d14cbb73554e343a332c50cb150573, type: 2}
   - {fileID: 11400000, guid: cb3260998a014624a92de1348677a2eb, type: 2}
-  orbitalRadius: 0.39
-  orbitalPeriod: 88
-  orbitalEccentricity: 0.2
-  inclination: 7
-  surface: "kr\xE1terov\xFD a skalnat\xFD"
+  orbitalRadius: 1.5
+  orbitalPeriod: "687 dn\xED"
+  orbitalEccentricity: 0.0934
+  inclination: 1.848
+  surface: "p\xFA\u0161tnat\xE1 zmrznut\xE1 p\xFAs\u0165"
   groundElements:
-  - {fileID: 11400000, guid: b6b7206fcf32f1446990330674795ccf, type: 2}
   - {fileID: 11400000, guid: 7e38b9213b64fb745bcc342af13d3f9c, type: 2}
-  - {fileID: 11400000, guid: 6d62754b472ef944f9fac2ff54ca2d9f, type: 2}
-  minTemperature: -180
-  averageTemperature: 167
-  maxTemperature: 430
-  gravity: 3.7
+  - {fileID: 11400000, guid: b6b7206fcf32f1446990330674795ccf, type: 2}
+  - {fileID: 11400000, guid: cb3260998a014624a92de1348677a2eb, type: 2}
+  - {fileID: 11400000, guid: 07a46da36909b2e4aa47910eb1e19ad8, type: 2}
+  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
+  - {fileID: 11400000, guid: ea56e4a6b30aca943a30a74617b246e3, type: 2}
+  minTemperature: -153
+  averageTemperature: -53
+  maxTemperature: 20
+  gravity: 3.71
   hasMagneticField: 1
-  magneticFieldStrength: 4.8

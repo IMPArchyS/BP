@@ -5,8 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(CelestialObject))]
 public class Moon : MonoBehaviour
 {
-    public MoonData moonData;
+    #region generic
+    [Header("Generic")]
+    [SerializeField] private MoonData moonData;
+    public MoonData CurrentData { get; set; }
+    #endregion
 
+    private void Awake()
+    {
+        CurrentData = ScriptableObject.CreateInstance<MoonData>();
+        CurrentData.CopyFrom(moonData);
+    }
     private void Start()
     {
 

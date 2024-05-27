@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Planet_Earth
   m_EditorClassIdentifier: 
   hasRings: 0
-  hasMoons: 0
-  moons: []
+  hasMoons: 1
+  moons:
+  - {fileID: 0}

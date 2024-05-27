@@ -15,30 +15,23 @@ MonoBehaviour:
   objectName: "Ur\xE1n"
   type: 0
   region: 2
-  mass: 3.30104e+23
-  radius: 2440
-  velocity: 47
-  age: 4500000000
+  mass: 8.681e+25
+  radius: 25362
+  velocity: 21.3
+  age: 4503000000
   hasAtmosphere: 1
-  atmospherePressure: 0
+  atmospherePressure: 0.1
   atmosphereComposition:
-  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
   - {fileID: 11400000, guid: a92f1f4a2635bfc49b2a613a7aab7915, type: 2}
   - {fileID: 11400000, guid: 040683c42a12dc64d9e4d592ae30d2e0, type: 2}
-  - {fileID: 11400000, guid: 73d14cbb73554e343a332c50cb150573, type: 2}
-  - {fileID: 11400000, guid: cb3260998a014624a92de1348677a2eb, type: 2}
-  orbitalRadius: 0.39
-  orbitalPeriod: 88
-  orbitalEccentricity: 0.2
-  inclination: 7
-  surface: "kr\xE1terov\xFD a skalnat\xFD"
-  groundElements:
-  - {fileID: 11400000, guid: b6b7206fcf32f1446990330674795ccf, type: 2}
-  - {fileID: 11400000, guid: 7e38b9213b64fb745bcc342af13d3f9c, type: 2}
-  - {fileID: 11400000, guid: 6d62754b472ef944f9fac2ff54ca2d9f, type: 2}
-  minTemperature: -180
-  averageTemperature: 167
-  maxTemperature: 430
-  gravity: 3.7
+  orbitalRadius: 19.22
+  orbitalPeriod: 84 rokov
+  orbitalEccentricity: 0.0015
+  inclination: 97.77
+  surface: "plynn\xFD \u013Eadov\xFD"
+  groundElements: []
+  minTemperature: -195
+  averageTemperature: -163
+  maxTemperature: 5
+  gravity: 8.87
   hasMagneticField: 1
-  magneticFieldStrength: 4.8

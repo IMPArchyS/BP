@@ -15,30 +15,23 @@ MonoBehaviour:
   objectName: Saturn
   type: 0
   region: 2
-  mass: 3.30104e+23
-  radius: 2440
-  velocity: 47
-  age: 4500000000
+  mass: 5.683e+26
+  radius: 58232
+  velocity: 9.68
+  age: 4503000000
   hasAtmosphere: 1
-  atmospherePressure: 0
+  atmospherePressure: 1.4
   atmosphereComposition:
-  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
-  - {fileID: 11400000, guid: a92f1f4a2635bfc49b2a613a7aab7915, type: 2}
   - {fileID: 11400000, guid: 040683c42a12dc64d9e4d592ae30d2e0, type: 2}
-  - {fileID: 11400000, guid: 73d14cbb73554e343a332c50cb150573, type: 2}
-  - {fileID: 11400000, guid: cb3260998a014624a92de1348677a2eb, type: 2}
-  orbitalRadius: 0.39
-  orbitalPeriod: 88
-  orbitalEccentricity: 0.2
-  inclination: 7
-  surface: "kr\xE1terov\xFD a skalnat\xFD"
-  groundElements:
-  - {fileID: 11400000, guid: b6b7206fcf32f1446990330674795ccf, type: 2}
-  - {fileID: 11400000, guid: 7e38b9213b64fb745bcc342af13d3f9c, type: 2}
-  - {fileID: 11400000, guid: 6d62754b472ef944f9fac2ff54ca2d9f, type: 2}
-  minTemperature: -180
-  averageTemperature: 167
-  maxTemperature: 430
-  gravity: 3.7
+  - {fileID: 11400000, guid: a92f1f4a2635bfc49b2a613a7aab7915, type: 2}
+  orbitalRadius: 9.5
+  orbitalPeriod: 29.4 rokov
+  orbitalEccentricity: 0.0541
+  inclination: 2.48
+  surface: "plynov\xE1 \u0161trukt\xFAra"
+  groundElements: []
+  minTemperature: -185
+  averageTemperature: -178
+  maxTemperature: -122
+  gravity: 10.44
   hasMagneticField: 1
-  magneticFieldStrength: 4.8

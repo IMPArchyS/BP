@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ef0f903efb57e648bb1d30e212f6b51, type: 2}
   - {fileID: 11400000, guid: e2ceeb48f49e6d743932eb86f2fe45ec, type: 2}
   orbitalRadius: 0.7
-  orbitalPeriod: 225
+  orbitalPeriod: "225 dn\xED"
   orbitalEccentricity: 0.007
   inclination: 3.395
   surface: "pekeln\xE9 pusto\u0161ina"
@@ -37,4 +37,3 @@ MonoBehaviour:
   maxTemperature: 482
   gravity: 8.87
   hasMagneticField: 1
-  magneticFieldStrength: 6.6e+16

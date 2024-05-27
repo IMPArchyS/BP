@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f600e1bbf899f314097c736e09938dbe, type: 3}
   m_Name: Planet_Mars
   m_EditorClassIdentifier: 
-  moons: []
   hasRings: 0
-  ringCharacteristics: []
+  hasMoons: 1
+  moons:
+  - {fileID: 0}
+  - {fileID: 0}

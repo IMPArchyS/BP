@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f600e1bbf899f314097c736e09938dbe, type: 3}
   m_Name: Planet_Neptune
   m_EditorClassIdentifier: 
-  moons: []
-  hasRings: 0
-  ringCharacteristics: []
+  hasRings: 1
+  hasMoons: 1
+  moons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

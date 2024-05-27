@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,8 +75,7 @@ public class CelestialObjectInfo : MonoBehaviour
         TextMeshProUGUI magnetBundled = celestialObjectInfoBox.transform.GetChild(10).GetComponent<TextMeshProUGUI>();
         string hasGravitySk = foundCelestial.CurrentData.HasMagneticField ? "má" : "nemá";
         magnetBundled.text = "pole: " + hasGravitySk + "\n"
-        + "konštanta: " + foundCelestial.CurrentData.Gravity + "\n"
-        + "sila: " + foundCelestial.CurrentData.MagneticFieldStrength;
+        + "konštanta: " + foundCelestial.CurrentData.Gravity + "\n";
 
         // specific data based on type
         TextMeshProUGUI specificBundled = celestialObjectInfoBox.transform.GetChild(12).GetComponent<TextMeshProUGUI>();
@@ -104,6 +104,12 @@ public class CelestialObjectInfo : MonoBehaviour
             specificHeader.text = "Planéta";
             string hasMoonsSk = planet.CurrentData.hasMoons ? "má" : "nemá";
             string hasRingsSk = planet.CurrentData.hasRings ? "má" : "nemá";
+            string planetMoonNames = "";
+            foreach (Moon m in planet.CurrentData.Moons)
+            {
+                planetMoonNames += m.GetComponent<GenericCOData>().ObjectName + ", ";
+            }
+
             specificBundled.text = "Mesiace: " + hasMoonsSk + "\n"
             + "Prstence: " + hasRingsSk + "\n";
         }

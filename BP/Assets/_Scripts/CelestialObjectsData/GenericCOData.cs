@@ -32,7 +32,7 @@ public class GenericCOData : ScriptableObject
     [Header("Orbital Information")]
 
     [SerializeField] private float orbitalRadius; // in kilometers
-    [SerializeField] private float orbitalPeriod; // in Earth days
+    [SerializeField] private string orbitalPeriod; // in Earth days
     [SerializeField] private float orbitalEccentricity;
     [SerializeField] private float inclination; // in degrees
 
@@ -54,7 +54,6 @@ public class GenericCOData : ScriptableObject
 
     [SerializeField] private float gravity; // in m/s^2
     [SerializeField] private bool hasMagneticField;
-    [SerializeField] private float magneticFieldStrength; // in gauss
 
     #endregion
 
@@ -82,7 +81,6 @@ public class GenericCOData : ScriptableObject
         maxTemperature = other.maxTemperature;
         gravity = other.gravity;
         hasMagneticField = other.hasMagneticField;
-        magneticFieldStrength = other.magneticFieldStrength;
     }
 
     public string ObjectName
@@ -150,7 +148,7 @@ public class GenericCOData : ScriptableObject
         set { orbitalRadius = value; }
     }
 
-    public float OrbitalPeriod
+    public string OrbitalPeriod
     {
         get { return orbitalPeriod; }
         set { orbitalPeriod = value; }
@@ -208,12 +206,6 @@ public class GenericCOData : ScriptableObject
     {
         get { return hasMagneticField; }
         set { hasMagneticField = value; }
-    }
-
-    public float MagneticFieldStrength
-    {
-        get { return magneticFieldStrength; }
-        set { magneticFieldStrength = value; }
     }
 
     #endregion
