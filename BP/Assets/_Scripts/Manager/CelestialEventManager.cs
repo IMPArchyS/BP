@@ -24,7 +24,7 @@ public class CelestialEventManager : MonoBehaviour
     #region UnityEvents
     [SerializeField] private UnityEvent<string> onElementCreation;
     [SerializeField] private UnityEvent onStarMajorEvent;
-    [field: SerializeField] public UnityEvent OnStarYearly { get; private set; }
+    [field: SerializeField] public UnityEvent<BigInteger> OnStarYearly { get; private set; }
     #endregion
 
     #region Startup

@@ -20,20 +20,23 @@ public class StarData : ScriptableObject
     [SerializeField] private StarDeathType endOfLifeStage; // e.g., white dwarf, neutron star, black hole
 
     [Header("Duration Properties")]
-    [SerializeField] private string planetaryNebulaDuration;
+    [SerializeField] private string protoStarDuration;
+    [SerializeField] private string tTauriDuration;
     [SerializeField] private string mainSequenceDuration;
     [SerializeField] private string redGiantDuration;
     [SerializeField] private string whiteDwarfDuration;
-    [SerializeField] private Vector3 mainSequenceScale = new();
-    [SerializeField] private Vector3 redGiantScale = new();
-    [SerializeField] private Vector3 planetaryNebulaScale = new();
-    [SerializeField] private Vector3 whiteDwarfScale = new();
+
+    [SerializeField] private float tTauriStarScale;
+    [SerializeField] private float mainSequenceScale;
+    [SerializeField] private float redGiantScale;
+    [SerializeField] private float whiteDwarfScale;
 
     #endregion
 
     #region getters setters
     public void CopyFrom(StarData other)
     {
+        // copy all properties from other to this
         luminosityType = other.luminosityType;
         spectralType = other.spectralType;
         luminosity = other.luminosity;
@@ -41,12 +44,29 @@ public class StarData : ScriptableObject
         stellarWindIntensity = other.stellarWindIntensity;
         lifetime = other.lifetime;
         endOfLifeStage = other.endOfLifeStage;
+
+        protoStarDuration = other.protoStarDuration;
+        tTauriDuration = other.tTauriDuration;
+        mainSequenceDuration = other.mainSequenceDuration;
+        redGiantDuration = other.redGiantDuration;
+
+        whiteDwarfDuration = other.whiteDwarfDuration;
+        tTauriStarScale = other.tTauriStarScale;
+        mainSequenceScale = other.mainSequenceScale;
+        redGiantScale = other.redGiantScale;
+        whiteDwarfScale = other.whiteDwarfScale;
     }
+
     // generate getters and setters for duration properites
-    public string PlanetaryNebulaDuration
+    public string TTauriDuration
     {
-        get { return planetaryNebulaDuration; }
-        set { planetaryNebulaDuration = value; }
+        get { return tTauriDuration; }
+        set { tTauriDuration = value; }
+    }
+    public string ProtoStarDuration
+    {
+        get { return protoStarDuration; }
+        set { protoStarDuration = value; }
     }
 
     public string MainSequenceDuration
@@ -67,25 +87,25 @@ public class StarData : ScriptableObject
         set { whiteDwarfDuration = value; }
     }
 
-    public Vector3 MainSequenceScale
+    public float MainSequenceScale
     {
         get { return mainSequenceScale; }
         set { mainSequenceScale = value; }
     }
 
-    public Vector3 RedGiantScale
+    public float TTauriStarScale
+    {
+        get { return tTauriStarScale; }
+        set { tTauriStarScale = value; }
+    }
+
+    public float RedGiantScale
     {
         get { return redGiantScale; }
         set { redGiantScale = value; }
     }
 
-    public Vector3 PlanetaryNebulaScale
-    {
-        get { return planetaryNebulaScale; }
-        set { planetaryNebulaScale = value; }
-    }
-
-    public Vector3 WhiteDwarfScale
+    public float WhiteDwarfScale
     {
         get { return whiteDwarfScale; }
         set { whiteDwarfScale = value; }

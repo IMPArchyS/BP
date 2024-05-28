@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c128b196b485544fbb64c60870bf8bf, type: 3}
   m_Name: SunStarData
   m_EditorClassIdentifier: 
-  luminosityType: 2
+  luminosityType: 3
   spectralType: 3
   luminosity: 3.828e+26
   fusionProcess: "proton-proton f\xFAzia"
   stellarWindIntensity: 600
   lifetime: 11730100000
   endOfLifeStage: 0
-  planetaryNebulaDuration: 
-  mainSequenceDuration: 
-  redGiantDuration: 
-  whiteDwarfDuration: 
-  mainSequenceScale: {x: 20, y: 20, z: 20}
-  redGiantScale: {x: 168, y: 168, z: 168}
-  planetaryNebulaScale: {x: 5, y: 5, z: 5}
-  whiteDwarfScale: {x: 3, y: 3, z: 3}
+  protoStarDuration: 100000
+  tTauriDuration: 50000000
+  mainSequenceDuration: 10515000000
+  redGiantDuration: 1908000000
+  whiteDwarfDuration: 900000000000000
+  tTauriStarScale: 3
+  mainSequenceScale: 20
+  redGiantScale: 200
+  whiteDwarfScale: 13

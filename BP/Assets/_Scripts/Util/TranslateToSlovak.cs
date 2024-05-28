@@ -136,9 +136,6 @@ public class TranslateToSlovak
         string skLuminosityType = "";
         switch (luminosityType)
         {
-            case StarLuminosityType.Nebula:
-                skLuminosityType = "Nebula";
-                break;
             case StarLuminosityType.ProtoStar:
                 skLuminosityType = "Proto hviezda";
                 break;
