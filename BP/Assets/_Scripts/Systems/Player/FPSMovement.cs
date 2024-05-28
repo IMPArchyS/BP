@@ -8,6 +8,7 @@ public class FPSMovement : MonoBehaviour
     public float PlayerSensitivity { get; set; }
     public float Acceleration { get; set; }
     public float CurrentSpeed { get; private set; }
+    private float xRotation = 0f;
     #endregion
 
     #region Mouse Logic
@@ -22,10 +23,17 @@ public class FPSMovement : MonoBehaviour
     #region Player logic
     public void HandlePlayerLook()
     {
-        Vector3 currentRotation = transform.rotation.eulerAngles;
-        currentRotation.z = 0f;
-        transform.rotation = Quaternion.Euler(currentRotation);
-        RotatePlayer();
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * PlayerSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * PlayerSensitivity;
+
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            transform.parent.Rotate(Vector3.up * mouseX);
+        }
     }
 
     public void MovePlayer()
@@ -36,20 +44,13 @@ public class FPSMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = CurrentSpeed * Time.deltaTime * new Vector3(horizontalInput, 0f, verticalInput);
-        transform.Translate(movement);
-    }
+        Vector3 forward = transform.forward;
+        Vector3 right = transform.right;
 
-    public void RotatePlayer()
-    {
-        if (Cursor.lockState == CursorLockMode.Locked)
-        {
-            float mouseX = Input.GetAxis("Mouse X") * PlayerSensitivity;
-            float mouseY = Input.GetAxis("Mouse Y") * PlayerSensitivity;
+        Vector3 direction = forward * verticalInput + right * horizontalInput;
 
-            transform.Rotate(Vector3.up, mouseX);
-            transform.Rotate(Vector3.left, mouseY);
-        }
+        Vector3 movement = CurrentSpeed * Time.deltaTime * direction;
+        transform.parent.Translate(movement, Space.World);
     }
     #endregion
 }
