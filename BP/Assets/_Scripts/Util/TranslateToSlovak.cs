@@ -58,6 +58,9 @@ public class TranslateToSlovak
             case "100mil yrs":
                 skUnit = "100mil rokov";
                 break;
+            case "10mil yrs":
+                skUnit = "10mil rokov";
+                break;
             case "1bil yrs":
                 skUnit = "1mld rokov";
                 break;

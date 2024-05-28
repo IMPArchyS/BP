@@ -13,20 +13,24 @@ MonoBehaviour:
   m_Name: Giant
   m_EditorClassIdentifier: 
   <Events>k__BackingField:
-  - <Year>k__BackingField: 999989300000000
+  - <Year>k__BackingField: 8800000000
     <EventType>k__BackingField: 8
     <Keyword>k__BackingField: Koniec Etapy
     <Description>k__BackingField: Koniec Etapy
-  - <Year>k__BackingField: 1330000000
+  - <Year>k__BackingField: 1270000000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: RedGiantGrowth
+    <Description>k__BackingField: "Minutie vod\xEDku v Slnku"
+  - <Year>k__BackingField: 1670000000
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: RedGiantMax
-    <Description>k__BackingField: "Minutie vod\xEDku v Slnku"
+    <Description>k__BackingField: "\u010Cerven\xFD obor"
   - <Year>k__BackingField: 1830000000
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: WhiteDwarf
     <Description>k__BackingField: "Biely trpasl\xEDk"
-  - <Year>k__BackingField: 1830000000
+  - <Year>k__BackingField: 1800000000
     <EventType>k__BackingField: 5
-    <Keyword>k__BackingField: RedGiantGrowth
-    <Description>k__BackingField: "Biely trpasl\xEDk"
+    <Keyword>k__BackingField: WhiteDwarfTrigger
+    <Description>k__BackingField: Kolaps jadra obra
   <StartingYear>k__BackingField: 10700000000

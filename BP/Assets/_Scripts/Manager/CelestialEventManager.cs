@@ -23,7 +23,7 @@ public class CelestialEventManager : MonoBehaviour
 
     #region UnityEvents
     [SerializeField] private UnityEvent<string> onElementCreation;
-    [SerializeField] private UnityEvent onStarMajorEvent;
+    [SerializeField] private UnityEvent<string> onStarMajorEvent;
     [field: SerializeField] public UnityEvent<BigInteger> OnStarYearly { get; private set; }
     #endregion
 
@@ -90,7 +90,7 @@ public class CelestialEventManager : MonoBehaviour
             case CelestialEventType.PlanetEvent:
                 break;
             case CelestialEventType.StarEvent:
-                onStarMajorEvent?.Invoke();
+                onStarMajorEvent?.Invoke(celestialEvent.Keyword);
                 break;
             case CelestialEventType.AsteroidEvent:
                 break;

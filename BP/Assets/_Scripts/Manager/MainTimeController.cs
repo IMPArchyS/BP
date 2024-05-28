@@ -24,8 +24,8 @@ public class MainTimeController : MonoBehaviour
     private long secondCount = 0;
     private long currentIndex = 0;
     private float updateCounter = 0f;
-    private readonly BigInteger[] timeScales = { 1, 60, 3600, 86400, 2628000, 31536000, 315360000, 3153600000, 31536000000, 315360000000, 3153600000000, 31536000000000, 3153600000000000, 31536000000000000, BigInteger.Parse("31536000000000000000"), BigInteger.Parse("3153600000000000000000") };
-    private readonly string[] timeUnits = { "sec", "min", "hr", "day", "month", "yr", "10 yrs", "100 yrs", "1000 yrs", "10k yrs", "100k yrs", "1mil yrs", "100mil yrs", "1bil yrs", "1mld yrs", "100mld yrs" };
+    private readonly BigInteger[] timeScales = { 1, 60, 3600, 86400, 2628000, 31536000, 315360000, 3153600000, 31536000000, 315360000000, 3153600000000, 31536000000000, 315360000000000, 3153600000000000, 31536000000000000 };
+    private readonly string[] timeUnits = { "sec", "min", "hr", "day", "month", "yr", "10 yrs", "100 yrs", "1000 yrs", "10k yrs", "100k yrs", "1mil yrs", "10mil yrs", "100mil yrs", "1bil yrs" };
     #endregion
 
     #region UI
