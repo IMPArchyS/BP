@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionSound: {fileID: 6421390693990038931}
-  musicSrc: {fileID: 7562455391008514005}
-  sfxSrc: {fileID: 7562455390708806276}
+  <MusicSrc>k__BackingField: {fileID: 7562455391008514005}
+  <SfxSrc>k__BackingField: {fileID: 7562455390708806276}
   sd: {fileID: 11400000, guid: ce55a6afae01d8041aa87aded67fbf12, type: 2}
 --- !u!1 &7562455391008513994
 GameObject:

@@ -5,14 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class OrbitalMovement : MonoBehaviour
 {
-    public Transform centerObject; // Object to orbit around
-    public Vector3 centerOffset = Vector3.zero; // Offset to the center object
-    public float orbitSpeed = 10f; // Speed of the orbit
-    public float xRadius = 5f; // Radius on the x-axis
-    public float yRadius = 3f; // Radius on the y-axis
-    public float zRadius = 4f; // Radius on the z-axis
-    public float tiltAngle = 30f; // Tilt angle for the orbit plane
-    public bool showOrbit = true; // Toggle for showing the orbit path
+    public Transform centerObject;
+    public Vector3 centerOffset = Vector3.zero;
+    public float orbitSpeed = 10f;
+    public float xRadius = 5f;
+    public float yRadius = 3f;
+    public float zRadius = 4f;
+    public float tiltAngle = 30f;
+    public bool showOrbit = true;
 
     private LineRenderer lineRenderer;
     private readonly int segments = 100;
@@ -30,41 +30,35 @@ public class OrbitalMovement : MonoBehaviour
         lineRenderer.startWidth = 0.15f;
         lineRenderer.endWidth = 0.15f;
         lineRenderer.material = new Material(Resources.Load<Material>("Shaders/Lines"));
+
+        // Initialize currentTime with a random value between 0 and 2π
+        currentTime = Random.value * 2 * Mathf.PI;
         UpdateOrbitPath();
     }
 
     private void Update()
     {
         int stellarTimeScale;
-        // Increment the angle based on time and speed
         if (MainTimeController.Instance.StellarTimeScale > MainTimeController.Instance.StellarYear)
             stellarTimeScale = MainTimeController.Instance.StellarYear;
         else
             stellarTimeScale = (int)MainTimeController.Instance.StellarTimeScale;
 
-        // Increment the current time based on the custom timescale
         currentTime += Time.deltaTime * stellarTimeScale;
 
-        // Calculate the normalized time within a single orbit period
         float orbitPeriod = 2 * Mathf.PI / orbitSpeed;
         currentTime %= orbitPeriod;
 
-        // Calculate the angle based on normalized time and orbit speed
         float angle = currentTime * orbitSpeed;
 
-        // Calculate the new position in an elliptical path
         float x = Mathf.Cos(angle) * xRadius;
         float y = Mathf.Sin(angle) * yRadius;
         float z = Mathf.Sin(angle) * zRadius;
 
-        // Apply tilt to the orbit
         offset = new(x, y, z);
         Quaternion tiltRotation = Quaternion.Euler(tiltAngle, 0, 0);
         offset = tiltRotation * offset;
 
-        // Set the position of the orbiting object
-
-        // Update the orbit path if toggled
         if (showOrbit)
         {
             UpdateOrbitPath();

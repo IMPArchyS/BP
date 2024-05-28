@@ -36,31 +36,29 @@ public class Star : MonoBehaviour
         CurrentStarDurationData.CopyFrom(starDurationData);
     }
 
-
-    private void Start()
-    {
-    }
-    private void Update()
-    {
-
-    }
     public void MajorEvent(string keyword)
     {
-        Debug.Log("Major Event");
-        Debug.Log(keyword);
-        if (keyword == "RedGiantGrowth")
-            redGiantGrowth = true;
-        if (keyword == "RedGiantGrowth")
-            redGiantGrowth2 = true;
-        if (keyword == "WhiteDwarf")
+        switch (keyword)
         {
-            CurrentData.SpectralType = StarSpectralType.White;
-            spectralType = StarSpectralType.White;
-            CurrentData.LuminosityType = StarLuminosityType.Dwarf;
-            luminosityType = StarLuminosityType.Dwarf;
+            case "RedGiantGrowth":
+                redGiantGrowth = true;
+                redGiantGrowth2 = true;
+                break;
+
+            case "WhiteDwarf":
+                CurrentData.SpectralType = StarSpectralType.White;
+                spectralType = StarSpectralType.White;
+                CurrentData.LuminosityType = StarLuminosityType.Dwarf;
+                luminosityType = StarLuminosityType.Dwarf;
+                break;
+
+            case "WhiteDwarfTrigger":
+                whiteDwarfTrigger = true;
+                break;
+
+            default:
+                break;
         }
-        if (keyword == "WhiteDwarfTrigger")
-            whiteDwarfTrigger = true;
     }
 
     public void YearlyEvent(BigInteger yearDifference)
@@ -87,7 +85,10 @@ public class Star : MonoBehaviour
                 if (CurrentData.SpectralType != StarSpectralType.Yellow) return;
                 if (CurrentStarDurationData.RedGiantDuration == "0") return;
 
-                if (CurrentData.SpectralType == StarSpectralType.White) Debug.Log("WHITE DWARF");
+                if (CurrentData.SpectralType == StarSpectralType.White)
+                {
+
+                }
 
                 if (MainTimeController.Instance.Epoch == 4 && redGiantGrowth)
                     CurrentStarDurationData.MainSequenceDuration = StarGrowth(CurrentStarDurationData.MainSequenceDuration, 75,
@@ -103,7 +104,6 @@ public class Star : MonoBehaviour
 
                 if (MainTimeController.Instance.Epoch == 4 && redGiantGrowth2 && whiteDwarfTrigger && CurrentStarDurationData.WhiteDwarfDuration != "0")
                 {
-                    Debug.Log("RED GIANT SHRIKING");
                     CurrentStarDurationData.WhiteDwarfDuration = StarShrink(CurrentStarDurationData.WhiteDwarfDuration, CurrentStarDurationData.WhiteDwarfScale,
                                                                         0.00008f * (float)yearDifference, StarLuminosityType.Dwarf, (ulong)yearDifference);
                 }
@@ -119,7 +119,6 @@ public class Star : MonoBehaviour
     private string StarShrink(string duration, float endScale, float scaleDecrement, StarLuminosityType nextLST, ulong timeDiff)
     {
         ulong remainingYears = ulong.Parse(duration);
-
         remainingYears = remainingYears > timeDiff ? remainingYears - timeDiff : 0;
         string yearsLeft = remainingYears.ToString();
 
@@ -135,9 +134,8 @@ public class Star : MonoBehaviour
         currentScale -= scaleDecrement;
         if (currentScale < endScale)
             currentScale = endScale;
-        transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
 
-        //Debug.Log("{STAR} -> [" + remainingYears + "] -> " + luminosityType + " -> SIZE GROW");
+        transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
         return yearsLeft;
     }
 
@@ -161,8 +159,6 @@ public class Star : MonoBehaviour
             currentScale = endScale;
 
         transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
-
-        //Debug.Log("{STAR} -> [" + remainingYears + "] -> " + luminosityType + " -> SIZE GROW");
         return yearsLeft;
     }
 }

@@ -139,7 +139,9 @@ public class PlayerController : MonoBehaviour
 
     public void JumpToObject()
     {
-        fpsCamera.transform.SetPositionAndRotation(overviewCamera.transform.position, overviewCamera.transform.rotation);
+        fpsCamera.transform.parent.position = overviewCamera.transform.position;
+        fpsCamera.transform.rotation = Quaternion.Euler(overviewCamera.transform.eulerAngles.x, fpsCamera.transform.eulerAngles.y, fpsCamera.transform.eulerAngles.z);
+        fpsCamera.transform.parent.rotation = Quaternion.Euler(fpsCamera.transform.parent.rotation.x, overviewCamera.transform.eulerAngles.y, fpsCamera.transform.parent.rotation.z);
         SetCamera();
         SetCursorBasedOnCam();
     }

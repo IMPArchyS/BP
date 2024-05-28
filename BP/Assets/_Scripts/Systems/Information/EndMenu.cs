@@ -18,7 +18,6 @@ public class EndMenu : MonoBehaviour
     }
     private void OnEnable()
     {
-        Debug.Log("========================================");
         PlayerController.Instance.InMenu = true;
         PlayerController.Instance.InSubMenuOpen = true;
         Cursor.visible = true;
@@ -27,8 +26,6 @@ public class EndMenu : MonoBehaviour
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (sceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
-            Debug.Log(sceneIndex);
-            Debug.Log(SceneManager.sceneCountInBuildSettings);
             nextEpochButton.onClick.AddListener(() => LoadSceneWithIndex(sceneIndex + 1));
         }
         else

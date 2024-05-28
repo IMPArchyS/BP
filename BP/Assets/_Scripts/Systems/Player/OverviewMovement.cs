@@ -52,7 +52,7 @@ public class OverviewMovement : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             CamController.OrbitalAngle += axisX * DragSpeed / 100;
-            CamController.ElevationAngle -= axisY * DragSpeed / 100;
+            CamController.ElevationAngle = Mathf.Clamp(CamController.ElevationAngle - axisY * DragSpeed / 100, -90f, 90f);
         }
     }
     #endregion

@@ -249,6 +249,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 581961335}
+  qualityDropdown: {fileID: 1188874358}
+  fullscreenToggle: {fileID: 272541664}
+  volumeSlider: {fileID: 1940416025}
+  musicSlider: {fileID: 1227919367}
 --- !u!1 &47381602
 GameObject:
   m_ObjectHideFlags: 0
@@ -5500,19 +5504,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1533296077}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: AdjustMusic
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1302257653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5648,6 +5640,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302257653}
   m_CullTransparentMesh: 1
+--- !u!82 &1308905366 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7562455391008514005, guid: 3fbc7c34200da894bad1b532a6af95c7, type: 3}
+  m_PrefabInstance: {fileID: 7562455390267623557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1339970095
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,6 +6098,11 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &1432081908 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7562455390708806276, guid: 3fbc7c34200da894bad1b532a6af95c7, type: 3}
+  m_PrefabInstance: {fileID: 7562455390267623557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434306343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,17 +6332,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511726758}
   m_CullTransparentMesh: 1
---- !u!114 &1533296077 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7562455390924305736, guid: 3fbc7c34200da894bad1b532a6af95c7, type: 3}
-  m_PrefabInstance: {fileID: 7562455390267623557}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb52ea13578bd145b2beb218790b53e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1543931672
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,19 +6988,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1533296077}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: AdjustSfx
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1964985698
 GameObject:
   m_ObjectHideFlags: 0
@@ -7913,6 +7892,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7562455390924305736, guid: 3fbc7c34200da894bad1b532a6af95c7, type: 3}
+      propertyPath: <SfxSrc>k__BackingField
+      value: 
+      objectReference: {fileID: 1432081908}
+    - target: {fileID: 7562455390924305736, guid: 3fbc7c34200da894bad1b532a6af95c7, type: 3}
+      propertyPath: <MusicSrc>k__BackingField
+      value: 
+      objectReference: {fileID: 1308905366}
     - target: {fileID: 7562455390924305737, guid: 3fbc7c34200da894bad1b532a6af95c7, type: 3}
       propertyPath: m_Name
       value: SoundManager

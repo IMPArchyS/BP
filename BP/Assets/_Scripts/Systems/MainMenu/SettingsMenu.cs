@@ -1,10 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] private TMP_Dropdown qualityDropdown;
+    [SerializeField] private Toggle fullscreenToggle;
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private Slider musicSlider;
+
     private Resolution[] resolutions;
 
     private void Start()
@@ -23,6 +29,20 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = resIndex;
         resolutionDropdown.RefreshShownValue();
+    }
+
+    private void OnEnable()
+    {
+        volumeSlider.value = SoundManager.Instance.SfxSrc.volume;
+        musicSlider.value = SoundManager.Instance.MusicSrc.volume;
+        qualityDropdown.value = QualitySettings.GetQualityLevel();
+        fullscreenToggle.isOn = Screen.fullScreen;
+
+        if (volumeSlider.onValueChanged.GetPersistentEventCount() == 0)
+            volumeSlider.onValueChanged.AddListener(SoundManager.Instance.AdjustSfx);
+
+        if (musicSlider.onValueChanged.GetPersistentEventCount() == 0)
+            musicSlider.onValueChanged.AddListener(SoundManager.Instance.AdjustMusic);
     }
 
     public void SetResolution(int resIndex)

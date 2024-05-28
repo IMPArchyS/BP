@@ -6,7 +6,8 @@ public class SoundManager : MonoBehaviour
     #region Atributes
     public static SoundManager Instance;
     [SerializeField] private AudioSource positionSound;
-    [SerializeField] private AudioSource musicSrc, sfxSrc;
+    [field: SerializeField] public AudioSource MusicSrc { get; private set; }
+    [field: SerializeField] public AudioSource SfxSrc { get; private set; }
     [SerializeField] private SoundData sd;
     #endregion
 
@@ -35,8 +36,8 @@ public class SoundManager : MonoBehaviour
 
         if (s != null)
         {
-            musicSrc.clip = s.Clip;
-            musicSrc.Play();
+            MusicSrc.clip = s.Clip;
+            MusicSrc.Play();
         }
     }
 
@@ -46,18 +47,20 @@ public class SoundManager : MonoBehaviour
 
         if (s != null)
         {
-            musicSrc.clip = s.Clip;
-            musicSrc.Stop();
+            MusicSrc.clip = s.Clip;
+            MusicSrc.Stop();
         }
     }
 
     public void AdjustMusic(float value)
     {
-        musicSrc.volume = value;
-        if (musicSrc.volume == 0)
-            musicSrc.mute = true;
+        MusicSrc.volume = value;
+        if (MusicSrc.volume == 0)
+            MusicSrc.mute = true;
         else
-            musicSrc.mute = false;
+            MusicSrc.mute = false;
+
+        Debug.Log("Music Volume: " + MusicSrc.volume);
     }
     #endregion
 
@@ -67,7 +70,7 @@ public class SoundManager : MonoBehaviour
         Sound s = sd.Sfx.Find(m => m.Name.Equals(name));
 
         if (s != null)
-            sfxSrc.PlayOneShot(s.Clip);
+            SfxSrc.PlayOneShot(s.Clip);
     }
     public void PlaySfx(string name, Vector3 pos)
     {
@@ -76,18 +79,18 @@ public class SoundManager : MonoBehaviour
         if (s != null)
         {
             positionSound.transform.position = pos;
-            positionSound.volume = sfxSrc.volume;
+            positionSound.volume = SfxSrc.volume;
             positionSound.PlayOneShot(s.Clip);
         }
     }
 
     public void AdjustSfx(float value)
     {
-        sfxSrc.volume = value;
-        if (musicSrc.volume == 0)
-            musicSrc.mute = true;
+        SfxSrc.volume = value;
+        if (MusicSrc.volume == 0)
+            MusicSrc.mute = true;
         else
-            musicSrc.mute = false;
+            MusicSrc.mute = false;
     }
     #endregion
 }
