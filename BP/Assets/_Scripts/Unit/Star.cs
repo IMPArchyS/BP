@@ -17,7 +17,9 @@ public class Star : MonoBehaviour
     [SerializeField] private StarLuminosityType luminosityType;
     [SerializeField] private StarSpectralType spectralType;
     [SerializeField] private StarData starData;
+    [SerializeField] private StarDurationSizes starDurationData;
     public StarData CurrentData { get; set; }
+    public StarDurationSizes CurrentStarDurationData { get; set; }
 
     #endregion
 
@@ -25,6 +27,9 @@ public class Star : MonoBehaviour
     {
         CurrentData = ScriptableObject.CreateInstance<StarData>();
         CurrentData.CopyFrom(starData);
+
+        CurrentStarDurationData = ScriptableObject.CreateInstance<StarDurationSizes>();
+        CurrentStarDurationData.CopyFrom(starDurationData);
     }
 
 
@@ -46,11 +51,13 @@ public class Star : MonoBehaviour
         switch (luminosityType)
         {
             case StarLuminosityType.ProtoStar:
-                CurrentData.ProtoStarDuration = StarGrowth(CurrentData.ProtoStarDuration, CurrentData.TTauriStarScale, 0.00003f * (float)yearDifference, StarLuminosityType.TTauri, (ulong)yearDifference);
-                Debug.Log(CurrentData.ProtoStarDuration);
+                CurrentStarDurationData.ProtoStarDuration = StarGrowth(CurrentStarDurationData.ProtoStarDuration, CurrentStarDurationData.TTauriStarScale,
+                                                                        0.00003f * (float)yearDifference, StarLuminosityType.TTauri, (ulong)yearDifference);
+                Debug.Log(CurrentStarDurationData.ProtoStarDuration);
                 break;
             case StarLuminosityType.TTauri:
-                CurrentData.TTauriDuration = StarGrowth(CurrentData.TTauriDuration, CurrentData.MainSequenceScale, 0.0000004f * (float)yearDifference, StarLuminosityType.Dwarf, (ulong)yearDifference);
+                CurrentStarDurationData.TTauriDuration = StarGrowth(CurrentStarDurationData.TTauriDuration, CurrentStarDurationData.MainSequenceScale,
+                                                                        0.0000004f * (float)yearDifference, StarLuminosityType.Dwarf, (ulong)yearDifference);
                 break;
             case StarLuminosityType.Dwarf:
                 break;
@@ -75,7 +82,7 @@ public class Star : MonoBehaviour
         if (remainingYears <= 0)
         {
             transform.localScale = new UnityEngine.Vector3(endScale, endScale, endScale);
-            luminosityType = nextLST;
+            CurrentData.LuminosityType = nextLST;
             Debug.Log("[" + remainingYears + "] -> " + luminosityType + " -> SIZE GROW");
             return yearsLeft;
         }

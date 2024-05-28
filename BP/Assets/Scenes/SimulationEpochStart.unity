@@ -37425,7 +37425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1488153157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40274,7 +40274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luminosityType: 0
   spectralType: 3
-  starData: {fileID: 11400000, guid: f9f0ae4dda96e3d48800bc81a5963907, type: 2}
+  starData: {fileID: 11400000, guid: 1830a2bdb72b8b9499eaea0db9767c18, type: 2}
+  starDurationData: {fileID: 11400000, guid: 016edfaffe5a9324c8746e02be82b597, type: 2}
 --- !u!114 &1601187131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40287,7 +40288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2aec512d9b3faf418ba3f42425e9f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  celestialObjectData: {fileID: 11400000, guid: a7f19c25cd1158c44a14a962648bc6e3, type: 2}
+  celestialObjectData: {fileID: 11400000, guid: a5d030d6fda00f346be8ac2663a83905, type: 2}
   sphereCollider: {fileID: 0}
   onPlayerEnter:
     m_PersistentCalls:
