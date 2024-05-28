@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Events>k__BackingField:
   - <Year>k__BackingField: 4600000000
-    <EventType>k__BackingField: 7
+    <EventType>k__BackingField: 8
     <Keyword>k__BackingField: Koniec Etapy
     <Description>k__BackingField: Koniec Etapy
   <StartingYear>k__BackingField: 0

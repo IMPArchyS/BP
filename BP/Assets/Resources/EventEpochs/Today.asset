@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Today
   m_EditorClassIdentifier: 
   <Events>k__BackingField:
-  - <Year>k__BackingField: 11000000000
-    <EventType>k__BackingField: 7
+  - <Year>k__BackingField: 6100000000
+    <EventType>k__BackingField: 8
     <Keyword>k__BackingField: Koniec Etapy
     <Description>k__BackingField: Koniec Etapy
-  <StartingYear>k__BackingField: 0
+  <StartingYear>k__BackingField: 4600000000

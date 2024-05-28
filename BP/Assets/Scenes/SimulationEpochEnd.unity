@@ -6816,6 +6816,38 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2172980086940029956, guid: 4ec86035b30cace4f915eb6be61d6798, type: 3}
   m_PrefabInstance: {fileID: 726880329}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &392776891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 392776892}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &392776892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392776891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 19.6, z: -102.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 963194228}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &393085433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22907,7 +22939,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 2000
+  far clip plane: 1000
   field of view: 65
   orthographic: 0
   orthographic size: 5
@@ -22934,12 +22966,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.21176471, y: 0.41244608, z: -0.099200286, w: -0.8804563}
-  m_LocalPosition: {x: 59.67, y: 27.961514, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 392776892}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 31.39, y: -132.88, z: 0}
 --- !u!114 &963194231
 MonoBehaviour:
@@ -40216,7 +40248,7 @@ Transform:
   m_GameObject: {fileID: 1601187125}
   m_LocalRotation: {x: -0, y: -0, z: 0.061048545, w: 0.99813485}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1872937732}
@@ -40239,7 +40271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c509960f1e17e240a8df59c338e8151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starData: {fileID: 11400000, guid: f9f0ae4dda96e3d48800bc81a5963907, type: 2}
+  luminosityType: 2
+  spectralType: 3
+  starData: {fileID: 11400000, guid: 7dbb292a47e78484080dd35690c28b16, type: 2}
+  starDurationData: {fileID: 11400000, guid: 016edfaffe5a9324c8746e02be82b597, type: 2}
 --- !u!114 &1601187131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50578,6 +50613,12 @@ MonoBehaviour:
   eventLogDisplay: {fileID: 1421677070}
   fullEventLog: {fileID: 1593672307}
   onElementCreation:
+    m_PersistentCalls:
+      m_Calls: []
+  onStarMajorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnStarYearly>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
 --- !u!224 &1948281928 stripped

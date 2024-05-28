@@ -21,6 +21,8 @@ public class Star : MonoBehaviour
     public StarData CurrentData { get; set; }
     public StarDurationSizes CurrentStarDurationData { get; set; }
 
+    private bool firstTrigger = false;
+    private bool redGiantGrowth = false;
     #endregion
 
     private void Awake()
@@ -43,25 +45,40 @@ public class Star : MonoBehaviour
     public void MajorEvent()
     {
         Debug.Log("Major Event");
+        //redGiantGrowth = true;
     }
 
     public void YearlyEvent(BigInteger yearDifference)
     {
-        // Scale / time duration
-        switch (luminosityType)
+        if (yearDifference == 0 || !firstTrigger)
+        {
+            firstTrigger = true;
+            return;
+        }
+        // Scale / time duration -> grow
+        // init scale / scale -> shrink
+        switch (CurrentData.LuminosityType)
         {
             case StarLuminosityType.ProtoStar:
-                CurrentStarDurationData.ProtoStarDuration = StarGrowth(CurrentStarDurationData.ProtoStarDuration, CurrentStarDurationData.TTauriStarScale,
-                                                                        0.00003f * (float)yearDifference, StarLuminosityType.TTauri, (ulong)yearDifference);
+                CurrentStarDurationData.ProtoStarDuration = StarShrink(CurrentStarDurationData.ProtoStarDuration, CurrentStarDurationData.TTauriStarScale,
+                                                                        0.0066f * (float)yearDifference, StarLuminosityType.TTauri, (ulong)yearDifference);
                 Debug.Log(CurrentStarDurationData.ProtoStarDuration);
                 break;
             case StarLuminosityType.TTauri:
-                CurrentStarDurationData.TTauriDuration = StarGrowth(CurrentStarDurationData.TTauriDuration, CurrentStarDurationData.MainSequenceScale,
-                                                                        0.0000004f * (float)yearDifference, StarLuminosityType.Dwarf, (ulong)yearDifference);
+                CurrentStarDurationData.TTauriDuration = StarShrink(CurrentStarDurationData.TTauriDuration, CurrentStarDurationData.MainSequenceScale,
+                                                                        0.00000044f * (float)yearDifference, StarLuminosityType.Dwarf, (ulong)yearDifference);
                 break;
             case StarLuminosityType.Dwarf:
+                if (CurrentData.SpectralType != StarSpectralType.Yellow) return;
+
+                if (MainTimeController.Instance.Epoch == 4 && redGiantGrowth)
+                    CurrentStarDurationData.MainSequenceDuration = StarGrowth(CurrentStarDurationData.MainSequenceDuration, CurrentStarDurationData.RedGiantScale,
+                                                                1.04e-9f * (float)yearDifference, StarLuminosityType.Giant, (ulong)yearDifference);
                 break;
             case StarLuminosityType.Giant:
+                CurrentData.SpectralType = StarSpectralType.Red;
+                CurrentStarDurationData.RedGiantDuration = StarShrink(CurrentStarDurationData.RedGiantDuration, CurrentStarDurationData.WhiteDwarfScale,
+                                                3.6e-9f * (float)yearDifference, StarLuminosityType.Dwarf, (ulong)yearDifference);
                 break;
             case StarLuminosityType.SuperGiant:
                 break;
@@ -71,8 +88,7 @@ public class Star : MonoBehaviour
                 break;
         }
     }
-
-    private string StarGrowth(string duration, float endScale, float scaleIncrement, StarLuminosityType nextLST, ulong timeDiff)
+    private string StarShrink(string duration, float endScale, float scaleDecrement, StarLuminosityType nextLST, ulong timeDiff)
     {
         ulong remainingYears = ulong.Parse(duration);
 
@@ -83,13 +99,40 @@ public class Star : MonoBehaviour
         {
             transform.localScale = new UnityEngine.Vector3(endScale, endScale, endScale);
             CurrentData.LuminosityType = nextLST;
+            luminosityType = nextLST;
+            Debug.Log("[" + remainingYears + "] -> " + luminosityType + " -> SIZE SHRINK");
+            return yearsLeft;
+        }
+        float currentScale = transform.localScale.x;
+        currentScale -= scaleDecrement;
+        if (currentScale < endScale)
+            currentScale = endScale;
+        transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
+
+        //Debug.Log("{STAR} -> [" + remainingYears + "] -> " + luminosityType + " -> SIZE GROW");
+        return yearsLeft;
+    }
+
+    private string StarGrowth(string duration, float endScale, float scaleIncrement, StarLuminosityType nextLST, ulong timeDiff)
+    {
+        ulong remainingYears = ulong.Parse(duration);
+        remainingYears = remainingYears > timeDiff ? remainingYears - timeDiff : 0;
+        string yearsLeft = remainingYears.ToString();
+
+        if (remainingYears <= 0)
+        {
+            transform.localScale = new UnityEngine.Vector3(endScale, endScale, endScale);
+            CurrentData.LuminosityType = nextLST;
+            luminosityType = nextLST;
             Debug.Log("[" + remainingYears + "] -> " + luminosityType + " -> SIZE GROW");
             return yearsLeft;
         }
         float currentScale = transform.localScale.x;
-        currentScale += scaleIncrement;
+        currentScale += scaleIncrement * timeDiff;
         if (currentScale > endScale)
             currentScale = endScale;
+
+        Debug.Log(remainingYears);
         transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
 
         //Debug.Log("{STAR} -> [" + remainingYears + "] -> " + luminosityType + " -> SIZE GROW");

@@ -12,6 +12,7 @@ public class MainTimeController : MonoBehaviour
     public int StellarYear { get; private set; } = 31536000;
     public BigInteger YearCount { get; private set; } = 0;
     public decimal ElapsedTime { get; private set; } = 0;
+    public ushort Epoch { get; private set; } = 0;
     [SerializeField] private bool timePaused = false;
     #endregion
 
@@ -69,15 +70,19 @@ public class MainTimeController : MonoBehaviour
         {
             case 2: // -3.8 bil yrs
                 ElapsedTime = (decimal)25257043377494153.032970218834;
+                Epoch = 2;
                 break;
             case 3: // 2024
                 ElapsedTime = (decimal)145344955972350710.55533790154;
+                Epoch = 3;
                 break;
             case 4: // +7 bil yrs
                 ElapsedTime = (decimal)359540261318455788.30508691731;
+                Epoch = 4;
                 break;
             default:
                 ElapsedTime = 0;
+                Epoch = 1;
                 break;
         }
     }

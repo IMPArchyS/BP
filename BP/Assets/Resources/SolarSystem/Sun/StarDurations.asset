@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   protoStarDuration: 100000
   tTauriDuration: 50000000
-  mainSequenceDuration: 10515000000
-  redGiantDuration: 1908000000
+  mainSequenceDuration: 626522551
+  redGiantDuration: 10000000
   whiteDwarfDuration: 900000000000000
-  tTauriStarScale: 3
+  tTauriStarScale: 22
   mainSequenceScale: 20
   redGiantScale: 200
-  whiteDwarfScale: 13
+  whiteDwarfScale: 7

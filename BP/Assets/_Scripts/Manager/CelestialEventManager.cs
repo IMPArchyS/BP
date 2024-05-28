@@ -45,7 +45,7 @@ public class CelestialEventManager : MonoBehaviour
         }
         Star star = FindObjectOfType<Star>();
         onStarMajorEvent.AddListener(star.MajorEvent);
-        OnStarYearly.AddListener(star.YearlyEvent);
+        OnStarYearly?.AddListener(star.YearlyEvent);
         UpdateEventDisplay();
         UpdateFullEventLog();
     }

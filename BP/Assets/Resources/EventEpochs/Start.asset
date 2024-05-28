@@ -21,7 +21,7 @@ MonoBehaviour:
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: ProtoStar
     <Description>k__BackingField: Proto hviezda
-  - <Year>k__BackingField: 100000
+  - <Year>k__BackingField: 5000000
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: TTauri Star
     <Description>k__BackingField: T Tauri hviezda
@@ -33,4 +33,44 @@ MonoBehaviour:
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: MainSequence
     <Description>k__BackingField: "Hlavn\xE1 postupnos\u0165"
+  - <Year>k__BackingField: 5000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: JupiterBorn
+    <Description>k__BackingField: Tvorba Jupiteru
+  - <Year>k__BackingField: 6000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: SaturnBorn
+    <Description>k__BackingField: Tvorba Saturnu
+  - <Year>k__BackingField: 15000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: UranusBorn
+    <Description>k__BackingField: "Tvorba Ur\xE1nu"
+  - <Year>k__BackingField: 15001000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: NeptuneBorn
+    <Description>k__BackingField: "Tvorba Nept\xFAnu"
+  - <Year>k__BackingField: 31000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: VenusBorn
+    <Description>k__BackingField: "Tvorba Venu\u0161e"
+  - <Year>k__BackingField: 31001000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: EarthBorn
+    <Description>k__BackingField: Tvorba Zeme
+  - <Year>k__BackingField: 32003000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: MarsBorn
+    <Description>k__BackingField: Tvorba Marsu
+  - <Year>k__BackingField: 32004000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: MercuryBorn
+    <Description>k__BackingField: "Tvorba Merk\xFAru"
+  - <Year>k__BackingField: 33004000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: TheiaBorn
+    <Description>k__BackingField: Tvorba Theia
+  - <Year>k__BackingField: 51000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: TheiaDestroyed
+    <Description>k__BackingField: Tvorba Mesiacu
   <StartingYear>k__BackingField: 0
