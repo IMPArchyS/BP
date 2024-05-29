@@ -8,6 +8,10 @@ TagManager:
   - Star
   - SecondaryCamera
   - Manager
+  - celestialHitbox
+  - planetHitbox
+  - starHitbox
+  - asteroidHitbox
   layers:
   - Default
   - TransparentFX

@@ -31,8 +31,6 @@ public class OrbitalMovement : MonoBehaviour
         lineRenderer.endWidth = 0.15f;
         lineRenderer.material = new Material(Resources.Load<Material>("Shaders/Lines"));
 
-        // Initialize currentTime with a random value between 0 and 2π
-        currentTime = Random.value * 2 * Mathf.PI;
         UpdateOrbitPath();
     }
 

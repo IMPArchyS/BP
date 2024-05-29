@@ -45,17 +45,27 @@ public class CelestialObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("MainCamera") && currentCelestial == null)
+        if (other.gameObject.CompareTag("Player") && currentCelestial == null)
         {
             Debug.Log("CS-OBJ: " + gameObject.name + " -> IN RANGE");
             onPlayerEnter?.Invoke(this);
             currentCelestial = this;
         }
+
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("starHitbox"))
+        {
+            Debug.Log("CS-OBJ: " + gameObject.name + " -> HIT BY STAR");
+            //onPlayerExit?.Invoke();
+            //currentCelestial = null;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("MainCamera") && currentCelestial == this)
+        if (other.gameObject.CompareTag("Player") && currentCelestial == this)
         {
             Debug.Log("CS-OBJ: " + gameObject.name + " -> OUT OF RANGE");
             onPlayerExit?.Invoke();

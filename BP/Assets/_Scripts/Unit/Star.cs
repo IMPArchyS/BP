@@ -20,13 +20,22 @@ public class Star : MonoBehaviour
     [SerializeField] private StarDurationSizes starDurationData;
     public StarData CurrentData { get; set; }
     public StarDurationSizes CurrentStarDurationData { get; set; }
+    #endregion
+    #region star utils
+    [Header("Star Utils")]
+    [SerializeField] private ParticleSystem insideProtoDisk;
+    [SerializeField] private ParticleSystem outsideProtoDisk;
+    [SerializeField] private ParticleSystem outerProtoDisk;
+    [SerializeField] private ParticleSystem nebulaEmmision;
+    [SerializeField] private List<Material> starStageMaterials;
 
+    #endregion
+    #region private stuff
     private bool firstTrigger = false;
     private bool redGiantGrowth = false;
     private bool redGiantGrowth2 = false;
     private bool whiteDwarfTrigger = false;
     #endregion
-
     private void Awake()
     {
         CurrentData = ScriptableObject.CreateInstance<StarData>();
@@ -34,6 +43,19 @@ public class Star : MonoBehaviour
 
         CurrentStarDurationData = ScriptableObject.CreateInstance<StarDurationSizes>();
         CurrentStarDurationData.CopyFrom(starDurationData);
+    }
+
+    private void LateUpdate()
+    {
+        SpinPlanetaryDisk();
+    }
+
+    public void SpinPlanetaryDisk()
+    {
+
+        insideProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 10 * Time.deltaTime, Space.World);
+        outsideProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 5 * Time.deltaTime, Space.World);
+        outsideProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 2 * Time.deltaTime, Space.World);
     }
 
     public void MajorEvent(string keyword)
@@ -56,9 +78,67 @@ public class Star : MonoBehaviour
                 whiteDwarfTrigger = true;
                 break;
 
+            case "EarlyMainSequence":
+                StartCoroutine(InnerProtoDiskExplode());
+                break;
+
+            case "MainPlanetsFormed":
+                StartCoroutine(ProtoDiskExplode());
+                break;
+
             default:
                 break;
         }
+    }
+
+    private IEnumerator ProtoDiskExplode()
+    {
+        int stellarTimeScale;
+        if (MainTimeController.Instance.StellarTimeScale > MainTimeController.Instance.StellarYear)
+            stellarTimeScale = MainTimeController.Instance.StellarYear;
+        else
+            stellarTimeScale = (int)MainTimeController.Instance.StellarTimeScale;
+
+        while (insideProtoDisk.transform.localScale.x > 0)
+        {
+            float currentScale = insideProtoDisk.transform.localScale.x;
+            currentScale -= 0.0001f * Time.deltaTime * stellarTimeScale;
+            if (currentScale < 0)
+                currentScale = 0;
+            insideProtoDisk.transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
+            yield return null;
+        }
+        insideProtoDisk.gameObject.SetActive(false);
+    }
+
+    private IEnumerator InnerProtoDiskExplode()
+    {
+        int stellarTimeScale;
+        if (MainTimeController.Instance.StellarTimeScale > MainTimeController.Instance.StellarYear)
+            stellarTimeScale = MainTimeController.Instance.StellarYear;
+        else
+            stellarTimeScale = (int)MainTimeController.Instance.StellarTimeScale;
+
+        while (outsideProtoDisk.transform.localScale.x > 0)
+        {
+            float currentScale = outsideProtoDisk.transform.localScale.x;
+            var main = insideProtoDisk.main;
+            currentScale -= 0.0001f * Time.deltaTime * stellarTimeScale;
+            if (currentScale < 0)
+                currentScale = 0;
+            outsideProtoDisk.transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
+
+            Color currentColor = main.startColor.Evaluate(0); // Use the Evaluate method to get the color value
+            float h, s, v;
+            Color.RGBToHSV(currentColor, out h, out s, out v);
+            v -= 0.0001f * Time.deltaTime * stellarTimeScale; // Adjust this value as needed
+            if (v < 0.7f) // 50% of the original brightness
+                v = 0.7f;
+            main.startColor = Color.HSVToRGB(h, s, v);
+
+            yield return null;
+        }
+        outsideProtoDisk.gameObject.SetActive(false);
     }
 
     public void YearlyEvent(BigInteger yearDifference)
@@ -75,7 +155,6 @@ public class Star : MonoBehaviour
             case StarLuminosityType.ProtoStar:
                 CurrentStarDurationData.ProtoStarDuration = StarShrink(CurrentStarDurationData.ProtoStarDuration, CurrentStarDurationData.TTauriStarScale,
                                                                         0.0066f * (float)yearDifference, StarLuminosityType.TTauri, (ulong)yearDifference);
-                Debug.Log(CurrentStarDurationData.ProtoStarDuration);
                 break;
             case StarLuminosityType.TTauri:
                 CurrentStarDurationData.TTauriDuration = StarShrink(CurrentStarDurationData.TTauriDuration, CurrentStarDurationData.MainSequenceScale,

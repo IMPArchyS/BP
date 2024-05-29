@@ -24,6 +24,7 @@ public class CelestialEventManager : MonoBehaviour
     #region UnityEvents
     [SerializeField] private UnityEvent<string> onElementCreation;
     [SerializeField] private UnityEvent<string> onStarMajorEvent;
+    [SerializeField] private UnityEvent<string> onPlanetCreation;
     [field: SerializeField] public UnityEvent<BigInteger> OnStarYearly { get; private set; }
     #endregion
 
@@ -46,6 +47,7 @@ public class CelestialEventManager : MonoBehaviour
         Star star = FindObjectOfType<Star>();
         onStarMajorEvent.AddListener(star.MajorEvent);
         OnStarYearly?.AddListener(star.YearlyEvent);
+        onPlanetCreation?.AddListener(SolarSystem.Instance.CreatePlanet);
         UpdateEventDisplay();
         UpdateFullEventLog();
     }
@@ -88,6 +90,7 @@ public class CelestialEventManager : MonoBehaviour
             case CelestialEventType.OuterSpaceEvent:
                 break;
             case CelestialEventType.PlanetEvent:
+                onPlanetCreation?.Invoke(celestialEvent.Keyword);
                 break;
             case CelestialEventType.StarEvent:
                 onStarMajorEvent?.Invoke(celestialEvent.Keyword);

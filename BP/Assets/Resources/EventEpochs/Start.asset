@@ -32,7 +32,7 @@ MonoBehaviour:
   - <Year>k__BackingField: 68100000
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: MainSequence
-    <Description>k__BackingField: "Hlavn\xE1 postupnos\u0165"
+    <Description>k__BackingField: "Vyvinut\xE9 Slnko"
   - <Year>k__BackingField: 5000000
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: JupiterBorn
@@ -65,7 +65,7 @@ MonoBehaviour:
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: MercuryBorn
     <Description>k__BackingField: "Tvorba Merk\xFAru"
-  - <Year>k__BackingField: 33004000
+  - <Year>k__BackingField: 31002000
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: TheiaBorn
     <Description>k__BackingField: Tvorba Theia
@@ -73,4 +73,12 @@ MonoBehaviour:
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: TheiaDestroyed
     <Description>k__BackingField: Tvorba Mesiacu
+  - <Year>k__BackingField: 30000000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: EarlyMainSequence
+    <Description>k__BackingField: "Za\u010Diatok f\xFAzie vod\xEDku"
+  - <Year>k__BackingField: 31003000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: MainPlanetsFormed
+    <Description>k__BackingField: "V\u0161etky plan\xE9ty sformovan\xE9"
   <StartingYear>k__BackingField: 0

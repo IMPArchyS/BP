@@ -59,8 +59,6 @@ public class SoundManager : MonoBehaviour
             MusicSrc.mute = true;
         else
             MusicSrc.mute = false;
-
-        Debug.Log("Music Volume: " + MusicSrc.volume);
     }
     #endregion
 
