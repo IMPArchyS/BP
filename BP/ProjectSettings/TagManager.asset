@@ -12,6 +12,7 @@ TagManager:
   - planetHitbox
   - starHitbox
   - asteroidHitbox
+  - Planet
   layers:
   - Default
   - TransparentFX

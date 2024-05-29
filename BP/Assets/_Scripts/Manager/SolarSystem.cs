@@ -25,9 +25,16 @@ public class SolarSystem : MonoBehaviour
             Instance = this;
         }
     }
-
+    public void ThrowPlanets()
+    {
+        foreach (Planet planet in planets)
+        {
+            planet.gameObject.SetActive(false);
+        }
+    }
     public void CreatePlanet(string keyword)
     {
+
         switch (keyword)
         {
             case "JupiterBorn":
@@ -74,10 +81,20 @@ public class SolarSystem : MonoBehaviour
                 planets[8].transform.GetComponent<MeshRenderer>().enabled = true;
                 planets[8].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
+            case "TheiaDestroyed":
+                planets[8].transform.GetComponent<OrbitalMovement>().orbitSpeed = planets[8].transform.GetComponent<OrbitalMovement>().orbitSpeed / 4;
+                break;
         }
         Debug.Log("Creating Planet");
     }
 
+    public void MoonFormation(Planet planet)
+    {
+        if (planet.gameObject.name != "Earth")
+        {
+            planet.gameObject.SetActive(false);
+        }
+    }
     public void HandleSolarSystemEvent(string keyword)
     {
         switch (keyword)
@@ -125,7 +142,6 @@ public class SolarSystem : MonoBehaviour
         foreach (Planet planet in planets)
         {
             CelestialObject csPlanet = planet.GetComponent<CelestialObject>();
-            Debug.Log(csPlanet.CurrentData.ObjectName.ToLower());
             switch (csPlanet.CurrentData.ObjectName.ToLower())
             {
                 case "jupiter":

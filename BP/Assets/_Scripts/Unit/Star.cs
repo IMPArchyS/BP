@@ -86,6 +86,9 @@ public class Star : MonoBehaviour
                 spectralType = StarSpectralType.White;
                 CurrentData.LuminosityType = StarLuminosityType.Dwarf;
                 luminosityType = StarLuminosityType.Dwarf;
+                transform.GetChild(0).gameObject.SetActive(false);
+                SolarSystem.Instance.ThrowPlanets();
+                transform.GetChild(1).gameObject.SetActive(false);
                 transform.GetChild(6).GetComponent<MeshRenderer>().material = starStageMaterials[2];
                 break;
 

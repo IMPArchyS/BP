@@ -12,4 +12,12 @@ public class PlanetCollision : MonoBehaviour
             transform.parent.gameObject.SetActive(false);
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("planetHitbox") && other.gameObject != gameObject)
+        {
+            SolarSystem.Instance.MoonFormation(other.transform.parent.gameObject.GetComponent<Planet>());
+        }
+    }
 }
