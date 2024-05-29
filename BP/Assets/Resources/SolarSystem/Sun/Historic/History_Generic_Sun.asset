@@ -18,7 +18,7 @@ MonoBehaviour:
   mass: 1.989e+30
   radius: 695500
   velocity: 220
-  age: 4600000000
+  age: 0
   hasAtmosphere: 1
   atmospherePressure: 1e+9
   atmosphereComposition:

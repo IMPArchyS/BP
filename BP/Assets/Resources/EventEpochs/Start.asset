@@ -77,8 +77,12 @@ MonoBehaviour:
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: EarlyMainSequence
     <Description>k__BackingField: "Za\u010Diatok f\xFAzie vod\xEDku"
-  - <Year>k__BackingField: 30000000
+  - <Year>k__BackingField: 31001000
     <EventType>k__BackingField: 5
-    <Keyword>k__BackingField: EarlyMainSequence
-    <Description>k__BackingField: "Za\u010Diatok f\xFAzie vod\xEDku"
+    <Keyword>k__BackingField: MainPlanetsFormed
+    <Description>k__BackingField: "V\u0161etky plan\xE9ty vytvoren\xE9"
+  - <Year>k__BackingField: 84000000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: OuterDiskFaids
+    <Description>k__BackingField: "Migr\xE1cia Nept\xFAnu"
   <StartingYear>k__BackingField: 0

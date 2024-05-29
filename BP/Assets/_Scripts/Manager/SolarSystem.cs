@@ -20,39 +20,48 @@ public class SolarSystem : MonoBehaviour
         switch (keyword)
         {
             case "JupiterBorn":
-                planets[4].gameObject.SetActive(true);
+                planets[4].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[4].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "SaturnBorn":
-                planets[5].gameObject.SetActive(true);
+                planets[5].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[5].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "UranusBorn":
-                planets[6].gameObject.SetActive(true);
+                planets[6].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[6].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "NeptuneBorn":
-                planets[7].gameObject.SetActive(true);
+                planets[7].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[7].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "EarthBorn":
-                planets[2].gameObject.SetActive(true);
+                planets[2].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[2].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "VenusBorn":
-                planets[1].gameObject.SetActive(true);
+                planets[1].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[1].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "MarsBorn":
-                planets[3].gameObject.SetActive(true);
+                planets[3].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[3].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "MercuryBorn":
-                planets[0].gameObject.SetActive(true);
+                planets[0].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[0].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "TheiaBorn":
-                planets[8].gameObject.SetActive(true);
+                planets[8].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[8].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
         }
         Debug.Log("Creating Planet");
