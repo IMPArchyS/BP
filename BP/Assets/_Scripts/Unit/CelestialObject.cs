@@ -51,8 +51,8 @@ public class CelestialObject : MonoBehaviour
             onPlayerEnter?.Invoke(this);
             currentCelestial = this;
         }
-
     }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("starHitbox"))

@@ -48,7 +48,7 @@ public class CelestialObjectInfo : MonoBehaviour
             composition += e.Symbol + ", ";
         }
         atmoBundled.text = "obsahuje: " + hasAtmoSk + "\n"
-        + "atmosférický tlak: " + foundCelestial.CurrentData.AtmospherePressure
+        + "atmosférický tlak: " + foundCelestial.CurrentData.AtmospherePressure + "\n"
         + "zloženie: " + composition;
 
         // orbit data

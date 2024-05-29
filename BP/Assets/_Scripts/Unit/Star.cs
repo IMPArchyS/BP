@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -28,6 +29,8 @@ public class Star : MonoBehaviour
     [SerializeField] private ParticleSystem outerProtoDisk;
     [SerializeField] private ParticleSystem nebulaEmmision;
     [SerializeField] private List<Material> starStageMaterials;
+    [SerializeField] private List<ParticleSystem> starStageFX;
+    [SerializeField] private List<ParticleSystem> starStageGlow;
 
     #endregion
     #region private stuff
@@ -50,12 +53,21 @@ public class Star : MonoBehaviour
         SpinPlanetaryDisk();
     }
 
+    private void Start()
+    {
+        // debug log child 0 to 10
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Debug.Log(transform.GetChild(i));
+        }
+    }
+
     public void SpinPlanetaryDisk()
     {
 
         insideProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 10 * Time.deltaTime, Space.World);
         outsideProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 5 * Time.deltaTime, Space.World);
-        outsideProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 2 * Time.deltaTime, Space.World);
+        outerProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 2 * Time.deltaTime, Space.World);
     }
 
     public void MajorEvent(string keyword)
@@ -72,18 +84,35 @@ public class Star : MonoBehaviour
                 spectralType = StarSpectralType.White;
                 CurrentData.LuminosityType = StarLuminosityType.Dwarf;
                 luminosityType = StarLuminosityType.Dwarf;
+                transform.GetChild(6).GetComponent<MeshRenderer>().material = starStageMaterials[2];
                 break;
 
             case "WhiteDwarfTrigger":
                 whiteDwarfTrigger = true;
                 break;
+            case "TTauri Star":
+                transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(3).gameObject.SetActive(true);
+                transform.GetChild(6).GetComponent<MeshRenderer>().material = starStageMaterials[1];
+                break;
 
             case "EarlyMainSequence":
                 StartCoroutine(InnerProtoDiskExplode());
+                transform.GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(4).gameObject.SetActive(true);
+                transform.GetChild(5).gameObject.SetActive(true);
+                transform.GetChild(6).GetComponent<MeshRenderer>().material = starStageMaterials[2];
                 break;
 
             case "MainPlanetsFormed":
-                StartCoroutine(ProtoDiskExplode());
+                StartCoroutine(ProtoDiskExplode(insideProtoDisk));
+                break;
+
+            case "OuterDiskFaids":
+                StartCoroutine(ProtoDiskExplode(outerProtoDisk));
                 break;
 
             default:
@@ -91,7 +120,7 @@ public class Star : MonoBehaviour
         }
     }
 
-    private IEnumerator ProtoDiskExplode()
+    private IEnumerator ProtoDiskExplode(ParticleSystem disk)
     {
         int stellarTimeScale;
         if (MainTimeController.Instance.StellarTimeScale > MainTimeController.Instance.StellarYear)
@@ -99,16 +128,16 @@ public class Star : MonoBehaviour
         else
             stellarTimeScale = (int)MainTimeController.Instance.StellarTimeScale;
 
-        while (insideProtoDisk.transform.localScale.x > 0)
+        while (disk.transform.localScale.x > 0)
         {
-            float currentScale = insideProtoDisk.transform.localScale.x;
+            float currentScale = disk.transform.localScale.x;
             currentScale -= 0.0001f * Time.deltaTime * stellarTimeScale;
             if (currentScale < 0)
                 currentScale = 0;
-            insideProtoDisk.transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
+            disk.transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
             yield return null;
         }
-        insideProtoDisk.gameObject.SetActive(false);
+        disk.gameObject.SetActive(false);
     }
 
     private IEnumerator InnerProtoDiskExplode()
