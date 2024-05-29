@@ -25,14 +25,6 @@ MonoBehaviour:
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: TTauri Star
     <Description>k__BackingField: T Tauri hviezda
-  - <Year>k__BackingField: 50100000
-    <EventType>k__BackingField: 5
-    <Keyword>k__BackingField: TTauri Star
-    <Description>k__BackingField: T Tauri hviezda
-  - <Year>k__BackingField: 68100000
-    <EventType>k__BackingField: 5
-    <Keyword>k__BackingField: MainSequence
-    <Description>k__BackingField: "Vyvinut\xE9 Slnko"
   - <Year>k__BackingField: 5000000
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: JupiterBorn
@@ -49,6 +41,14 @@ MonoBehaviour:
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: NeptuneBorn
     <Description>k__BackingField: "Tvorba Nept\xFAnu"
+  - <Year>k__BackingField: 30000000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: EarlyMainSequence
+    <Description>k__BackingField: "Za\u010Diatok f\xFAzie vod\xEDku"
+  - <Year>k__BackingField: 30000010
+    <EventType>k__BackingField: 4
+    <Keyword>k__BackingField: PlanetMigration1
+    <Description>k__BackingField: "Prv\xE1 migr\xE1cia obrov"
   - <Year>k__BackingField: 31000000
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: VenusBorn
@@ -57,6 +57,14 @@ MonoBehaviour:
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: EarthBorn
     <Description>k__BackingField: Tvorba Zeme
+  - <Year>k__BackingField: 31001000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: MainPlanetsFormed
+    <Description>k__BackingField: "V\u0161etky plan\xE9ty vytvoren\xE9"
+  - <Year>k__BackingField: 31002000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: TheiaBorn
+    <Description>k__BackingField: Tvorba Theia
   - <Year>k__BackingField: 32003000
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: MarsBorn
@@ -65,24 +73,44 @@ MonoBehaviour:
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: MercuryBorn
     <Description>k__BackingField: "Tvorba Merk\xFAru"
-  - <Year>k__BackingField: 31002000
-    <EventType>k__BackingField: 3
-    <Keyword>k__BackingField: TheiaBorn
-    <Description>k__BackingField: Tvorba Theia
+  - <Year>k__BackingField: 50100000
+    <EventType>k__BackingField: 5
+    <Keyword>k__BackingField: TTauri Star
+    <Description>k__BackingField: T Tauri hviezda
   - <Year>k__BackingField: 51000000
     <EventType>k__BackingField: 3
     <Keyword>k__BackingField: TheiaDestroyed
     <Description>k__BackingField: Tvorba Mesiacu
-  - <Year>k__BackingField: 30000000
+  - <Year>k__BackingField: 68100000
     <EventType>k__BackingField: 5
-    <Keyword>k__BackingField: EarlyMainSequence
-    <Description>k__BackingField: "Za\u010Diatok f\xFAzie vod\xEDku"
-  - <Year>k__BackingField: 31001000
-    <EventType>k__BackingField: 5
-    <Keyword>k__BackingField: MainPlanetsFormed
-    <Description>k__BackingField: "V\u0161etky plan\xE9ty vytvoren\xE9"
+    <Keyword>k__BackingField: MainSequence
+    <Description>k__BackingField: "Vyvinut\xE9 Slnko"
   - <Year>k__BackingField: 84000000
+    <EventType>k__BackingField: 4
+    <Keyword>k__BackingField: PlanetMigration2
+    <Description>k__BackingField: "Migr\xE1cia Nept\xFAnu"
+  - <Year>k__BackingField: 84000100
     <EventType>k__BackingField: 5
     <Keyword>k__BackingField: OuterDiskFaids
-    <Description>k__BackingField: "Migr\xE1cia Nept\xFAnu"
+    <Description>k__BackingField: "Tvorba Kuiperovho p\xE1sma"
+  - <Year>k__BackingField: 565000000
+    <EventType>k__BackingField: 4
+    <Keyword>k__BackingField: LateHeavyBombard
+    <Description>k__BackingField: "Neskor\xE9 bombardovanie"
+  - <Year>k__BackingField: 520000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: NochianPeriod
+    <Description>k__BackingField: "Nochi\xE1nska doba na Marse"
+  - <Year>k__BackingField: 480000000
+    <EventType>k__BackingField: 4
+    <Keyword>k__BackingField: GalaxyOrbit
+    <Description>k__BackingField: "Prv\xFD obeh okolo galaxie"
+  - <Year>k__BackingField: 460000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: MarsMagneticFieldWeak
+    <Description>k__BackingField: "Marsove magnetick\xE9 pole slabne"
+  - <Year>k__BackingField: 177000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: WaterOnEarch
+    <Description>k__BackingField: "Prv\xFD v\xFDskyt vody na Zemi"
   <StartingYear>k__BackingField: 0

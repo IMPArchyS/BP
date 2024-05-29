@@ -25,6 +25,7 @@ public class CelestialEventManager : MonoBehaviour
     [SerializeField] private UnityEvent<string> onElementCreation;
     [SerializeField] private UnityEvent<string> onStarMajorEvent;
     [SerializeField] private UnityEvent<string> onPlanetCreation;
+    [SerializeField] private UnityEvent<string> onSolarSystemEvent;
     [field: SerializeField] public UnityEvent<BigInteger> OnStarYearly { get; private set; }
     #endregion
 
@@ -47,7 +48,9 @@ public class CelestialEventManager : MonoBehaviour
         Star star = FindObjectOfType<Star>();
         onStarMajorEvent.AddListener(star.MajorEvent);
         OnStarYearly?.AddListener(star.YearlyEvent);
+        OnStarYearly?.AddListener(SolarSystem.Instance.YearlyEvent);
         onPlanetCreation?.AddListener(SolarSystem.Instance.CreatePlanet);
+        onSolarSystemEvent?.AddListener(SolarSystem.Instance.HandleSolarSystemEvent);
         UpdateEventDisplay();
         UpdateFullEventLog();
     }
@@ -57,6 +60,11 @@ public class CelestialEventManager : MonoBehaviour
     public void TriggerEvent(BigInteger year)
     {
         var eventsToTrigger = eventData.Events.FindAll(e => BigInteger.Parse(e.Year) + eventData.ConvertYearToBigInt(eventData.StartingYear) <= year && !allEvents.Contains(e));
+
+        if (eventsToTrigger.Count > 0)
+        {
+            //MainTimeController.Instance.ResetTimeScale();
+        }
 
         foreach (var eventToTrigger in eventsToTrigger)
         {
@@ -95,7 +103,8 @@ public class CelestialEventManager : MonoBehaviour
             case CelestialEventType.StarEvent:
                 onStarMajorEvent?.Invoke(celestialEvent.Keyword);
                 break;
-            case CelestialEventType.AsteroidEvent:
+            case CelestialEventType.SolarSystemEvent:
+                onSolarSystemEvent?.Invoke(celestialEvent.Keyword);
                 break;
             case CelestialEventType.EndEpoch:
                 CanvasManager.Instance.EndMenu.gameObject.SetActive(true);

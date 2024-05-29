@@ -19201,7 +19201,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000002088
-  xRadius: 1919.1
+  xRadius: 2419.1
   yRadius: 1919.1
   zRadius: 1919.1
   tiltAngle: 45.77
@@ -19759,7 +19759,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.000000015325
-  xRadius: 520.3
+  xRadius: 720.3
   yRadius: 520.3
   zRadius: 520.3
   tiltAngle: 46.31
@@ -21869,7 +21869,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000000238929
-  xRadius: 953.7
+  xRadius: 1353.7
   yRadius: 953.7
   zRadius: 953.7
   tiltAngle: 47.29
@@ -26902,7 +26902,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000001003
-  xRadius: 152.4
+  xRadius: 202.4
   yRadius: 152.4
   zRadius: 152.4
   tiltAngle: 46.85
@@ -27548,7 +27548,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.000000322
-  xRadius: 72.03
+  xRadius: 90.03
   yRadius: 72.03
   zRadius: 72.03
   tiltAngle: 48.39
@@ -33285,7 +33285,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000002007
-  xRadius: 100
+  xRadius: 130
   yRadius: 100
   zRadius: 100
   tiltAngle: 45
@@ -37654,7 +37654,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000032
-  xRadius: 39
+  xRadius: 49
   yRadius: 39
   zRadius: 39
   tiltAngle: 52
@@ -40457,6 +40457,13 @@ MonoBehaviour:
   spectralType: 3
   starData: {fileID: 11400000, guid: 7dbb292a47e78484080dd35690c28b16, type: 2}
   starDurationData: {fileID: 11400000, guid: 016edfaffe5a9324c8746e02be82b597, type: 2}
+  insideProtoDisk: {fileID: 0}
+  outsideProtoDisk: {fileID: 0}
+  outerProtoDisk: {fileID: 0}
+  nebulaEmmision: {fileID: 0}
+  starStageMaterials: []
+  starStageFX: []
+  starStageGlow: []
 --- !u!114 &1601187131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50915,6 +50922,12 @@ MonoBehaviour:
   onStarMajorEvent:
     m_PersistentCalls:
       m_Calls: []
+  onPlanetCreation:
+    m_PersistentCalls:
+      m_Calls: []
+  onSolarSystemEvent:
+    m_PersistentCalls:
+      m_Calls: []
   <OnStarYearly>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -51795,7 +51808,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000000121636
-  xRadius: 3006.8
+  xRadius: 3606.8
   yRadius: 3006.8
   zRadius: 3006.8
   tiltAngle: 46.77

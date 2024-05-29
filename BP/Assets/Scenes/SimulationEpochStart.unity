@@ -15109,11 +15109,11 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000002007
-  xRadius: -100
+  xRadius: -130
   yRadius: -100
   zRadius: -100
   tiltAngle: 45
-  showOrbit: 0
+  showOrbit: 1
 --- !u!114 &545945721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19303,13 +19303,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerObject: {fileID: 1601187129}
-  centerOffset: {x: 0, y: 0, z: 0}
+  centerOffset: {x: 50, y: 0, z: 50}
   orbitSpeed: 0.00000002088
-  xRadius: 1919.1
-  yRadius: 1919.1
-  zRadius: 1919.1
+  xRadius: 1319.1
+  yRadius: 1004.1
+  zRadius: 889.1
   tiltAngle: 45.77
-  showOrbit: 0
+  showOrbit: 1
 --- !u!120 &773168627
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -24681,13 +24681,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerObject: {fileID: 1601187129}
-  centerOffset: {x: 0, y: 0, z: 0}
+  centerOffset: {x: 20, y: 0, z: 20}
   orbitSpeed: 0.000000015325
   xRadius: 520.3
-  yRadius: 520.3
-  zRadius: 520.3
+  yRadius: 420.3
+  zRadius: 420.3
   tiltAngle: 46.31
-  showOrbit: 0
+  showOrbit: 1
 --- !u!120 &788489412
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -26749,13 +26749,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerObject: {fileID: 1601187129}
-  centerOffset: {x: 0, y: 0, z: 0}
+  centerOffset: {x: -25, y: 0, z: 50}
   orbitSpeed: 0.00000000238929
   xRadius: 953.7
-  yRadius: 953.7
-  zRadius: 953.7
+  yRadius: 723.7
+  zRadius: 723.7
   tiltAngle: 47.29
-  showOrbit: 0
+  showOrbit: 1
 --- !u!120 &916792442
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -31723,13 +31723,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerObject: {fileID: 1601187129}
-  centerOffset: {x: 0, y: 0, z: 0}
+  centerOffset: {x: 30, y: 0, z: 0}
   orbitSpeed: 0.0000001003
-  xRadius: 152.4
-  yRadius: 152.4
-  zRadius: 152.4
+  xRadius: 252.4
+  yRadius: 202.4
+  zRadius: 202.4
   tiltAngle: 46.85
-  showOrbit: 0
+  showOrbit: 1
 --- !u!120 &1163032551
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -32371,10 +32371,10 @@ MonoBehaviour:
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.000000322
   xRadius: 72.03
-  yRadius: 72.03
-  zRadius: 72.03
+  yRadius: 50.03
+  zRadius: 62.03
   tiltAngle: 48.39
-  showOrbit: 0
+  showOrbit: 1
 --- !u!120 &1193959495
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -33291,11 +33291,11 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000002007
-  xRadius: 100
+  xRadius: 130
   yRadius: 100
   zRadius: 100
   tiltAngle: 45
-  showOrbit: 0
+  showOrbit: 1
 --- !u!120 &1237319870
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -36669,7 +36669,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0.45
     radius:
-      value: 4200
+      value: 2000
       mode: 0
       spread: 0
       speed:
@@ -42418,13 +42418,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerObject: {fileID: 1601187129}
-  centerOffset: {x: 0, y: 0, z: 0}
+  centerOffset: {x: -5, y: 0, z: 5}
   orbitSpeed: 0.00000032
   xRadius: 39
-  yRadius: 39
+  yRadius: 29
   zRadius: 39
   tiltAngle: 52
-  showOrbit: 0
+  showOrbit: 1
 --- !u!120 &1488153160
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -55815,6 +55815,9 @@ MonoBehaviour:
   onPlanetCreation:
     m_PersistentCalls:
       m_Calls: []
+  onSolarSystemEvent:
+    m_PersistentCalls:
+      m_Calls: []
   <OnStarYearly>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -56693,13 +56696,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerObject: {fileID: 1601187129}
-  centerOffset: {x: 0, y: 0, z: 0}
+  centerOffset: {x: 0, y: 0, z: 50}
   orbitSpeed: 0.00000000121636
-  xRadius: 3006.8
-  yRadius: 3006.8
-  zRadius: 3006.8
+  xRadius: 1642
+  yRadius: 1319
+  zRadius: 1122.7
   tiltAngle: 46.77
-  showOrbit: 0
+  showOrbit: 1
 --- !u!120 &1984143552
 LineRenderer:
   m_ObjectHideFlags: 0

@@ -64,6 +64,8 @@ public class Star : MonoBehaviour
 
     public void SpinPlanetaryDisk()
     {
+        if (insideProtoDisk == null || outsideProtoDisk == null || outerProtoDisk == null)
+            return;
 
         insideProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 10 * Time.deltaTime, Space.World);
         outsideProtoDisk.transform.Rotate(UnityEngine.Vector3.up, 5 * Time.deltaTime, Space.World);
@@ -131,7 +133,7 @@ public class Star : MonoBehaviour
         while (disk.transform.localScale.x > 0)
         {
             float currentScale = disk.transform.localScale.x;
-            currentScale -= 0.0001f * Time.deltaTime * stellarTimeScale;
+            currentScale -= 0.05f * Time.deltaTime * stellarTimeScale;
             if (currentScale < 0)
                 currentScale = 0;
             disk.transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
@@ -152,7 +154,7 @@ public class Star : MonoBehaviour
         {
             float currentScale = outsideProtoDisk.transform.localScale.x;
             var main = insideProtoDisk.main;
-            currentScale -= 0.0001f * Time.deltaTime * stellarTimeScale;
+            currentScale -= 0.05f * Time.deltaTime * stellarTimeScale;
             if (currentScale < 0)
                 currentScale = 0;
             outsideProtoDisk.transform.localScale = new UnityEngine.Vector3(currentScale, currentScale, currentScale);
