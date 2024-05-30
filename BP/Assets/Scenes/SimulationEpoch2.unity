@@ -312,6 +312,7 @@ MonoBehaviour:
   fpsCameraOn: 1
   fpsCamera: {fileID: 963194227}
   overviewCamera: {fileID: 1348185158}
+  showOrbit: 0
   <InMenu>k__BackingField: 0
   <InSubMenuOpen>k__BackingField: 0
 --- !u!4 &4846109
@@ -18906,7 +18907,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000002088
-  xRadius: 1919.1
+  xRadius: 2419.1
   yRadius: 1919.1
   zRadius: 1919.1
   tiltAngle: 45.77
@@ -19463,7 +19464,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.000000015325
-  xRadius: 520.3
+  xRadius: 720.3
   yRadius: 520.3
   zRadius: 520.3
   tiltAngle: 46.31
@@ -21465,7 +21466,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000000238929
-  xRadius: 953.7
+  xRadius: 1353.7
   yRadius: 953.7
   zRadius: 953.7
   tiltAngle: 47.29
@@ -23921,6 +23922,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  moons: []
 --- !u!4 &1027360084
 Transform:
   m_ObjectHideFlags: 0
@@ -26525,7 +26527,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000001003
-  xRadius: 152.4
+  xRadius: 202.4
   yRadius: 152.4
   zRadius: 152.4
   tiltAngle: 46.85
@@ -27170,7 +27172,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.000000322
-  xRadius: 72.03
+  xRadius: 90.03
   yRadius: 72.03
   zRadius: 72.03
   tiltAngle: 48.39
@@ -32905,7 +32907,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000002007
-  xRadius: 100
+  xRadius: 130
   yRadius: 100
   zRadius: 100
   tiltAngle: 45
@@ -37212,7 +37214,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000032
-  xRadius: 39
+  xRadius: 49
   yRadius: 39
   zRadius: 39
   tiltAngle: 52
@@ -40016,6 +40018,7 @@ MonoBehaviour:
   insideProtoDisk: {fileID: 0}
   outsideProtoDisk: {fileID: 0}
   outerProtoDisk: {fileID: 0}
+  kuiperBelt: {fileID: 1682937149}
   nebulaEmmision: {fileID: 0}
   starStageMaterials: []
   starStageFX: []
@@ -41335,6 +41338,77 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2172980086940029956, guid: b36d5f7e215ca4244899822b0ecbd110, type: 3}
   m_PrefabInstance: {fileID: 1680246309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1682937147
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1852806563}
+    m_Modifications:
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825315, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_Name
+      value: KuiperBelt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934252769712825315, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+--- !u!4 &1682937148 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7934252769712825314, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+  m_PrefabInstance: {fileID: 1682937147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1682937149 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7934252769712825312, guid: b26b6369fd45b0b4a9efa1316187bee4, type: 3}
+  m_PrefabInstance: {fileID: 1682937147}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1684599022
 PrefabInstance:
@@ -44404,6 +44478,7 @@ Transform:
   - {fileID: 916792448}
   - {fileID: 773168633}
   - {fileID: 1984143558}
+  - {fileID: 1682937148}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50397,6 +50472,9 @@ MonoBehaviour:
   onPlanetCreation:
     m_PersistentCalls:
       m_Calls: []
+  onSolarSystemEvent:
+    m_PersistentCalls:
+      m_Calls: []
   <OnStarYearly>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -51277,7 +51355,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000000121636
-  xRadius: 3006.8
+  xRadius: 3606.8
   yRadius: 3006.8
   zRadius: 3006.8
   tiltAngle: 46.77

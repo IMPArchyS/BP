@@ -15,7 +15,7 @@ MonoBehaviour:
   protoStarDuration: 100000
   tTauriDuration: 50000000
   mainSequenceDuration: 200000000
-  redGiantDuration: 300000000
+  redGiantDuration: 280000000
   whiteDwarfDuration: 900000000000000
   tTauriStarScale: 22
   mainSequenceScale: 20

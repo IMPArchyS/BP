@@ -28,7 +28,7 @@ public class Star : MonoBehaviour
     [SerializeField] private ParticleSystem outsideProtoDisk;
     [SerializeField] private ParticleSystem outerProtoDisk;
     [SerializeField] private ParticleSystem kuiperBelt;
-    [SerializeField] private ParticleSystem nebulaEmmision;
+    [SerializeField] private List<ParticleSystem> nebulaEmmisions;
     [SerializeField] private List<Material> starStageMaterials;
     [SerializeField] private List<ParticleSystem> starStageFX;
     [SerializeField] private List<ParticleSystem> starStageGlow;
@@ -80,6 +80,11 @@ public class Star : MonoBehaviour
             case "RedGiantGrowth":
                 redGiantGrowth = true;
                 redGiantGrowth2 = true;
+                transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(3).gameObject.SetActive(true);
+                transform.GetChild(6).GetComponent<MeshRenderer>().material = starStageMaterials[1];
                 break;
 
             case "WhiteDwarf":
@@ -87,9 +92,18 @@ public class Star : MonoBehaviour
                 spectralType = StarSpectralType.White;
                 CurrentData.LuminosityType = StarLuminosityType.Dwarf;
                 luminosityType = StarLuminosityType.Dwarf;
+                foreach (ParticleSystem nebula in nebulaEmmisions)
+                {
+                    nebula.gameObject.SetActive(true);
+                    nebula.Play();
+                }
+
                 transform.GetChild(0).gameObject.SetActive(false);
                 SolarSystem.Instance.ThrowPlanets();
+                kuiperBelt.gameObject.SetActive(false);
                 transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(3).gameObject.SetActive(false);
                 transform.GetChild(6).GetComponent<MeshRenderer>().material = starStageMaterials[2];
                 break;
 
@@ -221,7 +235,7 @@ public class Star : MonoBehaviour
                 if (MainTimeController.Instance.Epoch == 4 && redGiantGrowth2 && whiteDwarfTrigger && CurrentStarDurationData.WhiteDwarfDuration != "0")
                 {
                     CurrentStarDurationData.WhiteDwarfDuration = StarShrink(CurrentStarDurationData.WhiteDwarfDuration, CurrentStarDurationData.WhiteDwarfScale,
-                                                                        0.00008f * (float)yearDifference, StarLuminosityType.Dwarf, (ulong)yearDifference);
+                                                                        0.000008f * (float)yearDifference, StarLuminosityType.Dwarf, (ulong)yearDifference);
                 }
                 break;
             case StarLuminosityType.SuperGiant:

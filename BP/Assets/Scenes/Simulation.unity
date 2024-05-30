@@ -18939,7 +18939,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000002088
-  xRadius: 1919.1
+  xRadius: 2419.1
   yRadius: 1919.1
   zRadius: 1919.1
   tiltAngle: 45.77
@@ -19496,7 +19496,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.000000015325
-  xRadius: 520.3
+  xRadius: 720.3
   yRadius: 520.3
   zRadius: 520.3
   tiltAngle: 46.31
@@ -21660,7 +21660,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000000238929
-  xRadius: 953.7
+  xRadius: 1353.7
   yRadius: 953.7
   zRadius: 953.7
   tiltAngle: 47.29
@@ -26503,7 +26503,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000001003
-  xRadius: 152.4
+  xRadius: 202.4
   yRadius: 152.4
   zRadius: 152.4
   tiltAngle: 46.85
@@ -27148,7 +27148,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.000000322
-  xRadius: 72.03
+  xRadius: 90.03
   yRadius: 72.03
   zRadius: 72.03
   tiltAngle: 48.39
@@ -32745,10 +32745,10 @@ GameObject:
   - component: {fileID: 1237319863}
   - component: {fileID: 1237319868}
   - component: {fileID: 1237319867}
-  - component: {fileID: 1237319866}
-  - component: {fileID: 1237319869}
   - component: {fileID: 1237319870}
   - component: {fileID: 1237319871}
+  - component: {fileID: 1237319869}
+  - component: {fileID: 1237319866}
   - component: {fileID: 1237319872}
   m_Layer: 0
   m_Name: Earth
@@ -32834,7 +32834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2aec512d9b3faf418ba3f42425e9f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  celestialObjectData: {fileID: 11400000, guid: 3aa372d7b8a44044aa3e01b4045bff8c, type: 2}
+  celestialObjectData: {fileID: 11400000, guid: 7e4a763ab9e7fa845b173fd48e546c04, type: 2}
   sphereCollider: {fileID: 0}
   onPlayerEnter:
     m_PersistentCalls:
@@ -32883,7 +32883,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000002007
-  xRadius: 100
+  xRadius: 130
   yRadius: 100
   zRadius: 100
   tiltAngle: 45
@@ -33016,7 +33016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b0308f0132e734190b21e3a8c36377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetData: {fileID: 11400000, guid: 5b7a5ccdd868cdf4bad071e64a9ee5f1, type: 2}
+  planetData: {fileID: 11400000, guid: 313ecabd4d4ff5948a22dda4759ce313, type: 2}
 --- !u!1 &1242512368
 GameObject:
   m_ObjectHideFlags: 0
@@ -37531,7 +37531,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000032
-  xRadius: 39
+  xRadius: 49
   yRadius: 39
   zRadius: 39
   tiltAngle: 52
@@ -51601,7 +51601,7 @@ MonoBehaviour:
   centerObject: {fileID: 1601187129}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.00000000121636
-  xRadius: 3006.8
+  xRadius: 3606.8
   yRadius: 3006.8
   zRadius: 3006.8
   tiltAngle: 46.77

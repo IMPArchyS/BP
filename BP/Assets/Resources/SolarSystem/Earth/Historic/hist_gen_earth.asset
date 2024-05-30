@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9ecbbe82b443d4da0eb7e00e6541e1, type: 3}
+  m_Name: hist_gen_earth
+  m_EditorClassIdentifier: 
+  objectName: Zem
+  type: 0
+  region: 1
+  mass: 5.97219e+24
+  radius: 6371
+  velocity: 29.78
+  age: 0
+  hasAtmosphere: 1
+  atmospherePressure: 0
+  atmosphereComposition:
+  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
+  - {fileID: 11400000, guid: e2ceeb48f49e6d743932eb86f2fe45ec, type: 2}
+  - {fileID: 11400000, guid: b7fac70cc861fbb47a61eab0ae88094a, type: 2}
+  orbitalRadius: 1
+  orbitalPeriod: "365 dn\xED"
+  orbitalEccentricity: 0.0034
+  inclination: 7.155
+  surface: "mnohobunkov\xE1 fl\xF3ra a fauna"
+  groundElements:
+  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
+  - {fileID: 11400000, guid: a92f1f4a2635bfc49b2a613a7aab7915, type: 2}
+  - {fileID: 11400000, guid: 8ef0f903efb57e648bb1d30e212f6b51, type: 2}
+  - {fileID: 11400000, guid: 07a46da36909b2e4aa47910eb1e19ad8, type: 2}
+  - {fileID: 11400000, guid: 73d14cbb73554e343a332c50cb150573, type: 2}
+  - {fileID: 11400000, guid: 7e38b9213b64fb745bcc342af13d3f9c, type: 2}
+  - {fileID: 11400000, guid: b6b7206fcf32f1446990330674795ccf, type: 2}
+  - {fileID: 11400000, guid: cb3260998a014624a92de1348677a2eb, type: 2}
+  minTemperature: -89.2
+  averageTemperature: 15
+  maxTemperature: 56.7
+  gravity: 9.807
+  hasMagneticField: 1

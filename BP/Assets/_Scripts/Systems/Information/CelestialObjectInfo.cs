@@ -102,8 +102,8 @@ public class CelestialObjectInfo : MonoBehaviour
         else if (planet != null)
         {
             specificHeader.text = "Planéta";
-            string hasMoonsSk = planet.CurrentData.hasMoons ? "má" : "nemá";
-            string hasRingsSk = planet.CurrentData.hasRings ? "má" : "nemá";
+            string hasMoonsSk = planet.CurrentData.HasMoons ? "má" : "nemá";
+            string hasRingsSk = planet.CurrentData.HasRings ? "má" : "nemá";
             string planetMoonNames = "";
             foreach (Moon m in planet.CurrentData.Moons)
             {
