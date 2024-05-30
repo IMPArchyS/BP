@@ -23911,17 +23911,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0937e4d3e9d11524c87d00106f8228c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star: {fileID: 0}
+  star: {fileID: 1601187130}
   planets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1488153157}
+  - {fileID: 1193959492}
+  - {fileID: 1237319872}
+  - {fileID: 1163032548}
+  - {fileID: 788489409}
+  - {fileID: 916792439}
+  - {fileID: 773168624}
+  - {fileID: 1984143549}
   moons: []
 --- !u!4 &1027360084
 Transform:
@@ -40019,7 +40018,7 @@ MonoBehaviour:
   outsideProtoDisk: {fileID: 0}
   outerProtoDisk: {fileID: 0}
   kuiperBelt: {fileID: 1682937149}
-  nebulaEmmision: {fileID: 0}
+  nebulaEmmisions: []
   starStageMaterials: []
   starStageFX: []
   starStageGlow: []

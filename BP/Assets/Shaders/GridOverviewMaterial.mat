@@ -106,7 +106,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GridSpacing: 100
+    - _GridSpacing: 129.8
     - _LineThickness: 0.2
     - _Metallic: 0
     - _ODistance: 2
