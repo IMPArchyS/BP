@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EarthDayNight
+  m_Shader: {fileID: 4800000, guid: f324d2be046cde44b894c7271eee622d, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DispTex:
+        m_Texture: {fileID: 2800000, guid: be7429a19c654fc43961e7804b3d1568, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 518b319960868e04b989a79a7ff82654, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NightTex:
+        m_Texture: {fileID: 2800000, guid: 568e5c78011b0964db6858389e277c04, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 623a56a58c7ee0a428fbc7cfc77280f4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampTex:
+        m_Texture: {fileID: 2800000, guid: 0905d04dee41a204daeddf83582ea475, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ClipRange: 0.8
+    - _Displacement: 0.42652124
+    - _MaxAngle: 69.230774
+    - _MinAngle: 59.23077
+    - _Offset: 0
+    - _RimPower: 3
+    - _Shininess: 0.09893245
+    m_Colors:
+    - _ChannelFactor: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Range: {r: 0, g: 0.5, b: 0, a: 1}
+    - _RimColor: {r: 0.5058824, g: 0.55202365, b: 0.6, a: 0}
+    - _SpecColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    - _SunDir: {r: 1, g: 0, b: 0, a: 1}

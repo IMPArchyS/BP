@@ -27,6 +27,7 @@ public class Star : MonoBehaviour
     [SerializeField] private ParticleSystem insideProtoDisk;
     [SerializeField] private ParticleSystem outsideProtoDisk;
     [SerializeField] private ParticleSystem outerProtoDisk;
+    [SerializeField] private ParticleSystem kuiperBelt;
     [SerializeField] private ParticleSystem nebulaEmmision;
     [SerializeField] private List<Material> starStageMaterials;
     [SerializeField] private List<ParticleSystem> starStageFX;
@@ -118,6 +119,8 @@ public class Star : MonoBehaviour
 
             case "OuterDiskFaids":
                 StartCoroutine(ProtoDiskExplode(outerProtoDisk));
+                kuiperBelt.gameObject.SetActive(true);
+                kuiperBelt.transform.Rotate(UnityEngine.Vector3.up, 0.5f * Time.deltaTime, Space.World);
                 break;
 
             default:

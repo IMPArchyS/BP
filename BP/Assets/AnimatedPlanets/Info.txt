@@ -1,0 +1,13 @@
+------------Animated Planets------------
+
+There are 35 planet-prefabs and 3 sun-prefabs in the prefab-folder. 
+You're free to use them as you see fit and even mix and match their material properties to create new planets.
+
+Most prefabs are animated, you can set the animation's speed and offset using the Loopduration and Loopoffset properties in the "AnimatingMatBehaviour"-script attached to these prefab.
+Loopduration: the time in seconds it takes for the entire animation to play through.
+Loopoffset: The starting point in the animation. (0: start at beginning, 0.5: start halfway, 1: start at the end (which is the same as starting at the beginning as it loops)
+
+Planets that have city-lights have the "DayNightMaterialBehaviour"-script, which makes the lights only be visible on the night-side of the planet. 
+You need to assign the main light in the scene as the sun property to have it work correctly.
+
+There is also a Space Skybox for you to use

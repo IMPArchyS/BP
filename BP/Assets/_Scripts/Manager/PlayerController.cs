@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera fpsCamera;
 
     [SerializeField] private Camera overviewCamera;
-
+    [SerializeField] private bool showOrbit = false;
     [field: SerializeField] public bool InMenu { get; set; } = false;
     [field: SerializeField] public bool InSubMenuOpen { get; set; } = false;
     #endregion
@@ -93,6 +93,11 @@ public class PlayerController : MonoBehaviour
         // switch bool based on UX & init camera
         if (fpsCameraOn) fpsCameraOn = false;
         SetCamera();
+        foreach (Planet p in SolarSystem.Instance.Planets)
+        {
+            if (!p.gameObject.GetComponent<MeshRenderer>().enabled)
+                p.GetComponent<OrbitalMovement>().showOrbit = false;
+        }
     }
     #endregion
 
@@ -186,11 +191,22 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    private bool ToggleOrbits(bool toggle)
+    {
+        toggle = !toggle;
+        foreach (Planet p in SolarSystem.Instance.Planets)
+        {
+            if (p.gameObject.GetComponent<MeshRenderer>().enabled)
+                p.GetComponent<OrbitalMovement>().showOrbit = toggle;
+        }
+        return toggle;
+    }
 
     private void LateUpdate()
     {
         if (InMenu) return;
         if (Input.GetKeyDown(KeyCode.P)) SetCamera();
+        if (Input.GetKeyDown(KeyCode.O)) showOrbit = ToggleOrbits(showOrbit);
         if (fpsCamera) { }
         else
         {

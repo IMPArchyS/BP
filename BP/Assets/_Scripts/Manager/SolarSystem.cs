@@ -11,7 +11,9 @@ public class SolarSystem : MonoBehaviour
     public static SolarSystem Instance;
     [SerializeField] private Star star;
     [SerializeField] private List<Planet> planets = new();
-
+    [SerializeField] private List<Moon> moons = new();
+    public List<Planet> Planets { get { return planets; } }
+    public List<Moon> Moons { get { return moons; } }
     private bool planetMig1 = false;
     private bool planetMig2 = false;
     private string planetMig1Dur = "2000000";
@@ -39,50 +41,62 @@ public class SolarSystem : MonoBehaviour
         {
             case "JupiterBorn":
                 planets[4].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[4].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[4].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "SaturnBorn":
                 planets[5].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[5].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[5].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "UranusBorn":
                 planets[6].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[6].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[6].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "NeptuneBorn":
                 planets[7].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[7].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[7].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "EarthBorn":
                 planets[2].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[2].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[2].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "VenusBorn":
                 planets[1].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[1].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[1].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "MarsBorn":
                 planets[3].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[3].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[3].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "MercuryBorn":
                 planets[0].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[0].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[0].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
 
             case "TheiaBorn":
                 planets[8].transform.GetComponent<MeshRenderer>().enabled = true;
+                planets[8].transform.GetComponent<SphereCollider>().enabled = true;
                 planets[8].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
             case "TheiaDestroyed":
                 planets[8].transform.GetComponent<OrbitalMovement>().orbitSpeed = planets[8].transform.GetComponent<OrbitalMovement>().orbitSpeed / 4;
+                moons[0].transform.GetComponent<MeshRenderer>().enabled = true;
+                moons[0].transform.GetComponent<SphereCollider>().enabled = true;
+                moons[0].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
         }
         Debug.Log("Creating Planet");

@@ -7,13 +7,20 @@ public class PlanetData : ScriptableObject
 {
     #region Moons & Rings
     [Header("Moons & Rings Information")]
-    public bool hasRings;
-    public bool hasMoons;
-    public List<Moon> moons = new();
+    [SerializeField] private bool hasRings;
+    [SerializeField] private bool hasMoons;
+    [SerializeField] private List<Moon> moons = new();
+    [SerializeField] private List<Material> planetStages;
+
 
     #endregion
 
-    #region getters setters
+    #region getters setters,
+    public List<Material> PlanetStages
+    {
+        get { return planetStages; }
+        set { planetStages = value; }
+    }
     public List<Moon> Moons
     {
         get { return moons; }
