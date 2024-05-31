@@ -76,6 +76,11 @@ public class OverviewMovement : MonoBehaviour
                 Debug.Log("OVM CAM RAY: " + hit.collider.gameObject);
                 lookAtObj = hit.collider.gameObject;
                 CamController.CameraTarget = lookAtObj.transform;
+                if (hit.collider.gameObject.CompareTag("OVM"))
+                {
+                    lookAtObj = hit.collider.transform.parent.gameObject;
+                    Debug.LogWarning("WORKING");
+                }
             }
         }
     }

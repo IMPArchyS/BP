@@ -15,17 +15,17 @@ MonoBehaviour:
   objectName: Zem
   type: 0
   region: 1
-  mass: 5.97219e+24
+  mass: 5.97219e+21
   radius: 4038
-  velocity: 29.78
-  age: 4503000000
+  velocity: 26.77
+  age: 0
   hasAtmosphere: 1
   atmospherePressure: 0
   atmosphereComposition:
   - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
   - {fileID: 11400000, guid: e2ceeb48f49e6d743932eb86f2fe45ec, type: 2}
   orbitalRadius: 1
-  orbitalPeriod: "365 dn\xED"
+  orbitalPeriod: "363 dn\xED"
   orbitalEccentricity: 0.0034
   inclination: 7.155
   surface: "nezn\xE1me"
@@ -38,8 +38,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7e38b9213b64fb745bcc342af13d3f9c, type: 2}
   - {fileID: 11400000, guid: b6b7206fcf32f1446990330674795ccf, type: 2}
   - {fileID: 11400000, guid: cb3260998a014624a92de1348677a2eb, type: 2}
-  minTemperature: -89.2
-  averageTemperature: 15
-  maxTemperature: 56.7
-  gravity: 9.807
+  minTemperature: 1753.5
+  averageTemperature: 2104.3
+  maxTemperature: 2346.7
+  gravity: 9.6
   hasMagneticField: 1

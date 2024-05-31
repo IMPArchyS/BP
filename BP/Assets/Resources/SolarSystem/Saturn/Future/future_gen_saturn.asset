@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9ecbbe82b443d4da0eb7e00e6541e1, type: 3}
+  m_Name: future_gen_saturn
+  m_EditorClassIdentifier: 
+  objectName: Saturn
+  type: 0
+  region: 2
+  mass: 5.683e+26
+  radius: 58232
+  velocity: 9.68
+  age: 6703000000
+  hasAtmosphere: 1
+  atmospherePressure: 1.4
+  atmosphereComposition:
+  - {fileID: 11400000, guid: 040683c42a12dc64d9e4d592ae30d2e0, type: 2}
+  - {fileID: 11400000, guid: a92f1f4a2635bfc49b2a613a7aab7915, type: 2}
+  orbitalRadius: 9.5
+  orbitalPeriod: 29.4 rokov
+  orbitalEccentricity: 0.0541
+  inclination: 2.48
+  surface: "plynov\xE1 \u0161trukt\xFAra"
+  groundElements: []
+  minTemperature: -185
+  averageTemperature: -178
+  maxTemperature: -122
+  gravity: 10.44
+  hasMagneticField: 1
