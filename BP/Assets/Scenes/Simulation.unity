@@ -33049,7 +33049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b0308f0132e734190b21e3a8c36377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetData: {fileID: 11400000, guid: 313ecabd4d4ff5948a22dda4759ce313, type: 2}
+  planetData: {fileID: 11400000, guid: 5b7a5ccdd868cdf4bad071e64a9ee5f1, type: 2}
 --- !u!1 &1242512368
 GameObject:
   m_ObjectHideFlags: 0
@@ -34536,6 +34536,9 @@ MonoBehaviour:
   - {fileID: 1984143549}
   moons: []
   <AsteroidField>k__BackingField: {fileID: 1776137790}
+  onPlanetChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1344536320
 Transform:
   m_ObjectHideFlags: 0
@@ -54961,6 +54964,10 @@ PrefabInstance:
     - target: {fileID: 3523380835550284387, guid: e97261baf54ca144f950a998b9a73f89, type: 3}
       propertyPath: m_Name
       value: Moon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523380835550284391, guid: e97261baf54ca144f950a998b9a73f89, type: 3}
+      propertyPath: showOrbit
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3523380835550284391, guid: e97261baf54ca144f950a998b9a73f89, type: 3}
       propertyPath: centerObject

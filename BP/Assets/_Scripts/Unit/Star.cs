@@ -57,10 +57,10 @@ public class Star : MonoBehaviour
     private void Start()
     {
         // debug log child 0 to 10
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Debug.Log(transform.GetChild(i));
-        }
+        // for (int i = 0; i < transform.childCount; i++)
+        // {
+        //     Debug.Log(transform.GetChild(i));
+        // }
     }
 
     public void SpinPlanetaryDisk()

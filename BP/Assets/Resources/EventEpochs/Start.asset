@@ -107,10 +107,30 @@ MonoBehaviour:
     <Description>k__BackingField: "Prv\xFD obeh okolo galaxie"
   - <Year>k__BackingField: 460000000
     <EventType>k__BackingField: 3
-    <Keyword>k__BackingField: MarsMagneticFieldWeak
+    <Keyword>k__BackingField: ChangeMars3
     <Description>k__BackingField: "Marsove magnetick\xE9 pole slabne"
   - <Year>k__BackingField: 177000000
     <EventType>k__BackingField: 3
-    <Keyword>k__BackingField: WaterOnEarch
+    <Keyword>k__BackingField: ChangeEarth2
     <Description>k__BackingField: "Prv\xFD v\xFDskyt vody na Zemi"
+  - <Year>k__BackingField: 50000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeEarth1
+    <Description>k__BackingField: "Hade\xE1nska Doba na Zemi"
+  - <Year>k__BackingField: 105000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeVenus1
+    <Description>k__BackingField: "Volkanizmus na Venu\u0161i"
+  - <Year>k__BackingField: 375000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeVenus2
+    <Description>k__BackingField: "Voda na Venu\u0161i"
+  - <Year>k__BackingField: 42000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeMars1
+    <Description>k__BackingField: Schladenie Marsu
+  - <Year>k__BackingField: 453000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeMars2
+    <Description>k__BackingField: Voda na Marse
   <StartingYear>k__BackingField: 0

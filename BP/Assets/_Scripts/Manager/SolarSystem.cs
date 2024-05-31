@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Scripting.APIUpdating;
 
 public class SolarSystem : MonoBehaviour
@@ -20,12 +21,20 @@ public class SolarSystem : MonoBehaviour
     private string planetMig1Dur = "2000000";
     private string planetMig2Dur = "15000000";
     private List<Planet> selectedPlanets = new();
+    [SerializeField] private UnityEvent<string> onPlanetChange;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+        }
+    }
+    private void Start()
+    {
+        foreach (Planet planet in planets)
+        {
+            onPlanetChange?.AddListener(planet.ChangePlanet);
         }
     }
     public void ThrowPlanets()
@@ -100,6 +109,11 @@ public class SolarSystem : MonoBehaviour
                 break;
             case "TheiaDestroyed":
                 planets[8].transform.GetComponent<OrbitalMovement>().orbitSpeed = planets[8].transform.GetComponent<OrbitalMovement>().orbitSpeed / 4;
+                planets[2].CurrentData.HasMoons = true;
+                planets[2].transform.GetChild(1).gameObject.SetActive(true);
+                planets[2].transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+                var particleSystemMain = planets[2].transform.GetChild(1).GetComponent<ParticleSystem>().main;
+                particleSystemMain.loop = false;
                 moons[0].transform.GetComponent<MeshRenderer>().enabled = true;
                 moons[0].transform.GetComponent<SphereCollider>().enabled = true;
                 moons[0].transform.GetComponent<OrbitalMovement>().showOrbit = true;
@@ -110,11 +124,7 @@ public class SolarSystem : MonoBehaviour
     private void UpdatePlanet(string keyword)
     {
         string planetEvent = keyword[6..];
-        switch (planetEvent)
-        {
-            default:
-                break;
-        }
+        onPlanetChange?.Invoke(planetEvent);
     }
 
     public void MoonFormation(Planet planet)

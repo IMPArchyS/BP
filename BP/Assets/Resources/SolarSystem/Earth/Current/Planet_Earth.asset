@@ -16,3 +16,10 @@ MonoBehaviour:
   hasMoons: 1
   moons:
   - {fileID: 0}
+  planetStages:
+  - {fileID: 2100000, guid: b8515810d6c9ef145b5d3456b0080bae, type: 2}
+  - {fileID: 2100000, guid: 7c76c0704faa57e4ea5930da7dece7dc, type: 2}
+  - {fileID: 2100000, guid: 4ee84c9359844e247a5b3e0f2edefe4c, type: 2}
+  - {fileID: 2100000, guid: 97aa87935f7c5e842bc1557b205c10a0, type: 2}
+  - {fileID: 2100000, guid: 5d88410967694844ebe65eb5f66e6fbf, type: 2}
+  - {fileID: 2100000, guid: f05b14ebc076b0141a2541be52c94c30, type: 2}

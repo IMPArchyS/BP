@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Today
   m_EditorClassIdentifier: 
   <Events>k__BackingField:
-  - <Year>k__BackingField: 6100000000
+  - <Year>k__BackingField: 6091139661
     <EventType>k__BackingField: 8
     <Keyword>k__BackingField: Koniec Etapy
     <Description>k__BackingField: Koniec Etapy
-  <StartingYear>k__BackingField: 4600000000
+  - <Year>k__BackingField: 1072000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeEarth4
+    <Description>k__BackingField: "Vymretie komplexn\xE9ho \u017Eivota na Zemi"
+  - <Year>k__BackingField: 2334000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeEarth5
+    <Description>k__BackingField: "Magnetick\xE9 pole Zemi odch\xE1dza"
+  <StartingYear>k__BackingField: 4608856299

@@ -17,3 +17,7 @@ MonoBehaviour:
   moons:
   - {fileID: 0}
   - {fileID: 0}
+  planetStages:
+  - {fileID: 2100000, guid: 6e4c89459ccf33042b92c1fe7abc9860, type: 2}
+  - {fileID: 2100000, guid: 709f4cdf9a52b1e4e870e5c668a15277, type: 2}
+  - {fileID: 2100000, guid: 4ee84c9359844e247a5b3e0f2edefe4c, type: 2}
