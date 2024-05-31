@@ -14990,7 +14990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b0308f0132e734190b21e3a8c36377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetData: {fileID: 11400000, guid: 5b7a5ccdd868cdf4bad071e64a9ee5f1, type: 2}
+  planetData: {fileID: 11400000, guid: 7d1728c0aa153844eb49e66031e27bf3, type: 2}
 --- !u!114 &545945718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15139,7 +15139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2aec512d9b3faf418ba3f42425e9f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  celestialObjectData: {fileID: 11400000, guid: 3aa372d7b8a44044aa3e01b4045bff8c, type: 2}
+  celestialObjectData: {fileID: 11400000, guid: e8127b30a39c8f745b2bddd895bdd4d0, type: 2}
   sphereCollider: {fileID: 0}
   onPlayerEnter:
     m_PersistentCalls:

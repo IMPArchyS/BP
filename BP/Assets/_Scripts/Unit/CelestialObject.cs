@@ -16,6 +16,7 @@ public class CelestialObject : MonoBehaviour
     #region Generic information
     [Header("General Information")]
     [SerializeField] private GenericCOData celestialObjectData;
+    public GenericCOData TodayData { get; set; }
     public GenericCOData CurrentData { get; set; }
     #endregion
 
@@ -31,6 +32,7 @@ public class CelestialObject : MonoBehaviour
     {
         CurrentData = ScriptableObject.CreateInstance<GenericCOData>();
         CurrentData.CopyFrom(celestialObjectData);
+        TodayData.CopyFrom(celestialObjectData);
         AgeBigInt = BigInteger.Parse(CurrentData.Age);
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;

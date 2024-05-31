@@ -30,7 +30,7 @@ public class CelestialObjectInfo : MonoBehaviour
 
     private void UpdateObjectDataUI(CelestialObject foundCelestial)
     {
-        celestialObjectInfoBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = foundCelestial.CurrentData.ObjectName;
+        celestialObjectInfoBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Dnešné dáta k " + foundCelestial.CurrentData.ObjectName;
 
         // generic data
         TextMeshProUGUI genericBundled = celestialObjectInfoBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();

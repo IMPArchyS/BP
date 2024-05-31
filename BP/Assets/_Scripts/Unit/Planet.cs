@@ -12,6 +12,7 @@ public class Planet : MonoBehaviour
     [Header("Generic")]
     [SerializeField] private PlanetData planetData;
     public PlanetData CurrentData { get; set; }
+    public PlanetData TodayData { get; set; }
     #endregion
 
     public void ChangePlanet(string keyword)
@@ -50,6 +51,7 @@ public class Planet : MonoBehaviour
     {
         CurrentData = ScriptableObject.CreateInstance<PlanetData>();
         CurrentData.CopyFrom(planetData);
+        TodayData.CopyFrom(planetData);
     }
     private void Start()
     {

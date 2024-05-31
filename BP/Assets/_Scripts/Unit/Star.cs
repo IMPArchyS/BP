@@ -20,6 +20,7 @@ public class Star : MonoBehaviour
     [SerializeField] private StarData starData;
     [SerializeField] private StarDurationSizes starDurationData;
     public StarData CurrentData { get; set; }
+    public StarData TodayData { get; set; }
     public StarDurationSizes CurrentStarDurationData { get; set; }
     #endregion
     #region star utils
@@ -44,6 +45,7 @@ public class Star : MonoBehaviour
     {
         CurrentData = ScriptableObject.CreateInstance<StarData>();
         CurrentData.CopyFrom(starData);
+        TodayData.CopyFrom(starData);
 
         CurrentStarDurationData = ScriptableObject.CreateInstance<StarDurationSizes>();
         CurrentStarDurationData.CopyFrom(starDurationData);
