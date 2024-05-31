@@ -301,11 +301,11 @@ MonoBehaviour:
   speed: 50
   sprintSpeed: 100
   sensitivity: 2
-  fps: {fileID: 0}
+  fps: {fileID: 706930928}
   acceleration: 25
   zoomSpeed: 30
   dragSpeed: 600
-  ovm: {fileID: 0}
+  ovm: {fileID: 1366632717}
   loopCamera: 0
   loopSpeed: 3
   gridMaterial: {fileID: 2100000, guid: 92e2a3b7c42e2d946b12dada483ef01d, type: 2}
@@ -12996,6 +12996,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34df8fcedf88c5841bbb6b79ff8a9c67, type: 3}
+--- !u!114 &706930928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4948068789898260797, guid: 34df8fcedf88c5841bbb6b79ff8a9c67, type: 3}
+  m_PrefabInstance: {fileID: 706930927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1397f01357375f4781bcd298d062d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &708379039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35095,6 +35106,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b01f2b46058c704c93d66bfdea80a03, type: 3}
+--- !u!114 &1366632717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2971244879241294931, guid: 0b01f2b46058c704c93d66bfdea80a03, type: 3}
+  m_PrefabInstance: {fileID: 1366632716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080a436256f45944cae82846f2625f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1366656895
 PrefabInstance:
   m_ObjectHideFlags: 0

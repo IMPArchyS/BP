@@ -17876,7 +17876,7 @@ MonoBehaviour:
   - {fileID: 545945717}
   moons:
   - {fileID: 1512909813}
-  <AsteroidField>k__BackingField: {fileID: 0}
+  <AsteroidField>k__BackingField: {fileID: 1861606329}
   onPlanetChange:
     m_PersistentCalls:
       m_Calls: []
@@ -55793,6 +55793,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8147591561452027948, guid: bf4ff559c1985234393199184a0d2aea, type: 3}
   m_PrefabInstance: {fileID: 1861606327}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1861606329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8147591561452027949, guid: bf4ff559c1985234393199184a0d2aea, type: 3}
+  m_PrefabInstance: {fileID: 1861606327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1866555654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61152,6 +61157,10 @@ PrefabInstance:
     - target: {fileID: 4948068789137820119, guid: 34df8fcedf88c5841bbb6b79ff8a9c67, type: 3}
       propertyPath: m_Name
       value: CameraHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948068789898260790, guid: 34df8fcedf88c5841bbb6b79ff8a9c67, type: 3}
+      propertyPath: far clip plane
+      value: 7000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34df8fcedf88c5841bbb6b79ff8a9c67, type: 3}

@@ -17,4 +17,32 @@ MonoBehaviour:
     <EventType>k__BackingField: 8
     <Keyword>k__BackingField: Koniec Etapy
     <Description>k__BackingField: Koniec Etapy
+  - <Year>k__BackingField: 4274000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeEarth4
+    <Description>k__BackingField: "Prv\xE9 pozemsk\xE9 zvierat\xE1"
+  - <Year>k__BackingField: 4274000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeEarth4
+    <Description>k__BackingField: "Prv\xE9 pozemsk\xE9 zvierat\xE1"
+  - <Year>k__BackingField: 3720000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeVenus4
+    <Description>k__BackingField: "Vyparovanie vody na Venu\u0161i"
+  - <Year>k__BackingField: 3996000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeVenus5
+    <Description>k__BackingField: "Venu\u0161a ako ju pozn\xE1me dnes"
+  - <Year>k__BackingField: 1688000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeMars4
+    <Description>k__BackingField: Vyparovanie vody na Marse
+  - <Year>k__BackingField: 3966000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: ChangeMars5
+    <Description>k__BackingField: "Mars ako pozn\xE1me dnes"
+  - <Year>k__BackingField: 1320000000
+    <EventType>k__BackingField: 3
+    <Keyword>k__BackingField: Photosynthesis
+    <Description>k__BackingField: "Za\u010Diatok Fotosynt\xE9zy na Zemi"
   <StartingYear>k__BackingField: 0

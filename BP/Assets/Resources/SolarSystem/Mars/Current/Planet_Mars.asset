@@ -20,5 +20,7 @@ MonoBehaviour:
   planetStages:
   - {fileID: 2100000, guid: 12ce2641c01349b469f225faa0b2fbbf, type: 2}
   - {fileID: 2100000, guid: 2198af18f8fae6341bfd4fa3d28d7965, type: 2}
+  - {fileID: 2100000, guid: 8d945d0e3c9da864d81cd8a77f1293af, type: 2}
   - {fileID: 2100000, guid: 4ee84c9359844e247a5b3e0f2edefe4c, type: 2}
+  - {fileID: 2100000, guid: 2198af18f8fae6341bfd4fa3d28d7965, type: 2}
   - {fileID: 2100000, guid: 8a5995a14cffc46c9946c25b14f7c26c, type: 2}
