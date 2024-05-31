@@ -104,6 +104,7 @@ public class Star : MonoBehaviour
                 transform.GetChild(1).gameObject.SetActive(false);
                 transform.GetChild(2).gameObject.SetActive(false);
                 transform.GetChild(3).gameObject.SetActive(false);
+                SolarSystem.Instance.AsteroidField.SetActive(false);
                 transform.GetChild(6).GetComponent<MeshRenderer>().material = starStageMaterials[2];
                 break;
 

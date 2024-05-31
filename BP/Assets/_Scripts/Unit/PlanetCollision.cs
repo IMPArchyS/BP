@@ -9,6 +9,10 @@ public class PlanetCollision : MonoBehaviour
         if (other.gameObject.CompareTag("starHitbox"))
         {
             Debug.Log("CS-OBJ: " + gameObject.name + " -> HIT BY STAR");
+            foreach (Transform child in transform.parent)
+            {
+                child.gameObject.SetActive(false);
+            }
             transform.parent.gameObject.SetActive(false);
         }
     }

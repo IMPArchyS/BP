@@ -26,15 +26,22 @@ public class Belt : MonoBehaviour
 
     private void Update()
     {
+        int stellarTimeScale;
+        // Increment the angle based on time and speed
+        if (MainTimeController.Instance.StellarTimeScale > MainTimeController.Instance.StellarYear)
+            stellarTimeScale = MainTimeController.Instance.StellarYear;
+        else
+            stellarTimeScale = (int)MainTimeController.Instance.StellarTimeScale;
+
         if (rotationClockwise)
         {
-            transform.RotateAround(parent.transform.position, parent.transform.up, orbitSpeed * Time.deltaTime);
+            transform.RotateAround(parent.transform.position, parent.transform.up, orbitSpeed * Time.deltaTime * stellarTimeScale);
         }
         else
         {
-            transform.RotateAround(parent.transform.position, -parent.transform.up, orbitSpeed * Time.deltaTime);
+            transform.RotateAround(parent.transform.position, -parent.transform.up, orbitSpeed * Time.deltaTime * stellarTimeScale);
         }
 
-        transform.Rotate(rotationDirection, rotationSpeed * Time.deltaTime);
+        transform.Rotate(rotationDirection, rotationSpeed * Time.deltaTime * stellarTimeScale);
     }
 }

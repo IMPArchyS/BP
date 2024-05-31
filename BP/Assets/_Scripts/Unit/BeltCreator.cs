@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeltCreator : MonoBehaviour
 {
     [Header("Spawner Settings")]
-    public GameObject cubePrefab;
+    public List<GameObject> cubePrefabs;
     public int cubeDensity;
     public int seed;
     public float innerRadius;
@@ -53,8 +53,8 @@ public class BeltCreator : MonoBehaviour
             localPosition = new Vector3(x, y, z);
             worldOffset = transform.rotation * localPosition;
             worldPosition = transform.position + worldOffset;
-
-            GameObject _asteroid = Instantiate(cubePrefab, worldPosition, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
+            GameObject randomPrefab = Random.Range(0, cubePrefabs.Count) < cubePrefabs.Count ? cubePrefabs[Random.Range(0, cubePrefabs.Count)] : cubePrefabs[0];
+            GameObject _asteroid = Instantiate(randomPrefab, worldPosition, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
             _asteroid.AddComponent<Belt>().SetupBeltObject(Random.Range(minOrbitSpeed, maxOrbitSpeed), Random.Range(minRotationSpeed, maxRotationSpeed), gameObject, rotatingClockwise);
             _asteroid.transform.SetParent(transform);
         }

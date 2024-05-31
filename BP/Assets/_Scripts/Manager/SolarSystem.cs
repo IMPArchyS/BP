@@ -12,6 +12,7 @@ public class SolarSystem : MonoBehaviour
     [SerializeField] private Star star;
     [SerializeField] private List<Planet> planets = new();
     [SerializeField] private List<Moon> moons = new();
+    [field: SerializeField] public GameObject AsteroidField { get; set; }
     public List<Planet> Planets { get { return planets; } }
     public List<Moon> Moons { get { return moons; } }
     private bool planetMig1 = false;
@@ -36,6 +37,11 @@ public class SolarSystem : MonoBehaviour
     }
     public void CreatePlanet(string keyword)
     {
+        if (keyword.StartsWith("Change"))
+        {
+            UpdatePlanet(keyword);
+            return;
+        }
 
         switch (keyword)
         {
@@ -99,7 +105,16 @@ public class SolarSystem : MonoBehaviour
                 moons[0].transform.GetComponent<OrbitalMovement>().showOrbit = true;
                 break;
         }
-        Debug.Log("Creating Planet");
+    }
+
+    private void UpdatePlanet(string keyword)
+    {
+        string planetEvent = keyword[6..];
+        switch (planetEvent)
+        {
+            default:
+                break;
+        }
     }
 
     public void MoonFormation(Planet planet)
