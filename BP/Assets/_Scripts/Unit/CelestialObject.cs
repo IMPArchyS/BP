@@ -37,7 +37,6 @@ public class CelestialObject : MonoBehaviour
         AgeBigInt = BigInteger.Parse(CurrentData.Age);
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;
-        sphereCollider.radius = 1.25f;
     }
 
     private void Start()

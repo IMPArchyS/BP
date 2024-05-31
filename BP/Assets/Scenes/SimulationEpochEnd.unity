@@ -7204,6 +7204,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1852806563}
     m_Modifications:
+    - target: {fileID: 3523380835550284379, guid: e97261baf54ca144f950a998b9a73f89, type: 3}
+      propertyPath: m_Radius
+      value: 1.53
+      objectReference: {fileID: 0}
     - target: {fileID: 3523380835550284386, guid: e97261baf54ca144f950a998b9a73f89, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -7262,6 +7266,17 @@ PrefabInstance:
       objectReference: {fileID: 1237319865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e97261baf54ca144f950a998b9a73f89, type: 3}
+--- !u!114 &392973961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3523380835550284389, guid: e97261baf54ca144f950a998b9a73f89, type: 3}
+  m_PrefabInstance: {fileID: 392973960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80aa95d8092ad3f4b826e5f7bf06e02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &393085433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14962,7 +14977,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.94
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &773168631
 MeshRenderer:
@@ -15529,7 +15544,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &788489416
 MeshRenderer:
@@ -17739,7 +17754,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &916792446
 MeshRenderer:
@@ -21333,7 +21348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1085830489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22568,7 +22583,8 @@ MonoBehaviour:
   - {fileID: 916792439}
   - {fileID: 773168624}
   - {fileID: 1984143549}
-  moons: []
+  moons:
+  - {fileID: 392973961}
   <AsteroidField>k__BackingField: {fileID: 843746635}
   onPlanetChange:
     m_PersistentCalls:
@@ -22903,7 +22919,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1163032555
 MeshRenderer:
@@ -23549,7 +23565,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1193959499
 MeshRenderer:
@@ -29119,7 +29135,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.84
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1237319868
 MonoBehaviour:
@@ -29527,7 +29543,7 @@ MonoBehaviour:
   memText: {fileID: 108592006}
   renderText: {fileID: 175539144}
   activeObjectText: {fileID: 1833514229}
-  debugCanvas: {fileID: 0}
+  debugCanvas: {fileID: 1085830488}
   maxDebugLines: 10
 --- !u!4 &1247705478
 Transform:
@@ -31211,7 +31227,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -40.00003}
-  m_SizeDelta: {x: 467.1582, y: 50}
+  m_SizeDelta: {x: 1261.091, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1350475693
 MonoBehaviour:
@@ -33926,7 +33942,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1488153164
 MeshRenderer:
@@ -36512,7 +36528,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.83
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1601187127
 MeshRenderer:
@@ -48253,7 +48269,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.93
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1984143556
 MeshRenderer:

@@ -199,6 +199,11 @@ public class PlayerController : MonoBehaviour
             if (p.gameObject.GetComponent<MeshRenderer>().enabled)
                 p.GetComponent<OrbitalMovement>().showOrbit = toggle;
         }
+        foreach (Moon m in SolarSystem.Instance.Moons)
+        {
+            if (m.gameObject.GetComponent<MeshRenderer>().enabled)
+                m.GetComponent<OrbitalMovement>().showOrbit = toggle;
+        }
         return toggle;
     }
 

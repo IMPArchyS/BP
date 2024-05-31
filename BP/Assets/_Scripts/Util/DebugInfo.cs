@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using System;
 
 public class DebugInfo : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class DebugInfo : MonoBehaviour
     {
         LinkGUIObjects();
         StartTextUpdates();
+        ToggleUI();
     }
 
     private void CreateSingletonInstance()
@@ -52,11 +54,15 @@ public class DebugInfo : MonoBehaviour
 
     private void LinkGUIObjects()
     {
-        fpsText = GameObject.Find("FPSText").GetComponent<TextMeshProUGUI>();
-        speedText = GameObject.Find("SPEEDText").GetComponent<TextMeshProUGUI>();
-        debugText = GameObject.Find("DebugLogText").GetComponent<TextMeshProUGUI>();
+        try
+        {
+            fpsText = GameObject.Find("FPSText").GetComponent<TextMeshProUGUI>();
+            speedText = GameObject.Find("SPEEDText").GetComponent<TextMeshProUGUI>();
+            debugText = GameObject.Find("DebugLogText").GetComponent<TextMeshProUGUI>();
+            debugCanvas = GameObject.Find("DEBUGCanvas");
+        }
+        catch (Exception) { }
         fpsController = GameObject.Find("FPSCamera").GetComponent<FPSMovement>();
-        debugCanvas = GameObject.Find("DEBUGCanvas");
     }
     #endregion
 

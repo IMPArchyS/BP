@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Planet_Venus
   m_EditorClassIdentifier: 
   hasRings: 0
-  hasMoons: 1
+  hasMoons: 0
   moons:
   - {fileID: 0}
   - {fileID: 0}

@@ -15246,7 +15246,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.65
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &545945723
 MonoBehaviour:
@@ -19782,7 +19782,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.63
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &773168631
 MeshRenderer:
@@ -25256,7 +25256,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.61
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &788489416
 MeshRenderer:
@@ -27408,7 +27408,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.11
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &916792446
 MeshRenderer:
@@ -30989,7 +30989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1085830489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32500,7 +32500,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1163032555
 MeshRenderer:
@@ -33146,7 +33146,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.94
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1193959499
 MeshRenderer:
@@ -33899,7 +33899,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1237319868
 MonoBehaviour:
@@ -34307,7 +34307,7 @@ MonoBehaviour:
   memText: {fileID: 108592006}
   renderText: {fileID: 175539144}
   activeObjectText: {fileID: 1833514229}
-  debugCanvas: {fileID: 0}
+  debugCanvas: {fileID: 1085830488}
   maxDebugLines: 10
 --- !u!4 &1247705478
 Transform:
@@ -35716,7 +35716,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -40.00003}
-  m_SizeDelta: {x: 467.1582, y: 50}
+  m_SizeDelta: {x: 1261.091, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1350475693
 MonoBehaviour:
@@ -42682,7 +42682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1450644865
 Transform:
   m_ObjectHideFlags: 0
@@ -43325,7 +43325,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.97
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1488153164
 MeshRenderer:
@@ -44555,7 +44555,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.19
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1512909820
 MeshRenderer:
@@ -46193,7 +46193,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.62
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1601187127
 MeshRenderer:
@@ -58135,7 +58135,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.22
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1984143556
 MeshRenderer:

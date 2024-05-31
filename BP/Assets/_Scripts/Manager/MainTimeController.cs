@@ -60,7 +60,11 @@ public class MainTimeController : MonoBehaviour
         timeScaleText = GameObject.Find("MainTimeScaleText").GetComponent<TextMeshProUGUI>();
         timeText = GameObject.Find("MainTimeText").GetComponent<TextMeshProUGUI>();
         // debug only
-        debugTimeScaleText = GameObject.Find("DebugTimeText").GetComponent<TextMeshProUGUI>();
+        try
+        {
+            debugTimeScaleText = GameObject.Find("DebugTimeText").GetComponent<TextMeshProUGUI>();
+        }
+        catch (Exception) { }
     }
 
     private void SetEpoch()

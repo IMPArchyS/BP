@@ -29,8 +29,8 @@ public class PauseMenu : MonoBehaviour
     }
     private void PauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !inPauseMenu) PauseSim();
-        else if (Input.GetKeyDown(KeyCode.Q) && inPauseMenu) ResumeSim();
+        if (Input.GetKeyDown(KeyCode.Escape) && !inPauseMenu) PauseSim();
+        else if (Input.GetKeyDown(KeyCode.Escape) && inPauseMenu) ResumeSim();
     }
 
     public void ResumeSim()
