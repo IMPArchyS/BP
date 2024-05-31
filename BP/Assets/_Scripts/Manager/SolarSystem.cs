@@ -51,6 +51,11 @@ public class SolarSystem : MonoBehaviour
             UpdatePlanet(keyword);
             return;
         }
+        if (keyword == "LateHeavyBombard")
+        {
+            AsteroidField.SetActive(true);
+            return;
+        }
 
         switch (keyword)
         {
