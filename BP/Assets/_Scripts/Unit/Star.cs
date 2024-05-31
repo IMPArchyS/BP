@@ -44,6 +44,7 @@ public class Star : MonoBehaviour
     private void Awake()
     {
         CurrentData = ScriptableObject.CreateInstance<StarData>();
+        TodayData = ScriptableObject.CreateInstance<StarData>();
         CurrentData.CopyFrom(starData);
         TodayData.CopyFrom(starData);
 

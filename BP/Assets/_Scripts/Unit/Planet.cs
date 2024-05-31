@@ -50,6 +50,7 @@ public class Planet : MonoBehaviour
     private void Awake()
     {
         CurrentData = ScriptableObject.CreateInstance<PlanetData>();
+        TodayData = ScriptableObject.CreateInstance<PlanetData>();
         CurrentData.CopyFrom(planetData);
         TodayData.CopyFrom(planetData);
     }

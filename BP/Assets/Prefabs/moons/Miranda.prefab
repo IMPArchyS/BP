@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2aec512d9b3faf418ba3f42425e9f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  celestialObjectData: {fileID: 11400000, guid: 2fba4b6d2c5d88b479922e8a7e10defe, type: 2}
+  celestialObjectData: {fileID: 11400000, guid: 708d4a1c437ee654ca914b755dc85da6, type: 2}
   sphereCollider: {fileID: 0}
   onPlayerEnter:
     m_PersistentCalls:

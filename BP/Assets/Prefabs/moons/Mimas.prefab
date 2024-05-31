@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b6558bd77b9bc409a7c4b464375906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerObject: {fileID: 0}
+  centerObject: {fileID: 3448956064462510067}
   centerOffset: {x: 0, y: 0, z: 0}
   orbitSpeed: 0.0000075
   xRadius: -24.77
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2aec512d9b3faf418ba3f42425e9f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  celestialObjectData: {fileID: 11400000, guid: 2fba4b6d2c5d88b479922e8a7e10defe, type: 2}
+  celestialObjectData: {fileID: 11400000, guid: 465b867965dfea7419804bb7d7fa602c, type: 2}
   sphereCollider: {fileID: 0}
   onPlayerEnter:
     m_PersistentCalls:

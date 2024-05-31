@@ -10,30 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa9ecbbe82b443d4da0eb7e00e6541e1, type: 3}
-  m_Name: Generic_Moon
+  m_Name: Generic_Deimos
   m_EditorClassIdentifier: 
-  objectName: Mesiac
+  objectName: Deimos
   type: 1
   region: 1
-  mass: 7.347e+22
-  radius: 1731.1
-  velocity: 1.022
-  age: 4500000000
+  mass: 1.5e+15
+  radius: 6.2
+  velocity: 1.3
+  age: 0
   hasAtmosphere: 0
   atmospherePressure: 0
   atmosphereComposition: []
-  orbitalRadius: 384
-  orbitalPeriod: 27,3
-  orbitalEccentricity: 0.0549
-  inclination: 5.145
-  surface: "kr\xE1terov\xFD, pra\u0161it\xFD povrch"
+  orbitalRadius: 23460
+  orbitalPeriod: "30 hod\xEDn"
+  orbitalEccentricity: 0.003
+  inclination: 1.8
+  surface: "vyhladen\xFD kr\xE1terov\xFD povrch"
   groundElements:
-  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
-  - {fileID: 11400000, guid: ea56e4a6b30aca943a30a74617b246e3, type: 2}
   - {fileID: 11400000, guid: 07a46da36909b2e4aa47910eb1e19ad8, type: 2}
   - {fileID: 11400000, guid: 7e38b9213b64fb745bcc342af13d3f9c, type: 2}
-  minTemperature: -173
-  averageTemperature: -53
-  maxTemperature: 127
-  gravity: 1.62
-  hasMagneticField: 1
+  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
+  minTemperature: -140
+  averageTemperature: -63
+  maxTemperature: 10
+  gravity: 0.034
+  hasMagneticField: 0

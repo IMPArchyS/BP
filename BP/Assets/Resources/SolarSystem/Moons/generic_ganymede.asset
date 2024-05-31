@@ -10,30 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa9ecbbe82b443d4da0eb7e00e6541e1, type: 3}
-  m_Name: Generic_Moon
+  m_Name: generic_ganymede
   m_EditorClassIdentifier: 
-  objectName: Mesiac
+  objectName: "Ganym\xE9d\xE9s"
   type: 1
-  region: 1
-  mass: 7.347e+22
-  radius: 1731.1
-  velocity: 1.022
+  region: 2
+  mass: 1.48e+23
+  radius: 2631.5
+  velocity: 10.7
   age: 4500000000
-  hasAtmosphere: 0
+  hasAtmosphere: 1
   atmospherePressure: 0
-  atmosphereComposition: []
-  orbitalRadius: 384
-  orbitalPeriod: 27,3
-  orbitalEccentricity: 0.0549
-  inclination: 5.145
-  surface: "kr\xE1terov\xFD, pra\u0161it\xFD povrch"
-  groundElements:
+  atmosphereComposition:
   - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
-  - {fileID: 11400000, guid: ea56e4a6b30aca943a30a74617b246e3, type: 2}
+  orbitalRadius: 1070000
+  orbitalPeriod: "7,15 d\u0148a"
+  orbitalEccentricity: 0.0015
+  inclination: 0.18
+  surface: "kr\xE1terov\xFD \u013Eadov\xFD temn\xFD "
+  groundElements:
   - {fileID: 11400000, guid: 07a46da36909b2e4aa47910eb1e19ad8, type: 2}
   - {fileID: 11400000, guid: 7e38b9213b64fb745bcc342af13d3f9c, type: 2}
-  minTemperature: -173
-  averageTemperature: -53
-  maxTemperature: 127
-  gravity: 1.62
-  hasMagneticField: 1
+  - {fileID: 11400000, guid: b6b7206fcf32f1446990330674795ccf, type: 2}
+  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
+  minTemperature: -190
+  averageTemperature: -140
+  maxTemperature: -110
+  gravity: 1.43
+  hasMagneticField: 0

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9ecbbe82b443d4da0eb7e00e6541e1, type: 3}
+  m_Name: generic_io
+  m_EditorClassIdentifier: 
+  objectName: IO
+  type: 1
+  region: 2
+  mass: 8.93e+22
+  radius: 1821.3
+  velocity: 17
+  age: 4500000000
+  hasAtmosphere: 1
+  atmospherePressure: 0
+  atmosphereComposition:
+  - {fileID: 11400000, guid: b5180dfcd1bacad41a31060c96d04c32, type: 2}
+  - {fileID: 11400000, guid: 73d14cbb73554e343a332c50cb150573, type: 2}
+  - {fileID: 11400000, guid: cb3260998a014624a92de1348677a2eb, type: 2}
+  orbitalRadius: 421700
+  orbitalPeriod: "1,76 d\u0148a"
+  orbitalEccentricity: 0.0041
+  inclination: 0.4
+  surface: "hornat\xFD s sope\u010Dnou aktivitou"
+  groundElements:
+  - {fileID: 11400000, guid: b5180dfcd1bacad41a31060c96d04c32, type: 2}
+  - {fileID: 11400000, guid: 73d14cbb73554e343a332c50cb150573, type: 2}
+  - {fileID: 11400000, guid: cb3260998a014624a92de1348677a2eb, type: 2}
+  - {fileID: 11400000, guid: 07a46da36909b2e4aa47910eb1e19ad8, type: 2}
+  - {fileID: 11400000, guid: 2d6f9c5ff5d24c546beff05ea2e1fc35, type: 2}
+  minTemperature: -193
+  averageTemperature: -140
+  maxTemperature: 1200
+  gravity: 1.79
+  hasMagneticField: 0

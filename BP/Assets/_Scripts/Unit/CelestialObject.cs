@@ -31,6 +31,7 @@ public class CelestialObject : MonoBehaviour
     private void Awake()
     {
         CurrentData = ScriptableObject.CreateInstance<GenericCOData>();
+        TodayData = ScriptableObject.CreateInstance<GenericCOData>();
         CurrentData.CopyFrom(celestialObjectData);
         TodayData.CopyFrom(celestialObjectData);
         AgeBigInt = BigInteger.Parse(CurrentData.Age);
